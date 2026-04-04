@@ -1,0 +1,546 @@
+/* ============================================================
+   КАТАЛОГ ГОРОДОВ (/gorod/)
+   Подключается поверх main.css; использует токены и .btn, .container, .fade-up
+   ============================================================ */
+
+/* ---- Page shell ---- */
+.catalog-page {
+  padding-top: 0;
+}
+
+/* Как на главной: .nav fixed, фон героя уходит под шапку до верха вьюпорта */
+
+/* ---- Hero (компактный ~50vh), край до верха экрана под прозрачной навигацией ---- */
+.catalog-hero {
+  --catalog-hero-image: url("../img/cities/1.jpg");
+
+  position: relative;
+  min-height: min(50vh, 560px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--c-white);
+  padding-top: max(
+    clamp(5.35rem, 11vw, 6.5rem),
+    calc(env(safe-area-inset-top, 0px) + 4.25rem)
+  );
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  padding-left: 0;
+  padding-right: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 32, 0.55) 0%, rgba(15, 23, 32, 0.72) 100%),
+    var(--catalog-hero-image) center / cover no-repeat;
+}
+
+.catalog-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.catalog-hero .eyebrow {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.catalog-hero .hero__title {
+  font-family: var(--font-hero-display);
+  font-weight: 700;
+  font-size: clamp(2.15rem, 5vw, 3.85rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--c-white);
+  margin: 0 0 0.75rem;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.45),
+    0 10px 36px rgba(0, 0, 0, 0.22);
+}
+
+.catalog-hero .hero__subtitle {
+  font-family: var(--font-hero-sans);
+  font-size: clamp(0.95rem, 1.65vw, 1.12rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* ---- Панель фильтров (между героем и сеткой), в потоке страницы ---- */
+.catalog-filter-bar {
+  position: relative;
+  z-index: 1;
+  margin-top: -1px;
+  padding: 0.85rem 0;
+  background: rgba(248, 250, 252, 0.72);
+  border-bottom: 1px solid rgba(15, 23, 32, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+}
+
+.catalog-filter-bar__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-filter-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.catalog-filters--tags {
+  padding-top: 0.65rem;
+  margin-top: 0.15rem;
+  border-top: 1px solid rgba(15, 23, 32, 0.07);
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---- Фильтры (пилюли) ---- */
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.catalog-filters .catalog-filter {
+  margin: 0;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.88rem;
+}
+
+/* Неактивные: JS оставляет .btn-outline-white — переопределяем под светлую панель */
+.catalog-filter-bar .catalog-filter.btn-outline-white {
+  color: var(--c-primary);
+  border-color: rgba(30, 73, 118, 0.32);
+}
+
+.catalog-filter-bar .catalog-filter.btn-outline-white:hover {
+  background: rgba(30, 73, 118, 0.06);
+  border-color: var(--c-primary);
+}
+
+.catalog-filter-bar .catalog-filter.is-active {
+  background: var(--c-primary);
+  color: var(--c-white);
+  border: 2px solid var(--c-primary);
+  box-shadow: 0 4px 18px rgba(30, 73, 118, 0.22);
+}
+
+.catalog-filter-bar .catalog-filter.is-active:hover {
+  background: var(--c-primary-dark);
+  border-color: var(--c-primary-dark);
+}
+
+/* ---- Фильтр по интересам (вторая строка) ---- */
+.catalog-filters--tags .catalog-tag-filter {
+  margin: 0;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.82rem;
+}
+
+.catalog-filter-bar .catalog-tag-filter.btn-outline-white {
+  color: var(--c-primary);
+  border-color: rgba(30, 73, 118, 0.28);
+}
+
+.catalog-filter-bar .catalog-tag-filter.btn-outline-white:hover {
+  background: rgba(30, 73, 118, 0.06);
+  border-color: var(--c-primary);
+}
+
+.catalog-filter-bar .catalog-tag-filter.is-active {
+  background: var(--c-primary);
+  color: var(--c-white);
+  border: 2px solid var(--c-primary);
+  box-shadow: 0 4px 18px rgba(30, 73, 118, 0.22);
+}
+
+.catalog-filter-bar .catalog-tag-filter.is-active:hover {
+  background: var(--c-primary-dark);
+  border-color: var(--c-primary-dark);
+}
+
+.catalog-count {
+  font-weight: 600;
+  font-size: 0.55em;
+  opacity: 0.85;
+  margin-left: 0.35em;
+  vertical-align: middle;
+}
+
+/* ---- Поиск и переключатель вида в шапке секции ---- */
+.catalog-section-header__tools {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1 1 18rem;
+  max-width: 26rem;
+  min-width: min(100%, 12rem);
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.catalog-section-header__tools .catalog-search-wrap {
+  flex: 1 1 12rem;
+  min-width: min(100%, 10rem);
+  max-width: 22rem;
+}
+
+.catalog-view-toggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  border-radius: var(--radius-card, 12px);
+  border: 1px solid rgba(15, 23, 32, 0.12);
+  background: var(--c-surface);
+  box-shadow: 0 1px 2px rgba(15, 23, 32, 0.04);
+  overflow: hidden;
+}
+
+.catalog-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: rgba(15, 23, 32, 0.45);
+  cursor: pointer;
+  transition:
+    background var(--t-fast),
+    color var(--t-fast);
+}
+
+.catalog-view-btn:hover {
+  color: var(--c-primary);
+  background: rgba(30, 73, 118, 0.06);
+}
+
+.catalog-view-btn:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--c-primary);
+  z-index: 1;
+}
+
+.catalog-view-btn.is-active {
+  color: var(--c-primary);
+  background: rgba(30, 73, 118, 0.1);
+}
+
+.catalog-view-btn + .catalog-view-btn {
+  border-left: 1px solid rgba(15, 23, 32, 0.08);
+}
+
+.catalog-search {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.65rem 1rem 0.65rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--c-dark);
+  background: var(--c-surface);
+  border: 1px solid rgba(15, 23, 32, 0.12);
+  border-radius: var(--radius-card, 12px);
+  box-shadow: 0 1px 2px rgba(15, 23, 32, 0.04);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%231e4976' stroke-opacity='0.45' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6'/%3E%3Cpath d='m13 13 3 3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0.85rem 50%;
+  background-size: 1rem 1rem;
+  transition:
+    border-color var(--t-fast),
+    box-shadow var(--t-fast);
+}
+
+.catalog-search::placeholder {
+  color: rgba(15, 23, 32, 0.42);
+  font-weight: 400;
+}
+
+.catalog-search:hover {
+  border-color: rgba(30, 73, 118, 0.28);
+}
+
+.catalog-search:focus {
+  outline: none;
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 3px rgba(30, 73, 118, 0.18);
+}
+
+.catalog-search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.15rem;
+  cursor: pointer;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%231e4976' stroke-opacity='0.5' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 3l8 8M11 3l-8 8'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* ---- Сетка городов ---- */
+.catalog-cities.cities {
+  padding: var(--section-py) 0;
+  background: var(--c-bg);
+}
+
+.cities__grid.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.75rem;
+  align-items: start;
+}
+
+/* ---- Вид «список»: одна колонка, карточка — изображение слева, текст справа ---- */
+.cities__grid.catalog-grid.catalog-grid--list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.catalog-grid--list .city-card {
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  justify-self: stretch;
+}
+
+.catalog-grid--list .city-card:hover {
+  transform: translateY(-3px);
+}
+
+.catalog-grid--list .city-card__img-wrap {
+  flex: 0 0 clamp(132px, 30vw, 268px);
+  width: clamp(132px, 30vw, 268px);
+  max-width: 42%;
+  align-self: stretch;
+  min-height: 0;
+}
+
+.catalog-grid--list .city-card__body {
+  flex: 1;
+  min-width: 0;
+  padding: 1.25rem 1.5rem 1.5rem;
+  justify-content: center;
+}
+
+.catalog-grid--list .city-card__lead {
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+}
+
+/* ---- Карточка города ---- */
+.city-card {
+  background: var(--c-surface);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition:
+    opacity var(--t-normal),
+    transform var(--t-normal),
+    box-shadow var(--t-normal),
+    visibility var(--t-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.city-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.city-card__img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.city-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.city-card:hover .city-card__img {
+  transform: scale(1.06);
+}
+
+.city-card__img--placeholder {
+  min-height: 100%;
+}
+
+.city-card__badge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  transition: background var(--t-normal), color var(--t-normal);
+}
+
+.city-card:hover .city-card__badge {
+  background: var(--c-accent);
+  color: var(--c-dark);
+}
+
+.city-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(8, 20, 45, 0.52) 100%);
+  opacity: 0;
+  transition: opacity var(--t-normal);
+  pointer-events: none;
+}
+
+.city-card:hover .city-card__overlay {
+  opacity: 1;
+}
+
+.city-card__body {
+  padding: 1.4rem 1.6rem 1.6rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.city-card__title {
+  color: var(--c-text);
+  transition: text-shadow var(--t-normal);
+}
+
+.city-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.city-card__tag {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--c-primary);
+  background: rgba(30, 73, 118, 0.08);
+  border: 1px solid rgba(30, 73, 118, 0.14);
+  border-radius: 999px;
+  padding: 0.22rem 0.55rem;
+  line-height: 1.2;
+}
+
+.city-card:hover .city-card__title {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.city-card__lead {
+  font-size: 0.9rem;
+  color: var(--c-muted);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.city-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--c-primary);
+  margin-top: 0.6rem;
+  transition: gap var(--t-fast), color var(--t-fast);
+}
+
+.city-card__link:hover {
+  gap: 0.6rem;
+  color: var(--c-primary-dark);
+}
+
+/* Фильтрация: убрать карточку из сетки (height:0 оставляет ячейки и row-gap — «дыры») */
+.catalog-grid > .city-card.is-hidden {
+  display: none;
+}
+
+/* ---- Пустое состояние (0 карточек после поиска + фильтров) ---- */
+/* Иначе display:flex перебивает UA [hidden] (одинаковая специфичность, наш CSS позже). */
+.catalog-empty[hidden] {
+  display: none !important;
+}
+
+.catalog-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(2.25rem, 5.5vw, 3.75rem) 1.25rem;
+  margin-top: 0.35rem;
+}
+
+.catalog-empty__inner {
+  max-width: 22rem;
+}
+
+.catalog-empty__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-hero-sans, var(--font-body));
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 700;
+  color: var(--c-text);
+  letter-spacing: -0.02em;
+}
+
+.catalog-empty__hint {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--c-muted);
+}
+
+/* ============================================================
+   Адаптив
+   ============================================================ */
+@media (max-width: 720px) {
+  .cities__grid.catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .catalog-grid--list .city-card {
+    flex-direction: column;
+  }
+
+  .catalog-grid--list .city-card__img-wrap {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 10;
+  }
+}
