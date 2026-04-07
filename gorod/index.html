@@ -6,6 +6,42 @@
   <meta name="description" content="Каталог городов Крыма — Южный берег, запад, восток и центр полуострова. Выберите направление и откройте путеводитель." />
   <title>Города Крыма — каталог</title>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TouristDestination",
+        "@id": "/#crimea",
+        "name": "Крым",
+        "description": "Каталог городов Крыма — Южный берег, запад, восток и центр полуострова. Выберите направление и откройте путеводитель.",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "45.03",
+          "longitude": "34.10"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Города Крыма",
+            "item": "/gorod/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -77,10 +113,16 @@
     <!-- Page hero + фильтры (стили catalog.css; базовая читаемость до подключения) -->
     <section class="catalog-hero" aria-label="Города Крыма">
       <div class="container">
+        <nav class="breadcrumbs breadcrumbs--on-dark breadcrumbs--center" aria-label="Навигационная цепочка">
+          <ol class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
+            <li class="breadcrumbs__item"><span class="breadcrumbs__text" aria-current="page">Города Крыма</span></li>
+          </ol>
+        </nav>
         <p class="eyebrow">Каталог</p>
         <h1 class="hero__title">Города Крыма</h1>
         <p class="hero__subtitle">
-          20 направлений — от южного берега до древних крепостей
+          <span id="catalogHeroDirections">19</span> направлений — от южного берега до древних крепостей
         </p>
       </div>
     </section>
@@ -236,7 +278,7 @@
           </a>
 
           <!-- Западный -->
-          <a href="/gorod/sevastopol/" class="city-card fade-up" data-delay="3" data-region="западный" data-tags="история пляж архитектура">
+          <a href="/gorod/sevastopol.html" class="city-card fade-up" data-delay="3" data-region="западный" data-tags="история пляж архитектура">
             <div class="city-card__img-wrap">
               <img class="city-card__img" src="../assets/img/cities/2.jpg" alt="Севастополь — бухты и Херсонес" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Западный</span>

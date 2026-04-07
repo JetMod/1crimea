@@ -38,6 +38,10 @@
   z-index: 1;
 }
 
+.catalog-hero .breadcrumbs {
+  margin-bottom: 0.65rem;
+}
+
 .catalog-hero .eyebrow {
   color: rgba(255, 255, 255, 0.85);
 }

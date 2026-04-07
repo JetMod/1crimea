@@ -19,6 +19,10 @@
   if (!grid || !filterBtns.length) return;
 
   var cards = grid.querySelectorAll('.city-card[data-region]');
+  var heroDirectionsEl = document.getElementById('catalogHeroDirections');
+  if (heroDirectionsEl) {
+    heroDirectionsEl.textContent = String(cards.length);
+  }
   var currentFilter = 'all';
   var currentTagFilter = 'all';
   var searchQuery = '';

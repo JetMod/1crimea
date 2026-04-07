@@ -59,6 +59,10 @@
   padding-right: max(0px, env(safe-area-inset-right, 0px));
 }
 
+.city-hero .breadcrumbs {
+  margin-bottom: 0.85rem;
+}
+
 .city-hero__content {
   max-width: 46rem;
   padding-bottom: clamp(3rem, 6vh, 4.5rem);

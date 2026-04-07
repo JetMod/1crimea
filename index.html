@@ -6,6 +6,37 @@
   <meta name="description" content="Путеводитель по городам Крыма — история, природа, море. Откройте Ялту, Севастополь, Евпаторию и другие жемчужины полуострова." />
   <title>Крым — Путеводитель по городам</title>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TouristDestination",
+        "@id": "/#crimea",
+        "name": "Крым",
+        "alternateName": ["Crimea", "Крымский полуостров"],
+        "description": "Путеводитель по городам Крыма — история, природа, море. Откройте Ялту, Севастополь, Евпаторию и другие жемчужины полуострова.",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "45.03",
+          "longitude": "34.10"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -90,7 +121,7 @@
         poster="assets/img/cities/1.jpg"
         aria-hidden="true"
       >
-        <source src="assets/video/hero.MP4" type="video/mp4" />
+        <source src="assets/video/hero.mp4" type="video/mp4" />
       </video>
 
       <div class="hero__overlay" aria-hidden="true"></div>
@@ -105,7 +136,7 @@
 
           <p class="hero__subtitle">
             Путеводитель по городам, побережью и горам.<br />
-            От <a href="gorod/yalta.html">Ялты</a> до Керчи — каждый уголок со своей историей.
+            От <a href="/gorod/yalta.html">Ялты</a> до Керчи — каждый уголок со своей историей.
           </p>
 
           <div class="hero__actions">
@@ -119,10 +150,10 @@
           <div class="hero__search">
             <div class="hero__search-chips" aria-label="Популярные города">
               <span class="hero__chips-hint">Популярное:</span>
-              <a class="hero__chip" href="gorod/yalta.html">Ялта</a>
-              <a class="hero__chip" href="/gorod/sevastopol/">Севастополь</a>
-              <a class="hero__chip" href="/gorod/sudak/">Судак</a>
-              <a class="hero__chip" href="/gorod/feodosiya/">Феодосия</a>
+              <a class="hero__chip" href="/gorod/yalta.html">Ялта</a>
+              <a class="hero__chip" href="/gorod/sevastopol.html">Севастополь</a>
+              <a class="hero__chip" href="/gorod/">Судак</a>
+              <a class="hero__chip" href="/gorod/">Феодосия</a>
             </div>
           </div>
         </div>
@@ -207,7 +238,7 @@
 
           <!-- Ялта + Алушта: две карточки вместо одной высокой (та же ячейка сетки 2×2) -->
           <div class="cities__featured-split fade-up" data-delay="1">
-            <a href="gorod/yalta.html" class="city-card city-card--featured city-card--featured-split">
+            <a href="/gorod/yalta.html" class="city-card city-card--featured city-card--featured-split">
             <div class="city-card__img-wrap">
                 <img
                   class="city-card__img"
@@ -230,7 +261,7 @@
                 </div>
               </div>
           </a>
-            <a href="/gorod/alushta/" class="city-card city-card--featured city-card--featured-split">
+            <a href="/gorod/" class="city-card city-card--featured city-card--featured-split">
             <div class="city-card__img-wrap">
                 <img
                   class="city-card__img"
@@ -256,7 +287,7 @@
           </div>
 
           <!-- Карточка: Севастополь -->
-          <a href="/gorod/sevastopol/" class="city-card fade-up" data-delay="2">
+          <a href="/gorod/sevastopol.html" class="city-card fade-up" data-delay="2">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -281,7 +312,7 @@
           </a>
 
           <!-- Карточка: Евпатория -->
-          <a href="/gorod/evpatoriya/" class="city-card fade-up" data-delay="3">
+          <a href="/gorod/" class="city-card fade-up" data-delay="3">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -306,7 +337,7 @@
           </a>
 
           <!-- Карточка: Бахчисарай -->
-          <a href="/gorod/bakhchisaray/" class="city-card fade-up" data-delay="4">
+          <a href="/gorod/bakhchisaray.html" class="city-card fade-up" data-delay="4">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -331,7 +362,7 @@
           </a>
 
           <!-- Карточка: Судак -->
-          <a href="/gorod/sudak/" class="city-card fade-up" data-delay="5">
+          <a href="/gorod/" class="city-card fade-up" data-delay="5">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -356,7 +387,7 @@
           </a>
 
           <!-- Карточка: Феодосия -->
-          <a href="/gorod/feodosiya/" class="city-card fade-up" data-delay="6">
+          <a href="/gorod/" class="city-card fade-up" data-delay="6">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -381,6 +412,78 @@
           </a>
 
         </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         GALLERY — Крым в кадре
+         ===================================================== -->
+    <section class="gallery" id="gallery" aria-label="Фотогалерея Крыма">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Фотогалерея</span>
+            <h2>Крым в кадре</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__track-wrap">
+        <div class="gallery__track" id="galleryTrack">
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/1.jpg" alt="Набережная Ялты — южный берег Крыма" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/yalta.html">Ялта</a></figcaption>
+          </figure>
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/2.jpg" alt="Панорама бухты Севастополя" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/sevastopol.html">Севастополь</a></figcaption>
+          </figure>
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/3.jpg" alt="Пляжи Евпатории" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/">Евпатория</a></figcaption>
+          </figure>
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/4.jpg" alt="Ханский дворец Бахчисарая" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/bakhchisaray.html">Бахчисарай</a></figcaption>
+          </figure>
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/5.jpg" alt="Генуэзская крепость в Судаке" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/">Судак</a></figcaption>
+          </figure>
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/6.webp" alt="Набережная Феодосии" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/">Феодосия</a></figcaption>
+          </figure>
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/7.webp" alt="Алушта — курорт у подножия гор" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/">Алушта</a></figcaption>
+          </figure>
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/img9.webp" alt="Горный пейзаж Крыма" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/">Горный Крым</a></figcaption>
+          </figure>
+
+          <figure class="gallery__item">
+            <img src="assets/img/cities/10.jfif" alt="Пейзажи Крымского полуострова" loading="lazy" width="540" height="380" />
+            <figcaption class="gallery__caption"><a href="/gorod/">Керчь</a></figcaption>
+          </figure>
+
+        </div>
+
+        <button class="gallery__btn gallery__btn--prev" id="galleryPrev" type="button" aria-label="Предыдущие фото">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="gallery__btn gallery__btn--next" id="galleryNext" type="button" aria-label="Следующие фото">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </section>
 
@@ -569,7 +672,7 @@
 
         <div class="why__routes">
 
-          <a href="/gorod/yalta/" class="why-route why-route--coast fade-up" data-delay="1">
+          <a href="/gorod/yalta.html" class="why-route why-route--coast fade-up" data-delay="1">
             <span class="why-route__bg" aria-hidden="true"></span>
             <span class="why-route__overlay" aria-hidden="true"></span>
             <span class="why-route__inner">
@@ -645,22 +748,22 @@
         <div class="footer__col footer__col--popular">
           <p class="footer__col-title">Популярное</p>
           <div class="footer__photo-grid">
-            <a href="gorod/yalta.html" class="footer__photo-item" aria-label="Ялта">
+            <a href="/gorod/yalta.html" class="footer__photo-item" aria-label="Ялта">
               <img src="assets/img/cities/1.jpg" alt="Ялта" loading="lazy" width="120" height="90" />
             </a>
-            <a href="/gorod/sevastopol/" class="footer__photo-item" aria-label="Севастополь">
+            <a href="/gorod/sevastopol.html" class="footer__photo-item" aria-label="Севастополь">
               <img src="assets/img/cities/2.jpg" alt="Севастополь" loading="lazy" width="120" height="90" />
             </a>
-            <a href="/gorod/evpatoriya/" class="footer__photo-item" aria-label="Евпатория">
+            <a href="/gorod/" class="footer__photo-item" aria-label="Евпатория">
               <img src="assets/img/cities/3.jpg" alt="Евпатория" loading="lazy" width="120" height="90" />
             </a>
-            <a href="/gorod/bakhchisaray/" class="footer__photo-item" aria-label="Бахчисарай">
+            <a href="/gorod/bakhchisaray.html" class="footer__photo-item" aria-label="Бахчисарай">
               <img src="assets/img/cities/4.jpg" alt="Бахчисарай" loading="lazy" width="120" height="90" />
             </a>
-            <a href="/gorod/sudak/" class="footer__photo-item" aria-label="Судак">
+            <a href="/gorod/" class="footer__photo-item" aria-label="Судак">
               <img src="assets/img/cities/5.jpg" alt="Судак" loading="lazy" width="120" height="90" />
             </a>
-            <a href="/gorod/feodosiya/" class="footer__photo-item" aria-label="Феодосия">
+            <a href="/gorod/" class="footer__photo-item" aria-label="Феодосия">
               <img src="assets/img/cities/6.webp" alt="Феодосия" loading="lazy" width="120" height="90" />
             </a>
             <a href="/gorod/" class="footer__photo-item" aria-label="Горный Крым">
