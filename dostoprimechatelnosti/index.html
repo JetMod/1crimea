@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Достопримечательности Крыма — дворцы, крепости, музеи и природа. Фильтры по городам и темам, краткие обзоры для маршрута." />
+  <title>Достопримечательности Крыма — каталог</title>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Крым — Путеводитель" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Достопримечательности Крыма — каталог" />
+  <meta property="og:description" content="Достопримечательности Крыма — дворцы, крепости, музеи и природа. Фильтры по городам и темам, краткие обзоры для маршрута." />
+  <meta property="og:url" content="/dostoprimechatelnosti/" />
+  <link rel="canonical" href="/dostoprimechatelnosti/" />
+  <meta property="og:image" content="/assets/img/cities/4.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Достопримечательности Крыма — каталог" />
+  <meta name="twitter:description" content="Достопримечательности Крыма — дворцы, крепости, музеи и природа. Фильтры по городам и темам, краткие обзоры для маршрута." />
+  <meta name="twitter:image" content="/assets/img/cities/4.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "/dostoprimechatelnosti/#page",
+        "name": "Достопримечательности Крыма",
+        "description": "Каталог мест и объектов для путешествий по полуострову — с фильтрами по городам и типам.",
+        "isPartOf": { "@id": "/#crimea" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Достопримечательности",
+            "item": "/dostoprimechatelnosti/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/home.css" />
+  <link rel="stylesheet" href="../assets/css/catalog.css" />
+  <link rel="stylesheet" href="../assets/css/city.css" />
+  <link rel="stylesheet" href="../assets/css/place.css" />
+</head>
+<body class="page-catalog page-places">
+
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс прокрутки"></div>
+
+  <header class="site-header">
+    <nav class="nav" role="navigation" aria-label="Главное меню">
+      <div class="container nav__inner">
+
+        <div class="nav__brand">
+          <a href="/" class="nav__logo" aria-label="Крым — на главную">
+            <span class="nav__logo-text">Крым</span>
+          </a>
+          <span class="nav__brand-divider" aria-hidden="true"></span>
+          <span class="nav__brand-tag">Путеводитель</span>
+        </div>
+
+        <ul class="nav__menu" role="list">
+          <li><a href="/gorod/" class="nav__link">Города</a></li>
+          <li><a href="/dostoprimechatelnosti/" class="nav__link" aria-current="page">Достопримечательности</a></li>
+          <li><a href="/template-about.html" class="nav__link">О проекте</a></li>
+        </ul>
+
+        <a href="/gorod/" class="btn btn-primary nav__cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Смотреть города
+        </a>
+
+        <button class="nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="navDrawer">
+          <span class="nav__burger-line"></span>
+          <span class="nav__burger-line"></span>
+          <span class="nav__burger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <div class="nav__drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+      <div class="nav__drawer-backdrop" tabindex="-1" aria-hidden="true"></div>
+      <div class="nav__drawer-panel">
+        <div class="nav__drawer-head">
+          <span class="nav__drawer-brand">Крым</span>
+          <button type="button" class="nav__drawer-close" aria-label="Закрыть меню">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <nav class="nav__drawer-nav" aria-label="Разделы">
+          <a href="/gorod/" class="nav__drawer-link">Города</a>
+          <a href="/dostoprimechatelnosti/" class="nav__drawer-link" aria-current="page">Достопримечательности</a>
+          <a href="/template-about.html" class="nav__drawer-link">О проекте</a>
+        </nav>
+        <a href="#places-cities-heading" class="btn btn-primary nav__drawer-cta">К каталогу мест</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="catalog-page places-hub">
+
+    <section class="catalog-hero catalog-hero--places" aria-label="Достопримечательности Крыма">
+      <div class="container">
+        <nav class="breadcrumbs breadcrumbs--on-dark breadcrumbs--center" aria-label="Навигационная цепочка">
+          <ol class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
+            <li class="breadcrumbs__item"><span class="breadcrumbs__text" aria-current="page">Достопримечательности</span></li>
+          </ol>
+        </nav>
+        <p class="eyebrow">Каталог</p>
+        <h1 class="hero__title">Достопримечательности</h1>
+        <p class="hero__subtitle">
+          <span id="placesHeroCount">12</span> мест — дворцы, крепости, музеи и природа по всему Крыму
+        </p>
+      </div>
+    </section>
+
+    <div class="catalog-filter-bar" role="region" aria-label="Фильтры каталога мест">
+      <div class="container catalog-filter-bar__inner">
+        <div class="catalog-filter-stack">
+          <div class="catalog-filters" role="group" aria-label="Город или регион">
+            <button type="button" class="btn catalog-filter place-city-filter is-active" data-city-filter="all">Все</button>
+            <button type="button" class="btn btn-outline-white catalog-filter place-city-filter" data-city-filter="yalta">Ялта</button>
+            <button type="button" class="btn btn-outline-white catalog-filter place-city-filter" data-city-filter="alupka">Алупка</button>
+            <button type="button" class="btn btn-outline-white catalog-filter place-city-filter" data-city-filter="sevastopol">Севастополь</button>
+            <button type="button" class="btn btn-outline-white catalog-filter place-city-filter" data-city-filter="bakhchisaray">Бахчисарай</button>
+            <button type="button" class="btn btn-outline-white catalog-filter place-city-filter" data-city-filter="sudak">Судак</button>
+            <button type="button" class="btn btn-outline-white catalog-filter place-city-filter" data-city-filter="feodosiya">Феодосия</button>
+            <button type="button" class="btn btn-outline-white catalog-filter place-city-filter" data-city-filter="evpatoriya">Евпатория</button>
+            <button type="button" class="btn btn-outline-white catalog-filter place-city-filter" data-city-filter="belogorsk">Белогорск</button>
+          </div>
+     
+        </div>
+      </div>
+    </div>
+
+    <section class="cities catalog-cities places-catalog" aria-labelledby="places-cities-heading">
+      <div class="container">
+
+        <div class="section-header catalog-section-header">
+          <div>
+            <span class="eyebrow">Что посмотреть</span>
+            <h2 id="places-cities-heading">Объекты <span class="catalog-count" id="placesVisibleCount" aria-live="polite">12</span></h2>
+          </div>
+          <div class="catalog-section-header__tools">
+            <div class="catalog-search-wrap">
+              <input
+                type="search"
+                class="catalog-search"
+                id="placesSearch"
+                placeholder="Найти место…"
+                autocomplete="off"
+                enterkeyhint="search"
+                aria-label="Поиск по названию"
+              />
+            </div>
+            <div class="catalog-view-toggle" role="group" aria-label="Вид каталога">
+              <button
+                type="button"
+                class="catalog-view-btn is-active"
+                data-catalog-view="grid"
+                aria-pressed="true"
+                aria-label="Вид сеткой"
+                title="Сетка"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="7" height="7" rx="1" />
+                  <rect x="14" y="3" width="7" height="7" rx="1" />
+                  <rect x="3" y="14" width="7" height="7" rx="1" />
+                  <rect x="14" y="14" width="7" height="7" rx="1" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="catalog-view-btn"
+                data-catalog-view="list"
+                aria-pressed="false"
+                aria-label="Вид списком"
+                title="Список"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="8" y1="6" x2="21" y2="6" />
+                  <line x1="8" y1="12" x2="21" y2="12" />
+                  <line x1="8" y1="18" x2="21" y2="18" />
+                  <line x1="3" y1="6" x2="3.01" y2="6" />
+                  <line x1="3" y1="12" x2="3.01" y2="12" />
+                  <line x1="3" y1="18" x2="3.01" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cities__grid catalog-grid places-grid">
+
+          <a href="/dostoprimechatelnosti/livadiyskiy-dvorets.html" class="sight-card fade-up" data-delay="1" data-city="yalta" data-type="dvorets" data-tags="история архитектура музей">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Ливадийский дворец среди парка" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Ливадийский дворец</h3>
+              <p class="sight-card__text">Белоснежная резиденция у моря: парк, экспозиции и место Ялтинской конференции 1945 года.</p>
+              <span class="sight-card__link">Подробнее<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/alupka/" class="sight-card fade-up" data-delay="1" data-city="alupka" data-type="dvorets" data-tags="история архитектура природа">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Воронцовский дворец в Алупке" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Воронцовский дворец</h3>
+              <p class="sight-card__text">Романтические башни и парк у подножия Ай-Петри — визитная карточка Южного берега.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/bakhchisaray/" class="sight-card fade-up" data-delay="2" data-city="bakhchisaray" data-type="dvorets" data-tags="история архитектура">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Бахчисарайский ханский дворец" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Ханский дворец</h3>
+              <p class="sight-card__text">Дворцовая площадь, Большая и Малая ханские мечети — сердце средневекового Бахчисарая.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/sevastopol.html" class="sight-card fade-up" data-delay="2" data-city="sevastopol" data-type="krepost" data-tags="история архитектура пляж">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Руины Херсонеса Таврического" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Херсонес Таврический</h3>
+              <p class="sight-card__text">Античный полис у моря: театр, базилики и набережная с видом на закат.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/sudak/" class="sight-card fade-up" data-delay="3" data-city="sudak" data-type="krepost" data-tags="история архитектура">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Генуэзская крепость в Судаке" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Генуэзская крепость</h3>
+              <p class="sight-card__text">Крепостные стены над бухтой — один из самых узнаваемых силуэтов восточного Крыма.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/feodosiya/" class="sight-card fade-up" data-delay="3" data-city="feodosiya" data-type="muzej" data-tags="история архитектура курорт">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Феодосия, галерея Айвазовского" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Галерея Айвазовского</h3>
+              <p class="sight-card__text">Крупнейшее собрание морских полотен художника и постоянные выставки в старинном здании.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/dostoprimechatelnosti/lastochkino-gnezdo.html" class="sight-card fade-up" data-delay="4" data-city="yalta" data-type="priroda" data-tags="архитектура природа курорт">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Замок Ласточкино гнездо" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Ласточкино гнездо</h3>
+              <p class="sight-card__text">Замок на Аю-Даге над морем — символ Южного берега и популярная смотровая точка.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="4" data-city="yalta" data-type="priroda" data-tags="природа история">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Никитский ботанический сад" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Никитский ботанический сад</h3>
+              <p class="sight-card__text">Коллекции растений со всего мира — прогулки в тени деревьев круглый год.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/koktebel/" class="sight-card fade-up" data-delay="5" data-city="feodosiya" data-type="priroda" data-tags="природа горы">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Вулкан Карадаг у Коктебеля" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Карадаг</h3>
+              <p class="sight-card__text">Древний вулкан и заповедник у моря: тропы, бухты и редкая флора.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="5" data-city="yalta" data-type="priroda" data-tags="горы природа">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Канатная дорога на Ай-Петри" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Канатная дорога на Ай-Петри</h3>
+              <p class="sight-card__text">Подъём на плато с панорамами Южного берега и зубцами скал.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/belogorsk/" class="sight-card fade-up" data-delay="6" data-city="belogorsk" data-type="priroda" data-tags="история природа горы">
+            <div class="sight-card__img-wrap">
+              <div class="sight-card__img city-card__img--placeholder" role="img" aria-label="Белая скала — меловой массив" style="width:100%;height:100%;background:linear-gradient(135deg,#fef3c7 0%,#f59e0b 40%,#78350f 100%);"></div>
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Белая скала (Ак-Кая)</h3>
+              <p class="sight-card__text">Меловой массив с обзорными площадками — визитная карточка степного Крыма.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/evpatoriya/" class="sight-card fade-up" data-delay="6" data-city="evpatoriya" data-type="muzej" data-tags="история курорт лечение">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Евпатория, музей" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Краеведческий музей Евпатории</h3>
+              <p class="sight-card__text">История западного побережья: от античности до курортной эпохи.</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="7" data-city="yalta" data-type="dvorets" data-tags="история архитектура вино">
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Массандровский дворец" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Массандровский дворец</h3>
+              <p class="sight-card__text">Резиденция у подножия гор и дегустации в подвалах знаменитого завода «Массандра».</p>
+              <span class="sight-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+        </div>
+
+        <div
+          class="catalog-empty"
+          id="placesEmpty"
+          hidden
+          role="status"
+          aria-live="polite"
+        >
+          <div class="catalog-empty__inner">
+            <p class="catalog-empty__title">Ничего не найдено</p>
+            <p class="catalog-empty__hint">Попробуйте изменить поиск или сбросить фильтры по городу, типу и интересам.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col footer__col--nav">
+          <a href="/" class="footer__logo" aria-label="Крым — главная">КРЫМ</a>
+          <p class="footer__lead">Путеводитель по полуострову — история, природа, море.</p>
+          <nav aria-label="Навигация в подвале">
+            <ul class="footer__nav">
+              <li><a href="/gorod/" class="footer__nav-link">Популярные города</a></li>
+              <li><a href="/dostoprimechatelnosti/" class="footer__nav-link">Достопримечательности</a></li>
+              <li><a href="/template-about.html" class="footer__nav-link">Интересное</a></li>
+              <li><a href="/politika/" class="footer__nav-link">Политика конфиденциальности</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__col footer__col--popular">
+          <p class="footer__col-title">Популярное</p>
+          <div class="footer__photo-grid">
+            <a href="/gorod/yalta.html" class="footer__photo-item" aria-label="Ялта">
+              <img src="../assets/img/cities/1.jpg" alt="Ялта" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/sevastopol/" class="footer__photo-item" aria-label="Севастополь">
+              <img src="../assets/img/cities/2.jpg" alt="Севастополь" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/evpatoriya/" class="footer__photo-item" aria-label="Евпатория">
+              <img src="../assets/img/cities/3.jpg" alt="Евпатория" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/bakhchisaray/" class="footer__photo-item" aria-label="Бахчисарай">
+              <img src="../assets/img/cities/4.jpg" alt="Бахчисарай" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/sudak/" class="footer__photo-item" aria-label="Судак">
+              <img src="../assets/img/cities/5.jpg" alt="Судак" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/feodosiya/" class="footer__photo-item" aria-label="Феодосия">
+              <img src="../assets/img/cities/6.webp" alt="Феодосия" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/dostoprimechatelnosti/" class="footer__photo-item" aria-label="Достопримечательности">
+              <img src="../assets/img/cities/7.webp" alt="Крым" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/" class="footer__photo-item" aria-label="Крымские пейзажи">
+              <img src="../assets/img/cities/img9.webp" alt="Крым" loading="lazy" width="120" height="90" />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col footer__col--contact">
+          <p class="footer__col-title">Связаться с нами</p>
+          <ul class="footer__contact-list">
+            <li>
+              <a href="mailto:info@crimea-guide.ru" class="footer__contact-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                info@crimea-guide.ru
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__copy">
+        &copy; 2026 Крым — Путеводитель. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх" type="button">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="../assets/js/nav.js"></script>
+  <script src="../assets/js/animations.js"></script>
+  <script src="../assets/js/places.js"></script>
+
+</body>
+</html>

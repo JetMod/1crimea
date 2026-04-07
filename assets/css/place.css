@@ -1,0 +1,475 @@
+/* ============================================================
+   РАЗДЕЛ МЕСТ: хаб /dostoprimechatelnosti/ и страница объекта
+   Подключается после main.css, home.css, catalog.css, city.css
+
+   Общие паттерны каталога (сетка, фильтры-пилюли, карточка как у города):
+   — catalog.css: .city-card и .sight-card объединены селекторами
+     (.catalog-grid--list, теги, ссылка «Подробнее», скрытие .is-hidden);
+     вторая строка фильтров — .catalog-filters--place-types + .place-type-filter.
+   База карточки достопримечательности: .sight-card в city.css (как на странице города).
+   ============================================================ */
+
+.page-places {
+  padding-top: 0;
+}
+
+/* ---- Страница объекта (напр. livadiyskiy-dvorets.html) ---- */
+.place-page .city-hero .breadcrumbs__list {
+  flex-wrap: wrap;
+  row-gap: 0.35rem;
+}
+
+/* Быстрые факты под hero */
+.place-quickbar {
+  position: relative;
+  z-index: 1;
+  padding: 0.85rem 0;
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  box-shadow: 0 1px 0 rgba(14, 24, 41, 0.04);
+}
+
+.place-quickbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+.place-quickbar__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  flex: 1 1 10rem;
+  min-width: 0;
+}
+
+.place-quickbar__icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: rgba(30, 73, 118, 0.08);
+  color: var(--c-primary);
+}
+
+.place-quickbar__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.place-quickbar__label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  line-height: 1.2;
+}
+
+.place-quickbar__value {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .place-quickbar {
+    padding: 0.75rem 0;
+  }
+
+  .place-quickbar__list {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .place-quickbar__item {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* Что посмотреть внутри — нумерованные карточки */
+.place-highlights {
+  padding: var(--section-py) 0;
+  background: var(--c-bg);
+  border-top: 1px solid var(--c-border);
+}
+
+.place-highlights .section-header {
+  margin-bottom: 1.75rem;
+}
+
+.place-highlights__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .place-highlights__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+}
+
+.place-highlights__item {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 1.15rem 1.2rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 0 rgba(14, 24, 41, 0.04);
+}
+
+.place-highlights__num {
+  flex-shrink: 0;
+  width: 2.35rem;
+  height: 2.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  background: rgba(30, 73, 118, 0.1);
+  line-height: 1;
+}
+
+.place-highlights__body {
+  min-width: 0;
+}
+
+.place-highlights__title {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--c-text);
+  margin: 0 0 0.45rem;
+  line-height: 1.25;
+}
+
+.place-highlights__text {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--c-muted);
+  margin: 0;
+}
+
+@media (max-width: 719px) {
+  .place-highlights__item {
+    padding: 1rem 1.1rem;
+  }
+}
+
+/* Не дублировать --section-py на стыке «Что посмотреть» → галерея */
+.place-page .place-highlights {
+  padding-top: var(--section-py);
+  padding-bottom: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+.place-page .place-highlights + .city-gallery {
+  padding-top: clamp(1.5rem, 3.5vw, 2.75rem);
+  padding-bottom: var(--section-py);
+}
+
+.place-article__h2 {
+  font-family: var(--font-hero-display);
+  font-size: clamp(1.45rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--c-text);
+  margin: 0 0 1rem;
+}
+
+.place-article__section {
+  margin-top: 1.75rem;
+}
+
+.place-article__section:first-of-type {
+  margin-top: 1.35rem;
+}
+
+.place-article__h3 {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--c-primary);
+  margin: 0 0 0.65rem;
+}
+
+.place-article__map-link {
+  font-weight: 600;
+  color: var(--c-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.place-article__map-link:hover {
+  color: var(--c-primary-dark);
+}
+
+/* Сайдбар «Практически»: категория (иконка + текст), сезон (цветовые метки) */
+.place-page .city-facts__dd--place-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.place-facts__category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.place-facts__category-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.45rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--c-accent);
+}
+
+.place-facts__season {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.65rem;
+}
+
+.place-facts__season-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+}
+
+.place-facts__season-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.place-facts__season-dot--good {
+  background: linear-gradient(145deg, #7ecf8c 0%, #4cb87a 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.place-facts__season-dot--muted {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.place-facts__season-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Герой хаба: фон задаётся модификатором (как у каталога городов) */
+.catalog-hero.catalog-hero--places {
+  --catalog-hero-image: url("../img/cities/4.jpg");
+}
+
+/* Секция сетки на хабе */
+.places-catalog.catalog-cities.cities {
+  padding: var(--section-py) 0;
+  background: var(--c-bg);
+}
+
+@media (max-width: 720px) {
+  .places-grid.cities__grid.catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Секция «Рядом» на странице места */
+.place-related {
+  padding: var(--section-py) 0;
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+}
+
+.place-related .section-header {
+  margin-bottom: 1.75rem;
+}
+
+/* Галерея — первый кадр крупнее (featured), остальные сеткой */
+@media (min-width: 641px) {
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows:
+      minmax(150px, 20vw)
+      minmax(150px, 20vw)
+      minmax(120px, 14vw);
+    grid-auto-flow: row;
+    gap: 0.65rem;
+    overflow-x: visible;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) .city-gallery__item {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) .city-gallery__thumb {
+    min-height: 0;
+  }
+
+  .place-page .city-gallery__item--featured {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) > .city-gallery__item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) > .city-gallery__item:nth-child(3) {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) > .city-gallery__item:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) > .city-gallery__item:nth-child(5) {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) > .city-gallery__item:nth-child(6) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(140px, 42vw);
+    grid-auto-flow: row;
+    gap: 0.65rem;
+    overflow-x: visible;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+
+  .place-page .city-gallery__item--featured {
+    min-height: min(52vw, 280px);
+  }
+
+  .place-page .city-gallery__grid:has(.city-gallery__item--featured) > .city-gallery__item:nth-child(n + 2) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* Prev / next между страницами мест */
+.place-pagination {
+  padding: 1.35rem 0;
+  background: var(--c-bg);
+  border-top: 1px solid var(--c-border);
+}
+
+.place-pagination__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+.place-pagination__inner--only-next {
+  justify-content: flex-end;
+}
+
+.place-pagination__inner--only-prev {
+  justify-content: flex-start;
+}
+
+.place-pagination__link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  max-width: min(100%, 22rem);
+  padding: 0.65rem 0.85rem;
+  margin: 0;
+  border-radius: 0.65rem;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text);
+  text-decoration: none;
+  font-family: var(--font-body);
+  line-height: 1.35;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.place-pagination__link--next {
+  align-items: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+.place-pagination__inner--only-next .place-pagination__link--next {
+  margin-left: 0;
+}
+
+.place-pagination__dir {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.place-pagination__title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--c-primary);
+}
+
+.place-pagination__link:hover .place-pagination__title {
+  color: var(--c-primary-dark);
+}
+
+.place-pagination__link:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
+}

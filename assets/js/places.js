@@ -1,46 +1,43 @@
 /* ===================================================
-   КАТАЛОГ ГОРОДОВ (/gorod/)
-   — фильтр по data-region
-   — фильтр по data-tags (интересы)
-   — живой поиск по .city-card__title
-   — счётчик видимых карточек
-   — fade-up через IntersectionObserver (как animations.js)
-   — регион в URL: чтение/запись location.hash
-   — интерес (тег) в URL: ?tag=… (чтение/запись через history.replaceState)
+   ХАБ ДОСТОПРИМЕЧАТЕЛЬНОСТЕЙ (/dostoprimechatelnosti/)
+   — фильтр по data-city
+   — фильтр по data-type
+   — фильтр по data-tags
+   — поиск по .sight-card__title
+   — счётчик, сетка/список, пустое состояние
+   — город в URL: location.hash (#yalta)
    =================================================== */
 (function () {
-  var grid = document.querySelector('.catalog-grid');
-  var countEl = document.getElementById('catalogVisibleCount');
-  var filterBtns = document.querySelectorAll('.catalog-filter[data-filter]');
-  var tagFilterBtns = document.querySelectorAll('.catalog-tag-filter[data-tag-filter]');
-  var searchInput = document.getElementById('catalogSearch');
-  var viewBtns = document.querySelectorAll('.catalog-view-btn[data-catalog-view]');
-  var emptyEl = document.getElementById('catalogEmpty');
+  var grid = document.querySelector('.places-grid.catalog-grid');
+  var countEl = document.getElementById('placesVisibleCount');
+  var cityBtns = document.querySelectorAll('.catalog-filter[data-city-filter].place-city-filter');
+  var typeBtns = document.querySelectorAll('.place-type-filter[data-type-filter]');
+  var hub = document.querySelector('.places-hub');
+  var tagFilterBtns = (hub || document).querySelectorAll('.catalog-tag-filter[data-tag-filter]');
+  var searchInput = document.getElementById('placesSearch');
+  var viewBtns = (hub || document).querySelectorAll('.catalog-view-btn[data-catalog-view]');
+  var emptyEl = document.getElementById('placesEmpty');
 
-  if (!grid || !filterBtns.length) return;
+  if (!grid || !cityBtns.length) return;
 
-  var cards = grid.querySelectorAll('.city-card[data-region]');
-  var heroDirectionsEl = document.getElementById('catalogHeroDirections');
-  if (heroDirectionsEl) {
-    heroDirectionsEl.textContent = String(cards.length);
+  var cards = grid.querySelectorAll('.sight-card[data-city]');
+  var heroCountEl = document.getElementById('placesHeroCount');
+  if (heroCountEl) {
+    heroCountEl.textContent = String(cards.length);
   }
-  var currentFilter = 'all';
+
+  var currentCity = 'all';
+  var currentType = 'all';
   var currentTagFilter = 'all';
   var searchQuery = '';
 
-  var validRegions = {};
-  filterBtns.forEach(function (btn) {
-    var f = (btn.getAttribute('data-filter') || 'all').toLowerCase();
-    validRegions[f] = true;
+  var validCities = {};
+  cityBtns.forEach(function (btn) {
+    var f = (btn.getAttribute('data-city-filter') || 'all').toLowerCase();
+    validCities[f] = true;
   });
 
-  var validTags = {};
-  tagFilterBtns.forEach(function (btn) {
-    var t = (btn.getAttribute('data-tag-filter') || 'all').toLowerCase();
-    validTags[t] = true;
-  });
-
-  function getHashRegion() {
+  function getHashCity() {
     var raw = location.hash.replace(/^#/, '');
     if (!raw) return { mode: 'empty' };
     try {
@@ -49,60 +46,30 @@
       return { mode: 'invalid' };
     }
     raw = raw.trim().toLowerCase();
-    if (validRegions[raw]) return { mode: 'ok', region: raw };
+    if (validCities[raw]) return { mode: 'ok', city: raw };
     return { mode: 'invalid' };
   }
 
-  function syncRegionToHash() {
-    var target = '#' + currentFilter;
-    if (location.hash !== target) {
-      var u = new URL(window.location.href);
-      u.hash = target;
-      history.replaceState(null, '', u.pathname + u.search + u.hash);
-    }
-  }
-
-  function getTagFromQuery() {
-    try {
-      var p = new URLSearchParams(window.location.search);
-      var t = (p.get('tag') || '').trim().toLowerCase();
-      if (!t || t === 'all') return { mode: 'empty' };
-      if (validTags[t]) return { mode: 'ok', tag: t };
-      return { mode: 'invalid' };
-    } catch (e) {
-      return { mode: 'empty' };
-    }
-  }
-
-  function syncTagToQuery() {
-    var tag = (currentTagFilter || 'all').toLowerCase();
-    var u = new URL(window.location.href);
-    if (tag === 'all') {
-      u.searchParams.delete('tag');
-    } else {
-      u.searchParams.set('tag', tag);
-    }
-    var next = u.pathname + u.search + u.hash;
-    if (next !== window.location.pathname + window.location.search + window.location.hash) {
-      history.replaceState(null, '', next);
-    }
+  function syncCityToHash() {
+    var target = '#' + currentCity;
+    if (location.hash !== target) location.replace(target);
   }
 
   function renderTagPills() {
     cards.forEach(function (card) {
-      if (card.querySelector('.city-card__tags')) return;
+      if (card.querySelector('.sight-card__tags')) return;
       var raw = card.getAttribute('data-tags') || '';
       var tags = raw.trim().split(/\s+/).filter(Boolean);
       if (!tags.length) return;
-      var body = card.querySelector('.city-card__body');
-      var title = body && body.querySelector('.city-card__title');
+      var body = card.querySelector('.sight-card__body');
+      var title = body && body.querySelector('.sight-card__title');
       if (!body || !title) return;
       var wrap = document.createElement('div');
-      wrap.className = 'city-card__tags';
-      wrap.setAttribute('aria-label', 'Интересы');
+      wrap.className = 'sight-card__tags';
+      wrap.setAttribute('aria-label', 'Темы');
       tags.forEach(function (t) {
         var span = document.createElement('span');
-        span.className = 'city-card__tag';
+        span.className = 'sight-card__tag';
         span.textContent = t.charAt(0).toUpperCase() + t.slice(1);
         wrap.appendChild(span);
       });
@@ -112,21 +79,14 @@
 
   renderTagPills();
 
-  function regionsForCard(card) {
-    return (card.getAttribute('data-region') || '')
+  function cityForCard(card) {
+    return (card.getAttribute('data-city') || '')
       .trim()
-      .toLowerCase()
-      .split(/\s+/)
-      .filter(Boolean);
-  }
-
-  function cardMatchesRegion(card, filter) {
-    if (filter === 'all') return true;
-    return regionsForCard(card).indexOf(filter) !== -1;
+      .toLowerCase();
   }
 
   function cardTitleNorm(card) {
-    var titleEl = card.querySelector('.city-card__title');
+    var titleEl = card.querySelector('.sight-card__title');
     return (titleEl && titleEl.textContent || '').trim().toLowerCase();
   }
 
@@ -143,14 +103,34 @@
       .filter(Boolean);
   }
 
+  function cardMatchesCity(card, filter) {
+    if (filter === 'all') return true;
+    return cityForCard(card) === filter;
+  }
+
+  function cardMatchesType(card, typeFilter) {
+    if (typeFilter === 'all') return true;
+    var t = (card.getAttribute('data-type') || '').trim().toLowerCase();
+    return t === typeFilter;
+  }
+
   function cardMatchesTag(card, tagFilter) {
     if (tagFilter === 'all') return true;
     return tagsForCard(card).indexOf(tagFilter) !== -1;
   }
 
-  function setActiveFilter(filter) {
-    filterBtns.forEach(function (btn) {
-      var f = (btn.getAttribute('data-filter') || 'all').toLowerCase();
+  function setActiveCity(filter) {
+    cityBtns.forEach(function (btn) {
+      var f = (btn.getAttribute('data-city-filter') || 'all').toLowerCase();
+      var on = f === filter;
+      btn.classList.toggle('is-active', on);
+      btn.classList.toggle('btn-outline-white', !on);
+    });
+  }
+
+  function setActiveType(filter) {
+    typeBtns.forEach(function (btn) {
+      var f = (btn.getAttribute('data-type-filter') || 'all').toLowerCase();
       var on = f === filter;
       btn.classList.toggle('is-active', on);
       btn.classList.toggle('btn-outline-white', !on);
@@ -184,7 +164,6 @@
     });
   }
 
-  /** После display:none → видимость IO иногда не срабатывает в том же кадре — не оставляем карточки с opacity:0 */
   function revealCardsInViewport() {
     var h = window.innerHeight || document.documentElement.clientHeight;
     var w = window.innerWidth || document.documentElement.clientWidth;
@@ -254,14 +233,16 @@
   });
 
   function applyFilters() {
-    var filter = (currentFilter || 'all').toLowerCase();
+    var cityF = (currentCity || 'all').toLowerCase();
+    var typeF = (currentType || 'all').toLowerCase();
     var tagF = (currentTagFilter || 'all').toLowerCase();
     var q = searchQuery.trim().toLowerCase();
     var visible = 0;
 
     cards.forEach(function (card) {
       var match =
-        cardMatchesRegion(card, filter) &&
+        cardMatchesCity(card, cityF) &&
+        cardMatchesType(card, typeF) &&
         cardMatchesSearch(card, q) &&
         cardMatchesTag(card, tagF);
       if (match) {
@@ -284,32 +265,36 @@
     });
   }
 
-  filterBtns.forEach(function (btn) {
+  cityBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      currentFilter = (btn.getAttribute('data-filter') || 'all').toLowerCase();
-      setActiveFilter(currentFilter);
+      currentCity = (btn.getAttribute('data-city-filter') || 'all').toLowerCase();
+      setActiveCity(currentCity);
       applyFilters();
-      syncRegionToHash();
+      syncCityToHash();
     });
   });
 
   window.addEventListener('hashchange', function () {
-    var h = getHashRegion();
+    var h = getHashCity();
     if (h.mode === 'ok') {
-      currentFilter = h.region;
+      currentCity = h.city;
     } else if (h.mode === 'invalid') {
-      currentFilter = 'all';
-      var u = new URL(window.location.href);
-      u.hash = '#all';
-      history.replaceState(null, '', u.pathname + u.search + u.hash);
-      setActiveFilter(currentFilter);
-      applyFilters();
+      currentCity = 'all';
+      location.replace('#all');
       return;
     } else {
-      currentFilter = 'all';
+      currentCity = 'all';
     }
-    setActiveFilter(currentFilter);
+    setActiveCity(currentCity);
     applyFilters();
+  });
+
+  typeBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      currentType = (btn.getAttribute('data-type-filter') || 'all').toLowerCase();
+      setActiveType(currentType);
+      applyFilters();
+    });
   });
 
   tagFilterBtns.forEach(function (btn) {
@@ -317,7 +302,6 @@
       currentTagFilter = (btn.getAttribute('data-tag-filter') || 'all').toLowerCase();
       setActiveTagFilter(currentTagFilter);
       applyFilters();
-      syncTagToQuery();
     });
   });
 
@@ -329,43 +313,39 @@
   }
 
   (function init() {
-    var h = getHashRegion();
+    var h = getHashCity();
     if (h.mode === 'ok') {
-      currentFilter = h.region;
+      currentCity = h.city;
     } else if (h.mode === 'invalid') {
-      currentFilter = 'all';
-      var uBad = new URL(window.location.href);
-      uBad.hash = '#all';
-      history.replaceState(null, '', uBad.pathname + uBad.search + uBad.hash);
+      currentCity = 'all';
+      location.replace('#all');
     } else {
       var active = 'all';
-      filterBtns.forEach(function (btn) {
+      cityBtns.forEach(function (btn) {
         if (btn.classList.contains('is-active')) {
-          active = (btn.getAttribute('data-filter') || 'all').toLowerCase();
+          active = (btn.getAttribute('data-city-filter') || 'all').toLowerCase();
         }
       });
-      currentFilter = active;
+      currentCity = active;
     }
-    setActiveFilter(currentFilter);
+    setActiveCity(currentCity);
 
-    var tq = getTagFromQuery();
-    if (tq.mode === 'ok') {
-      currentTagFilter = tq.tag;
-    } else if (tq.mode === 'invalid') {
-      currentTagFilter = 'all';
-      var uTag = new URL(window.location.href);
-      uTag.searchParams.delete('tag');
-      history.replaceState(null, '', uTag.pathname + uTag.search + uTag.hash);
-    } else {
-      var activeTag = 'all';
-      tagFilterBtns.forEach(function (btn) {
-        if (btn.classList.contains('is-active')) {
-          activeTag = (btn.getAttribute('data-tag-filter') || 'all').toLowerCase();
-        }
-      });
-      currentTagFilter = activeTag;
-    }
-    setActiveTagFilter(currentTagFilter);
+    var activeType = 'all';
+    typeBtns.forEach(function (btn) {
+      if (btn.classList.contains('is-active')) {
+        activeType = (btn.getAttribute('data-type-filter') || 'all').toLowerCase();
+      }
+    });
+    currentType = activeType;
+    setActiveType(currentType);
+
+    var activeTag = 'all';
+    tagFilterBtns.forEach(function (btn) {
+      if (btn.classList.contains('is-active')) {
+        activeTag = (btn.getAttribute('data-tag-filter') || 'all').toLowerCase();
+      }
+    });
+    currentTagFilter = activeTag;
 
     if (searchInput) searchQuery = searchInput.value || '';
     applyFilters();

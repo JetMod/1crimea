@@ -1966,6 +1966,15 @@ a.city-card:focus-visible {
   box-shadow: 0 8px 28px rgba(0,0,0,.14);
   transition: transform .3s ease, box-shadow .3s ease;
 }
+a.gallery__item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+a.gallery__item:focus-visible {
+  outline: 2px solid var(--c-accent, #c9a227);
+  outline-offset: 3px;
+}
 .gallery__item:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 40px rgba(0,0,0,.22);
@@ -1994,15 +2003,6 @@ a.city-card:focus-visible {
   letter-spacing: .02em;
 }
 
-.gallery__caption a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.gallery__caption a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-}
 
 .gallery__btn {
   position: absolute;

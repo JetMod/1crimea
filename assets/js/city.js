@@ -9,11 +9,79 @@
   if (!img || !backdrop || !closeBtn) return;
 
   var lastFocus = null;
+  var slideItems = [];
+  var slideIndex = 0;
 
-  function open(src, alt) {
+  var prevBtn = document.createElement('button');
+  prevBtn.type = 'button';
+  prevBtn.className = 'city-gallery__lightbox-prev';
+  prevBtn.setAttribute('aria-label', 'Предыдущее фото');
+  prevBtn.innerHTML =
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg>';
+  var nextBtn = document.createElement('button');
+  nextBtn.type = 'button';
+  nextBtn.className = 'city-gallery__lightbox-next';
+  nextBtn.setAttribute('aria-label', 'Следующее фото');
+  nextBtn.innerHTML =
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
+  lb.appendChild(prevBtn);
+  lb.appendChild(nextBtn);
+  prevBtn.hidden = true;
+  nextBtn.hidden = true;
+
+  var counterEl = document.createElement('div');
+  counterEl.className = 'city-gallery__lightbox-counter';
+  counterEl.setAttribute('aria-live', 'polite');
+  counterEl.setAttribute('aria-atomic', 'true');
+  counterEl.hidden = true;
+  lb.appendChild(counterEl);
+
+  function updateCounter() {
+    var n = slideItems.length;
+    if (n === 0) {
+      counterEl.textContent = '';
+      counterEl.hidden = true;
+      return;
+    }
+    counterEl.textContent = slideIndex + 1 + ' / ' + n;
+    counterEl.hidden = false;
+  }
+
+  function updateSlideView() {
+    var item = slideItems[slideIndex];
+    if (!item) return;
+    var thumb = item.querySelector('.city-gallery__thumb');
+    if (!thumb) return;
+    img.src = thumb.currentSrc || thumb.src;
+    img.alt = thumb.getAttribute('alt') || '';
+    updateCounter();
+  }
+
+  function syncNavVisibility() {
+    var multi = slideItems.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+  }
+
+  function step(delta) {
+    if (slideItems.length <= 1) return;
+    slideIndex = (slideIndex + delta + slideItems.length) % slideItems.length;
+    updateSlideView();
+  }
+
+  function openFromItem(itemBtn) {
+    var grid = itemBtn.closest('.city-gallery__grid');
+    if (grid) {
+      slideItems = Array.prototype.slice.call(grid.querySelectorAll('.city-gallery__item'));
+    } else {
+      slideItems = itemBtn.classList.contains('city-gallery__item') ? [itemBtn] : [];
+    }
+    slideIndex = slideItems.indexOf(itemBtn);
+    if (slideIndex === -1) slideIndex = 0;
+
     lastFocus = document.activeElement;
-    img.src = src;
-    img.alt = alt || '';
+    updateSlideView();
+    syncNavVisibility();
     lb.classList.add('is-open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -27,6 +95,12 @@
     document.body.style.overflow = '';
     img.removeAttribute('src');
     img.alt = '';
+    slideItems = [];
+    slideIndex = 0;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    counterEl.textContent = '';
+    counterEl.hidden = true;
     if (lastFocus && typeof lastFocus.focus === 'function') {
       try {
         lastFocus.focus();
@@ -39,18 +113,37 @@
     btn.addEventListener('click', function () {
       var thumb = btn.querySelector('.city-gallery__thumb');
       if (!thumb) return;
-      open(thumb.currentSrc || thumb.src, thumb.getAttribute('alt') || '');
+      openFromItem(btn);
     });
+  });
+
+  prevBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    step(-1);
+  });
+  nextBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    step(1);
   });
 
   backdrop.addEventListener('click', close);
   closeBtn.addEventListener('click', close);
 
   document.addEventListener('keydown', function (e) {
-    if (e.key !== 'Escape') return;
     if (!lb.classList.contains('is-open')) return;
-    e.preventDefault();
-    close();
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      close();
+      return;
+    }
+    if (slideItems.length <= 1) return;
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      step(-1);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      step(1);
+    }
   });
 }());
 
