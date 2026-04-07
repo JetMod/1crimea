@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ялта — набережная, Ливадийский и Массандровский дворцы, мягкий климат Южного берега Крыма. Практические советы и достопримечательности." />
+  <title>Ялта — Южный берег Крыма</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/home.css" />
+  <link rel="stylesheet" href="../assets/css/city.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс прокрутки"></div>
+
+  <header class="site-header">
+    <nav class="nav" role="navigation" aria-label="Главное меню">
+      <div class="container nav__inner">
+
+        <div class="nav__brand">
+          <a href="/" class="nav__logo" aria-label="Крым — на главную">
+            <span class="nav__logo-text">Крым</span>
+          </a>
+          <span class="nav__brand-divider" aria-hidden="true"></span>
+          <span class="nav__brand-tag">Путеводитель</span>
+        </div>
+
+        <ul class="nav__menu" role="list">
+          <li><a href="/gorod/" class="nav__link">Города</a></li>
+          <li><a href="/o-proekte/" class="nav__link">О проекте</a></li>
+          <li><a href="/kontakty/" class="nav__link">Контакты</a></li>
+        </ul>
+
+        <a href="/gorod/" class="btn btn-primary nav__cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Смотреть города
+        </a>
+
+        <button class="nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="navDrawer">
+          <span class="nav__burger-line"></span>
+          <span class="nav__burger-line"></span>
+          <span class="nav__burger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <div class="nav__drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+      <div class="nav__drawer-backdrop" tabindex="-1" aria-hidden="true"></div>
+      <div class="nav__drawer-panel">
+        <div class="nav__drawer-head">
+          <span class="nav__drawer-brand">Крым</span>
+          <button type="button" class="nav__drawer-close" aria-label="Закрыть меню">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <nav class="nav__drawer-nav" aria-label="Разделы">
+          <a href="/gorod/" class="nav__drawer-link">Города</a>
+          <a href="/o-proekte/" class="nav__drawer-link">О проекте</a>
+          <a href="/kontakty/" class="nav__drawer-link">Контакты</a>
+        </nav>
+        <a href="/gorod/" class="btn btn-primary nav__drawer-cta">Смотреть города</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. HERO -->
+    <section class="city-hero" aria-label="Ялта">
+      <div class="city-hero__bg" style="background-image: url('../assets/img/cities/1.jpg');" role="img" aria-label=""></div>
+      <div class="city-hero__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="city-hero__content">
+          <span class="city-hero__badge">ЮБК</span>
+          <h1 class="city-hero__title">Ялта</h1>
+          <p class="city-hero__tagline">
+            Жемчужина Южного берега: дворцы, набережная и море у подножия гор.
+            Мягкий климат и длинный сезон делают Ялту удобной базой,
+            чтобы исследовать весь ЮБК: от Гурзуфа до Фороса.
+          </p>
+          <div class="city-hero__tags">
+            <span class="city-hero__tag">Пляж</span>
+            <span class="city-hero__tag">История</span>
+            <span class="city-hero__tag">Курорт</span>
+            <span class="city-hero__tag">Апр–окт</span>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="hero__scroll" aria-label="Прокрутить вниз">
+        <span class="hero__scroll-label">Листать</span>
+        <span class="hero__scroll-visual" aria-hidden="true">
+          <span class="hero__scroll-line"></span>
+          <span class="hero__scroll-dot"></span>
+        </span>
+      </button>
+    </section>
+
+    <!-- 2. INTRO -->
+    <section class="city-intro" aria-label="О Ялте">
+      <div class="container city-intro__grid">
+        <div class="city-intro__copy fade-up" data-delay="1">
+          <p>
+            Ялта — главный курорт Южного берега Крыма: здесь сходятся горы и море, дворцы XIX века и оживлённая набережная.
+            Город славится мягким климатом, когда можно гулять вдоль воды утром и подниматься в горы к закату.
+          </p>
+          <p>
+            От Ливадийского дворца, где проходила знаменитая встреча 1945 года, до «Ласточкиного гнезда» на отвесной скале —
+            маршруты Ялты сочетают архитектуру, сады и панорамы, о которых писали путешественники ещё сто лет назад.
+          </p>
+          <p>
+            Удобная транспортная связь с Симферополем и соседними посёлками делает Ялту хорошей базой для поездок по всему ЮБК.
+          </p>
+          <p>
+            В высокий сезон город шумит и живёт в ритме набережной и пляжей; весной и осенью здесь особенно удобно гулять без жары,
+            заходить в кофейни с видом на море и не спеша собирать маршруты на один день — в горы, к винным дорогам или в соседние бухты.
+          </p>
+        </div>
+        <aside class="city-facts fade-up" data-delay="2" aria-labelledby="city-facts-title">
+          <p id="city-facts-title" class="city-facts__title">Быстрые факты</p>
+          <dl class="city-facts__dl">
+            <div class="city-facts__row">
+              <dt class="city-facts__dt">Регион</dt>
+              <dd class="city-facts__dd">Южный берег Крыма (ЮБК)</dd>
+            </div>
+            <div class="city-facts__row">
+              <dt class="city-facts__dt">Лучшее время</dt>
+              <dd class="city-facts__dd">Май–сентябрь; пляжный сезон — с конца весны до октября</dd>
+            </div>
+            <div class="city-facts__row">
+              <dt class="city-facts__dt">Климат</dt>
+              <dd class="city-facts__dd">Субтропический, мягкая зима, тёплое лето, много солнечных дней</dd>
+            </div>
+            <div class="city-facts__row">
+              <dt class="city-facts__dt">От Симферополя</dt>
+              <dd class="city-facts__dd">Около 80–90 км по автодороге (автобус, маршрутка, такси)</dd>
+            </div>
+          </dl>
+          <div class="city-facts__tags" aria-label="Интересы">
+            <span class="city-facts__tag">Пляж</span>
+            <span class="city-facts__tag">Архитектура</span>
+            <span class="city-facts__tag">Курорт</span>
+            <span class="city-facts__tag">Горы</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 3. SIGHTS -->
+    <section class="city-sights" aria-labelledby="city-sights-heading">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div>
+            <span class="eyebrow">Достопримечательности</span>
+            <h2 id="city-sights-heading">Что посмотреть</h2>
+          </div>
+        </div>
+        <div class="city-sights__grid" id="citySightsGrid" data-sights-per-page="9">
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Ливадийский дворец среди парка" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Ливадийский дворец</h3>
+              <p class="sight-card__text">Белоснежный дворец и парк на берегу: резиденция последнего императора и место Ялтинской конференции.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Набережная Ялты" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Набережная</h3>
+              <p class="sight-card__text">Главная прогулочная линия города: кафе, причалы, виды на море и закаты у причала.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Скалы и море у мыса" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Ласточкино гнездо</h3>
+              <p class="sight-card__text">Символ ЮБК: замок на Аю-Даге над волнами — один из самых узнаваемых видов Крыма.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Парк и винодельня" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Массандровский дворец</h3>
+              <p class="sight-card__text">Роскошный дворец и дегустации в знаменитых подвалах Массандры у подножия гор.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Горные склоны и облака" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Канатная дорога на Ай-Петри</h3>
+              <p class="sight-card__text">Подъём к плато с обзорными площадками, зубцами скал и крымскими видами на 360°.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/img9.webp" alt="Пейзаж Южного берега" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Никитский ботанический сад</h3>
+              <p class="sight-card__text">Коллекции растений со всего мира — идеальна для спокойной прогулки в тени деревьев.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Дом-музей Чехова среди зелени" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Дача Чехова</h3>
+              <p class="sight-card__text">Белый дом с мезонином, где писатель завершил «Вишнёвый сад»: экспозиция и тихий сад вокруг.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Аллея и пальмы в парке" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Приморский парк</h3>
+              <p class="sight-card__text">Тень пальм и кипарисов, дорожки вдоль моря — идеально для короткой передышки между дворцами и набережной.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Вид на море и скалы с мыса" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Скала Ифигения</h3>
+              <p class="sight-card__text">Мыс с видом на море и легендой об античном сюжете — короткая остановка на морских маршрутах от Ялты.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Дворец в парке Кореиза" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Дворец Юсуповых</h3>
+              <p class="sight-card__text">Роскошная резиденция в Кореизе с террасами и видом на море — короткая поездка от центра Ялты.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/foros/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Церковь на красной скале над морем" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Церковь Воскресения, Форос</h3>
+              <p class="sight-card__text">Знаменитый храм на Красной скале: контраст белых стен, лазури моря и зелени — один из символов побережья.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Галечный пляж у скал" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Мраморный пляж</h3>
+              <p class="sight-card__text">Галечная линия у подножия скал в Гаспре — популярное место для купания и фото на фоне моря.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/alupka/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Дворец и парк в Алупке" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Воронцовский дворец</h3>
+              <p class="sight-card__text">Алупкинский дворец с романтическими башнями и парком у подножия Ай-Петри — логичное продолжение маршрута от Ялты.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/gurzuf/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Бухта и скалы у Гурзуфа" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Гурзуф и Адалары</h3>
+              <p class="sight-card__text">Уютная бухта, набережная и острова-скалы у горизонта — легко добраться общественным транспортом из Ялты.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Скала у моря в Симеизе" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Скала «Дива», Симеиз</h3>
+              <p class="sight-card__text">Причудливый выступ у воды и панорамы залива — классическая остановка на южном побережье.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/img9.webp" alt="Парк и пальмы у моря" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Парк Мисхора</h3>
+              <p class="sight-card__text">Пальмы, аллеи и выход к морю у подножия Аю-Дага — приятная прогулка рядом с канатной дорогой.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Небольшой дворец на скале" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Дворец «Кичкине»</h3>
+              <p class="sight-card__text">Компактный «замок» на склоне недалеко от Ласточкиного гнезда — хороший повод совместить два маршрута в один день.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Исторический зал музея" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Краеведческий музей</h3>
+              <p class="sight-card__text">История Ялты и ЮБК в экспонатах и документах — полезно зайти, чтобы сложить картину города до прогулок.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Купол и колокольня храма в городе" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Храм Иоанна Златоуста</h3>
+              <p class="sight-card__text">Крупный православный храм у моря — удобная остановка между прогулкой по набережной и подъёмом в горы.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Кафедральный собор с куполами" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Крестовоздвиженский собор</h3>
+              <p class="sight-card__text">Кафедральный собор в центре Ялты: масштаб, колокольня и тихий сквер — контраст шумной набережной.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Виллы и набережная у моря" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Ореанда</h3>
+              <p class="sight-card__text">Посёлок к югу от Ялты: виллы модерна, тенистые спуски к морю и спокойные прогулки вдоль берега.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Восточный фасад дворца с башнями" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Дворец эмира Бухарского</h3>
+              <p class="sight-card__text">Экзотический для ЮБК архитектурный ансамбль с восточными мотивами — память о курортной эпохе начала XX века.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Здание морского вокзала у причалов" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Морской вокзал</h3>
+              <p class="sight-card__text">Отправление прогулочных катеров и паромов: удобная точка, чтобы увидеть побережье с воды.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Зелёный парк и дорожки зоопарка" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Зоопарк «Сказка»</h3>
+              <p class="sight-card__text">Семейный парк с животными и зонами отдыха — хороший формат на полдня, если путешествуете с детьми.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/img9.webp" alt="Виноградники и здания научного института" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">НИИ виноградарства «Магарач»</h3>
+              <p class="sight-card__text">Старейший виноградно-винодельческий институт: экскурсии, дегустации и история крымского виноделия.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Парк с пальмами и дорожками" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Парк Стамболи</h3>
+              <p class="sight-card__text">Тенистый парк с видами на море — тихая альтернатива оживлённой городской набережной.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Обсерватория на горном склоне" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Ливадийская обсерватория</h3>
+              <p class="sight-card__text">Научная площадка над Ливадией: при удачном расписании — экскурсии и взгляд на звёзды над морем.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Скалы и спуск к морю в Гаспре" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Гаспра: скалы и спуски</h3>
+              <p class="sight-card__text">Улицы между виллами, лестницы к морю и виды на воду — типичный рельеф ЮБК в миниатюре.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Галечный пляж у скал" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Посёлок Утёс</h3>
+              <p class="sight-card__text">Компактный курортный посёлок с галечными пляжами и скалами — доехать от Ялты можно за короткое время.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Фасад драматического театра" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Театр имени Чехова</h3>
+              <p class="sight-card__text">Ялтинский драматический театр — повод совместить вечерний спектакль с прогулкой по набережной.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Вид с холма на море и город" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Поликуровский холм</h3>
+              <p class="sight-card__text">Популярная смотровая над Ялтой: панорама города, моря и хребта — особенно хороша на закате.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Пляж и парк у Ливадийского дворца" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Пляжная зона Ливадии</h3>
+              <p class="sight-card__text">Сочетание парка дворца и выхода к морю — удобно завершить день после экскурсии по Ливадии.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Рынок с навесами и людьми" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="История">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Приморский рынок</h3>
+              <p class="sight-card__text">Фрукты, вино местного розлива, сыры и уличная еда — быстрый способ познакомиться с вкусами ЮБК.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="1">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Катер на фоне скал и моря" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Природа">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Морская прогулка от Ялты</h3>
+              <p class="sight-card__text">Рейсы вдоль скал к Ласточкиному гнезду и соседним бухтам — классический курортный маршрут с воды.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="2">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Улица с виллами и зеленью" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Улица Гоголя и виллы</h3>
+              <p class="sight-card__text">Тихие переулки с модерном и садами — пешая прогулка от центра без спешки и туристических потоков.</p>
+            </div>
+          
+          </a>
+
+          <a href="/gorod/yalta/" class="sight-card fade-up" data-delay="3">
+
+            <div class="sight-card__img-wrap">
+              <img class="sight-card__img" src="../assets/img/cities/img9.webp" alt="Набережная с огнями в сумерках" width="800" height="600" loading="lazy" />
+              <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+            </div>
+            <div class="sight-card__body">
+              <h3 class="sight-card__title">Вечерняя набережная</h3>
+              <p class="sight-card__text">Подсветка, музыка у воды и неспешные прогулки — другой ритм города после заката.</p>
+            </div>
+          
+          </a>
+
+        </div>
+
+        <nav class="city-sights__pagination" id="citySightsPagination" aria-label="Страницы списка достопримечательностей" hidden></nav>
+      </div>
+    </section>
+
+  
+    <!-- =====================================================
+         GALLERY — горизонтальный scroll-snap
+         ===================================================== -->
+         <section class="gallery" aria-label="Фотогалерея Крыма">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <span class="eyebrow">Другие города</span>
+                <h2>Крым в кадре</h2>
+              </div>
+            </div>
+          </div>
+    
+          <div class="gallery__track-wrap">
+            <div class="gallery__track" id="galleryTrack">
+    
+              <a href="/gorod/yalta/" class="gallery__item" aria-current="page">
+                <img src="../assets/img/cities/1.jpg" alt="Набережная Ялты — южный берег Крыма" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Ялта</span>
+              </a>
+    
+              <a href="/gorod/sevastopol/" class="gallery__item">
+                <img src="../assets/img/cities/2.jpg" alt="Панорама бухты Севастополя" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Севастополь</span>
+              </a>
+    
+              <a href="/gorod/evpatoriya/" class="gallery__item">
+                <img src="../assets/img/cities/3.jpg" alt="Пляжи Евпатории" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Евпатория</span>
+              </a>
+    
+              <a href="/gorod/bakhchisaray/" class="gallery__item">
+                <img src="../assets/img/cities/4.jpg" alt="Ханский дворец Бахчисарая" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Бахчисарай</span>
+              </a>
+    
+              <a href="/gorod/sudak/" class="gallery__item">
+                <img src="../assets/img/cities/5.jpg" alt="Генуэзская крепость в Судаке" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Судак</span>
+              </a>
+    
+              <a href="/gorod/feodosiya/" class="gallery__item">
+                <img src="../assets/img/cities/6.webp" alt="Набережная Феодосии" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Феодосия</span>
+              </a>
+    
+              <a href="/gorod/alushta/" class="gallery__item">
+                <img src="../assets/img/cities/7.webp" alt="Природа Крыма" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Алушта</span>
+              </a>
+    
+              <a href="/gorod/" class="gallery__item">
+                <img src="../assets/img/cities/img9.webp" alt="Горный пейзаж Крыма" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Горный Крым</span>
+              </a>
+    
+              <a href="/gorod/kerch/" class="gallery__item">
+                <img src="../assets/img/cities/10.jfif" alt="Пейзажи Крымского полуострова" loading="lazy" width="540" height="380" />
+                <span class="gallery__caption">Керчь</span>
+              </a>
+    
+            </div>
+    
+            <button class="gallery__btn gallery__btn--prev" id="galleryPrev" aria-label="Предыдущие фото">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="gallery__btn gallery__btn--next" id="galleryNext" aria-label="Следующие фото">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </section>
+
+
+    <!-- 5. PRACTICAL -->
+    <section class="city-practical" aria-labelledby="city-practical-heading">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div>
+            <span class="eyebrow">Советы</span>
+            <h2 id="city-practical-heading">Практически</h2>
+            <p class="city-practical__intro">
+              Дорога, сезон и жильё — коротко, чтобы спланировать поездку: что учесть до выезда и в первый день в городе.
+            </p>
+          </div>
+        </div>
+        <div class="city-practical__grid">
+          <div class="city-practical__block fade-up" data-delay="1">
+            <div class="city-practical__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.3-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+            </div>
+            <h3 class="city-practical__title">Как добраться</h3>
+            <div class="city-practical__text">
+              <p class="city-practical__lead">Чаще всего путь идёт через Симферополь: от аэрополя или ж/д вокзала до Ялты — 80–90 км.</p>
+              <ul class="city-practical__list">
+                <li><strong>Автобус и маршрутка</strong> — рейсы с центрального и курортного автовокзалов; в пути обычно около 1,5–2 часов, летом лучше заранее уточнить расписание и наличие мест.</li>
+                <li><strong>Такси и трансфер</strong> — удобно с багажом или поздним прилётом; время пути сопоставимо с автобусом, маршрут по трассе через Алушту с видами на море.</li>
+                <li><strong>Свой автомобиль</strong> — та же трасса; в высокий сезон на въезде в Ялту и на набережной возможны пробки, парковки в центре ограничены — заложите время или выберите жильё со стоянкой.</li>
+              </ul>
+              <p class="city-practical__tip"><span class="city-practical__tip-label">Совет</span> В городе удобно сочетать пешие прогулки с маршрутками до Ливадии, Массандры, Гурзуфа и других точек ЮБК — так не зависите от пробок в центре.</p>
+            </div>
+          </div>
+          <div class="city-practical__block fade-up" data-delay="2">
+            <div class="city-practical__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <h3 class="city-practical__title">Когда ехать</h3>
+            <div class="city-practical__text">
+              <p class="city-practical__lead">Пляжный сезон и максимум солнца — с июня по сентябрь; май и «бархатный» октябрь часто дают тёплое море без июльской толпы.</p>
+              <ul class="city-practical__list city-practical__list--compact">
+                <li><strong>Высокий сезон</strong> — жара, купание, фестивали и оживлённая набережная; цены и поток туристов выше, бронируйте жильё заранее.</li>
+                <li><strong>Весна и ранняя осень</strong> — комфортно для дворцов, гор и канатных дорог; купаться ещё можно, но вода прохладнее.</li>
+                <li><strong>Зима</strong> — тихий курорт, мягкий климат по сравнению с материком; больше про прогулки и экскурсии, чем про пляж.</li>
+              </ul>
+            </div>
+            <div class="city-season-bar" role="img" aria-label="Условная сезонность: январь–март и ноябрь–декабрь спокойнее, апрель и октябрь переходные, май–сентябрь высокий сезон">
+              <p class="city-season-bar__label">Сезонность по месяцам</p>
+              <div class="city-season-bar__months">
+                <span class="city-season-bar__month city-season-bar__month--low">Янв</span>
+                <span class="city-season-bar__month city-season-bar__month--low">Фев</span>
+                <span class="city-season-bar__month city-season-bar__month--low">Мар</span>
+                <span class="city-season-bar__month city-season-bar__month--shoulder">Апр</span>
+                <span class="city-season-bar__month city-season-bar__month--peak">Май</span>
+                <span class="city-season-bar__month city-season-bar__month--peak">Июн</span>
+                <span class="city-season-bar__month city-season-bar__month--peak">Июл</span>
+                <span class="city-season-bar__month city-season-bar__month--peak">Авг</span>
+                <span class="city-season-bar__month city-season-bar__month--peak">Сен</span>
+                <span class="city-season-bar__month city-season-bar__month--shoulder">Окт</span>
+                <span class="city-season-bar__month city-season-bar__month--low">Ноя</span>
+                <span class="city-season-bar__month city-season-bar__month--low">Дек</span>
+              </div>
+              <div class="city-season-bar__legend">
+                <span class="city-season-bar__legend-item"><span class="city-season-bar__legend-swatch city-season-bar__legend-swatch--low" aria-hidden="true"></span> Спокойнее</span>
+                <span class="city-season-bar__legend-item"><span class="city-season-bar__legend-swatch city-season-bar__legend-swatch--shoulder" aria-hidden="true"></span> Переходный</span>
+                <span class="city-season-bar__legend-item"><span class="city-season-bar__legend-swatch city-season-bar__legend-swatch--peak" aria-hidden="true"></span> Высокий сезон</span>
+              </div>
+            </div>
+          </div>
+          <div class="city-practical__block fade-up" data-delay="3">
+            <div class="city-practical__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="city-practical__title">Где остановиться</h3>
+            <div class="city-practical__text">
+              <p class="city-practical__lead">Выбор района так же важен, как звёздность отеля: от этого зависит шум, виды и удобство выездов по ЮБК.</p>
+              <p class="city-practical__chips-label">Популярные районы</p>
+              <div class="city-practical__chips" aria-label="Районы для проживания">
+                <span class="city-practical__chip">Центр и набережная</span>
+                <span class="city-practical__chip">Массандра</span>
+                <span class="city-practical__chip">Ливадия</span>
+                <span class="city-practical__chip">Кореиз · Мисхор</span>
+                <span class="city-practical__chip">Гаспра · Ореанда</span>
+              </div>
+              <ul class="city-practical__list">
+                <li><strong>Бюджет</strong> — гостевые дома и квартиры чуть дальше от моря или на вторых линиях; набережная доступна пешком или короткой маршруткой.</li>
+                <li><strong>Средний сегмент</strong> — отели и апартаменты с видом на море, чаще в центре, Массандре или вдоль трассы с удобным спуском к воде.</li>
+                <li><strong>Комфорт и люкс</strong> — исторические виллы и отели у воды в Ливадии, элитные комплексы на набережной; лучше бронировать заранее на лето и праздники.</li>
+              </ul>
+              <p class="city-practical__tip"><span class="city-practical__tip-label">Совет</span> Если планируете много поездок к дворцам и соседним посёлкам, сравните время до остановок маршруток — иногда удобнее жить не в самом центре, а ближе к выезду из города.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. QUOTE -->
+    <section class="quote city-quote fade-up" style="--city-quote-bg: url('../assets/img/cities/6.webp')" aria-label="Цитата о Ялте">
+      <div class="quote__bg" aria-hidden="true"></div>
+      <div class="city-quote__decor" aria-hidden="true">
+        <div class="city-quote__glow city-quote__glow--a"></div>
+        <div class="city-quote__glow city-quote__glow--b"></div>
+        <div class="city-quote__glow city-quote__glow--c"></div>
+        <div class="city-quote__grain"></div>
+        <span class="city-quote__mark city-quote__mark--open">«</span>
+        <span class="city-quote__mark city-quote__mark--close">»</span>
+        <svg class="city-quote__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+          <path fill="rgba(255,255,255,0.04)" d="M0,48 C240,8 480,88 720,48 S1200,8 1440,48 L1440,100 L0,100 Z"/>
+          <path fill="none" stroke="rgba(61,214,140,0.15)" stroke-width="1.5" d="M0,56 C280,18 520,92 760,52 S1180,14 1440,52"/>
+        </svg>
+        <svg class="city-quote__ridge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+          <path fill="rgba(0,0,0,0.18)" d="M0,140 L0,95 Q150,70 300,88 T600,75 T900,92 T1200,80 L1200,140 Z"/>
+          <path fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="2" d="M0,92 Q200,65 400,82 T800,72 T1200,78"/>
+        </svg>
+      </div>
+      <div class="quote__overlay" aria-hidden="true"></div>
+      <div class="container quote__content">
+        <p class="city-quote__kicker">Слова о городе</p>
+        <blockquote class="quote__text city-quote__text">
+          <span class="city-quote__line">«Ялта — это море в ладони гор,</span>
+          <span class="city-quote__line">и вечер, который не хочется заканчивать»</span>
+        </blockquote>
+        <footer class="city-quote__footer">
+          <cite class="quote__cite city-quote__cite">— о Южном береге</cite>
+        </footer>
+      </div>
+    </section>
+
+    <!-- 7. NEARBY -->
+    <section class="city-nearby cities" aria-labelledby="city-nearby-heading">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div>
+            <span class="eyebrow">Похожие направления</span>
+            <h2 id="city-nearby-heading">Рядом</h2>
+          </div>
+          <a href="/gorod/" class="section-header__link">
+            Все города
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="city-nearby__grid">
+
+          <a href="/gorod/alushta/" class="city-card fade-up" data-delay="1">
+            <div class="city-card__img-wrap">
+              <img class="city-card__img" src="../assets/img/cities/7.webp" alt="Алушта — набережная и горы" width="600" height="450" loading="lazy" />
+              <span class="city-card__badge">ЮБК</span>
+              <div class="city-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="city-card__body">
+              <h3 class="city-card__title">Алушта</h3>
+              <p class="city-card__lead">Длинная набережная, канатная дорога и выход к тропам Большого каньона.</p>
+              <span class="city-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/alupka/" class="city-card fade-up" data-delay="2">
+            <div class="city-card__img-wrap">
+              <img class="city-card__img" src="../assets/img/cities/4.jpg" alt="Алупка — парк и дворец" width="600" height="450" loading="lazy" />
+              <span class="city-card__badge">ЮБК</span>
+              <div class="city-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="city-card__body">
+              <h3 class="city-card__title">Алупка</h3>
+              <p class="city-card__lead">Воронцовский дворец, парк и пляжи у подножия Ай-Петри.</p>
+              <span class="city-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="/gorod/gurzuf/" class="city-card fade-up" data-delay="3">
+            <div class="city-card__img-wrap">
+              <img class="city-card__img" src="../assets/img/cities/img9.webp" alt="Гурзуф — бухта" width="600" height="450" loading="lazy" />
+              <span class="city-card__badge">ЮБК</span>
+              <div class="city-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="city-card__body">
+              <h3 class="city-card__title">Гурзуф</h3>
+              <p class="city-card__lead">Уютная бухта, скала Адалары и тихие пляжи в тени платанов.</p>
+              <span class="city-card__link">Узнать больше<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CITY NAV -->
+    <nav class="city-nav" aria-label="Соседние города">
+      <div class="container city-nav__inner">
+        <div class="city-nav__side city-nav__side--prev">
+          <a href="/gorod/alupka/" class="city-nav__link">
+            <img class="city-nav__thumb" src="../assets/img/cities/4.jpg" alt="" width="64" height="64" loading="lazy" />
+            <span class="city-nav__text">
+              <span class="city-nav__dir">← Предыдущий</span>
+              <span class="city-nav__name">Алупка</span>
+            </span>
+          </a>
+        </div>
+        <a href="/gorod/" class="city-nav__all">Все города</a>
+        <div class="city-nav__side city-nav__side--next">
+          <a href="/gorod/gurzuf/" class="city-nav__link city-nav__link--next">
+            <img class="city-nav__thumb" src="../assets/img/cities/img9.webp" alt="" width="64" height="64" loading="lazy" />
+            <span class="city-nav__text">
+              <span class="city-nav__dir">Следующий →</span>
+              <span class="city-nav__name">Гурзуф</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col footer__col--nav">
+          <a href="/" class="footer__logo" aria-label="Крым — главная">КРЫМ</a>
+          <p class="footer__lead">Путеводитель по полуострову — история, природа, море.</p>
+          <nav aria-label="Навигация в подвале">
+            <ul class="footer__nav">
+              <li><a href="/gorod/" class="footer__nav-link">Популярные города</a></li>
+              <li><a href="/gorod/" class="footer__nav-link">Направления</a></li>
+              <li><a href="/o-proekte/" class="footer__nav-link">Интересное</a></li>
+              <li><a href="/politika/" class="footer__nav-link">Политика конфиденциальности</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__col footer__col--popular">
+          <p class="footer__col-title">Популярное</p>
+          <div class="footer__photo-grid">
+            <a href="/gorod/yalta/" class="footer__photo-item" aria-label="Ялта">
+              <img src="../assets/img/cities/1.jpg" alt="Ялта" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/sevastopol/" class="footer__photo-item" aria-label="Севастополь">
+              <img src="../assets/img/cities/2.jpg" alt="Севастополь" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/evpatoriya/" class="footer__photo-item" aria-label="Евпатория">
+              <img src="../assets/img/cities/3.jpg" alt="Евпатория" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/bakhchisaray/" class="footer__photo-item" aria-label="Бахчисарай">
+              <img src="../assets/img/cities/4.jpg" alt="Бахчисарай" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/sudak/" class="footer__photo-item" aria-label="Судак">
+              <img src="../assets/img/cities/5.jpg" alt="Судак" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/feodosiya/" class="footer__photo-item" aria-label="Феодосия">
+              <img src="../assets/img/cities/6.webp" alt="Феодосия" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/" class="footer__photo-item" aria-label="Горный Крым">
+              <img src="../assets/img/cities/7.webp" alt="Горный Крым" loading="lazy" width="120" height="90" />
+            </a>
+            <a href="/gorod/" class="footer__photo-item" aria-label="Крымские пейзажи">
+              <img src="../assets/img/cities/img9.webp" alt="Крым" loading="lazy" width="120" height="90" />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col footer__col--contact">
+          <p class="footer__col-title">Связаться с нами</p>
+          <ul class="footer__contact-list">
+            <li>
+              <a href="mailto:info@crimea-guide.ru" class="footer__contact-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                info@crimea-guide.ru
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__copy">
+        &copy; 2026 Крым — Путеводитель. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх" type="button">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <div id="cityGalleryLightbox" class="city-gallery__lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" aria-hidden="true">
+    <div class="city-gallery__lightbox-backdrop" tabindex="-1" aria-hidden="true"></div>
+    <button type="button" class="city-gallery__lightbox-close" aria-label="Закрыть">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <figure class="city-gallery__lightbox-figure">
+      <img class="city-gallery__lightbox-img" src="" alt="" />
+    </figure>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script src="../assets/js/animations.js"></script>
+  <script src="../assets/js/city.js"></script>
+</body>
+</html>

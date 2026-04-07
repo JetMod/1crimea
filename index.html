@@ -105,7 +105,7 @@
 
           <p class="hero__subtitle">
             Путеводитель по городам, побережью и горам.<br />
-            От Ялты до Керчи — каждый уголок со своей историей.
+            От <a href="gorod/yalta.html">Ялты</a> до Керчи — каждый уголок со своей историей.
           </p>
 
           <div class="hero__actions">
@@ -119,10 +119,10 @@
           <div class="hero__search">
             <div class="hero__search-chips" aria-label="Популярные города">
               <span class="hero__chips-hint">Популярное:</span>
-              <button class="hero__chip" type="button" data-city="Ялта">Ялта</button>
-              <button class="hero__chip" type="button" data-city="Севастополь">Севастополь</button>
-              <button class="hero__chip" type="button" data-city="Судак">Судак</button>
-              <button class="hero__chip" type="button" data-city="Феодосия">Феодосия</button>
+              <a class="hero__chip" href="gorod/yalta.html">Ялта</a>
+              <a class="hero__chip" href="/gorod/sevastopol/">Севастополь</a>
+              <a class="hero__chip" href="/gorod/sudak/">Судак</a>
+              <a class="hero__chip" href="/gorod/feodosiya/">Феодосия</a>
             </div>
           </div>
         </div>
@@ -207,8 +207,8 @@
 
           <!-- Ялта + Алушта: две карточки вместо одной высокой (та же ячейка сетки 2×2) -->
           <div class="cities__featured-split fade-up" data-delay="1">
-            <article class="city-card city-card--featured city-card--featured-split">
-              <div class="city-card__img-wrap">
+            <a href="gorod/yalta.html" class="city-card city-card--featured city-card--featured-split">
+            <div class="city-card__img-wrap">
                 <img
                   class="city-card__img"
                   src="assets/img/cities/1.jpg"
@@ -224,15 +224,14 @@
                     Жемчужина Южного берега Крыма. Набережная, дворцы и тёплый климат
                     с апреля по октябрь.
                   </p>
-                  <a href="/gorod/yalta/" class="city-card__link">
+                  <span class="city-card__link">
                     Узнать больше
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </a>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </div>
               </div>
-            </article>
-            <article class="city-card city-card--featured city-card--featured-split">
-              <div class="city-card__img-wrap">
+          </a>
+            <a href="/gorod/alushta/" class="city-card city-card--featured city-card--featured-split">
+            <div class="city-card__img-wrap">
                 <img
                   class="city-card__img"
                   src="assets/img/cities/7.webp"
@@ -248,17 +247,16 @@
                     Город у подножия Чатыр-Дага: длинная набережная, канатная дорога
                     и переход к тропам Большого каньона.
                   </p>
-                  <a href="/gorod/alushta/" class="city-card__link">
+                  <span class="city-card__link">
                     Узнать больше
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </a>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </div>
               </div>
-            </article>
+          </a>
           </div>
 
           <!-- Карточка: Севастополь -->
-          <article class="city-card fade-up" data-delay="2">
+          <a href="/gorod/sevastopol/" class="city-card fade-up" data-delay="2">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -276,15 +274,14 @@
                 Город воинской славы и Черноморский флот. Древний Херсонес,
                 панорамы бухт и особая атмосфера морского форпоста.
               </p>
-              <a href="/gorod/sevastopol/" class="city-card__link">
+              <span class="city-card__link">
                 Узнать больше
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
             </div>
-          </article>
+          </a>
 
           <!-- Карточка: Евпатория -->
-          <article class="city-card fade-up" data-delay="3">
+          <a href="/gorod/evpatoriya/" class="city-card fade-up" data-delay="3">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -302,15 +299,14 @@
                 Лучший семейный курорт: мелководные пляжи, лечебные грязи,
                 средневековый Гёзлёв и весёлая набережная.
               </p>
-              <a href="/gorod/evpatoriya/" class="city-card__link">
+              <span class="city-card__link">
                 Узнать больше
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
             </div>
-          </article>
+          </a>
 
           <!-- Карточка: Бахчисарай -->
-          <article class="city-card fade-up" data-delay="4">
+          <a href="/gorod/bakhchisaray/" class="city-card fade-up" data-delay="4">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -328,15 +324,14 @@
                 Бывшая столица Крымского ханства. Ханский дворец, пещерный город
                 Чуфут-Кале и восточный колорит старых улочек.
               </p>
-              <a href="/gorod/bakhchisaray/" class="city-card__link">
+              <span class="city-card__link">
                 Узнать больше
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
             </div>
-          </article>
+          </a>
 
           <!-- Карточка: Судак -->
-          <article class="city-card fade-up" data-delay="5">
+          <a href="/gorod/sudak/" class="city-card fade-up" data-delay="5">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -354,15 +349,14 @@
                 Великолепная Генуэзская крепость на скале над морем, чистые бухты
                 и виноградники — символ восточного Крыма.
               </p>
-              <a href="/gorod/sudak/" class="city-card__link">
+              <span class="city-card__link">
                 Узнать больше
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
             </div>
-          </article>
+          </a>
 
           <!-- Карточка: Феодосия -->
-          <article class="city-card fade-up" data-delay="6">
+          <a href="/gorod/feodosiya/" class="city-card fade-up" data-delay="6">
             <div class="city-card__img-wrap">
               <img
                 class="city-card__img"
@@ -380,12 +374,11 @@
                 Один из древнейших городов мира, родина Айвазовского. Картинная
                 галерея, золотые пляжи и горизонт, вдохновлявший художников.
               </p>
-              <a href="/gorod/feodosiya/" class="city-card__link">
+              <span class="city-card__link">
                 Узнать больше
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
             </div>
-          </article>
+          </a>
 
         </div>
       </div>
@@ -576,7 +569,7 @@
 
         <div class="why__routes">
 
-          <a href="/gorod/" class="why-route why-route--coast fade-up" data-delay="1">
+          <a href="/gorod/yalta/" class="why-route why-route--coast fade-up" data-delay="1">
             <span class="why-route__bg" aria-hidden="true"></span>
             <span class="why-route__overlay" aria-hidden="true"></span>
             <span class="why-route__inner">
@@ -652,7 +645,7 @@
         <div class="footer__col footer__col--popular">
           <p class="footer__col-title">Популярное</p>
           <div class="footer__photo-grid">
-            <a href="/gorod/yalta/" class="footer__photo-item" aria-label="Ялта">
+            <a href="gorod/yalta.html" class="footer__photo-item" aria-label="Ялта">
               <img src="assets/img/cities/1.jpg" alt="Ялта" loading="lazy" width="120" height="90" />
             </a>
             <a href="/gorod/sevastopol/" class="footer__photo-item" aria-label="Севастополь">

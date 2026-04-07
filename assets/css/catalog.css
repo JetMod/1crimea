@@ -358,6 +358,16 @@
   flex-direction: column;
 }
 
+a.city-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.city-card:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 3px;
+}
+
 .city-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-card-hover);
@@ -478,6 +488,7 @@
   transition: gap var(--t-fast), color var(--t-fast);
 }
 
+.city-card:hover .city-card__link,
 .city-card__link:hover {
   gap: 0.6rem;
   color: var(--c-primary-dark);

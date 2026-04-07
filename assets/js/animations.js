@@ -58,26 +58,7 @@
   counters.forEach(function (el) { io.observe(el); });
 }());
 
-/* ---- 3. Hero — быстрый выбор города (чипы) ---- */
-(function () {
-  var cityMap = {
-    'ялта':        '/gorod/yalta/',
-    'севастополь': '/gorod/sevastopol/',
-    'евпатория':   '/gorod/evpatoriya/',
-    'бахчисарай':  '/gorod/bakhchisaray/',
-    'судак':       '/gorod/sudak/',
-    'феодосия':    '/gorod/feodosiya/'
-  };
-
-  document.querySelectorAll('.hero__chip').forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      var key = (chip.dataset.city || '').toLowerCase();
-      if (cityMap[key]) window.location.href = cityMap[key];
-    });
-  });
-}());
-
-/* ---- 4. Gallery — prev/next scroll + dots ---- */
+/* ---- 3. Gallery — prev/next scroll + dots ---- */
 (function () {
   var track  = document.getElementById('galleryTrack');
   var btnPrev = document.getElementById('galleryPrev');
@@ -135,7 +116,7 @@
   updateState();
 }());
 
-/* ---- 5. Scroll-to при клике на стрелку hero ---- */
+/* ---- 4. Scroll-to при клике на стрелку hero ---- */
 (function () {
   var scrollBtn = document.querySelector('.hero__scroll');
   if (!scrollBtn) return;
@@ -145,7 +126,7 @@
   });
 }());
 
-/* ---- 6. Scroll progress bar ---- */
+/* ---- 5. Scroll progress bar ---- */
 (function () {
   var bar = document.getElementById('scrollProgress');
   if (!bar) return;
@@ -162,7 +143,7 @@
   updateProgress();
 }());
 
-/* ---- 7. Back-to-top button ---- */
+/* ---- 6. Back-to-top button ---- */
 (function () {
   var btn = document.getElementById('backToTop');
   if (!btn) return;

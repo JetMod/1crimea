@@ -408,11 +408,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background: linear-gradient(
     180deg,
     rgba(8,22,48,.52) 0%,
@@ -474,6 +476,18 @@
   letter-spacing: 0.01em;
 }
 
+.hero__subtitle a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 0.18em;
+}
+
+.hero__subtitle a:hover {
+  text-decoration-color: rgba(255, 255, 255, 0.85);
+}
+
 .hero__actions {
   display: flex;
   align-items: center;
@@ -516,6 +530,7 @@
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
+  text-decoration: none;
   transition:
     background var(--t-fast),
     color var(--t-fast),
@@ -532,6 +547,11 @@
 }
 .hero__chip:active {
   transform: translateY(0);
+}
+
+.hero__chip:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
 }
 
 /* Scroll indicator — лёгкий: подпись + линия с «бегущей» точкой */
@@ -844,6 +864,17 @@
   display: flex;
   flex-direction: column;
 }
+
+a.city-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.city-card:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 3px;
+}
+
 .city-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-card-hover);
@@ -929,6 +960,7 @@
   margin-top: .6rem;
   transition: gap var(--t-fast), color var(--t-fast);
 }
+.city-card:hover .city-card__link,
 .city-card__link:hover {
   gap: .6rem;
   color: var(--c-primary-dark);
@@ -1017,6 +1049,7 @@
   color: var(--c-accent);
   font-size: .9rem;
 }
+.city-card--featured:hover .city-card__link,
 .city-card--featured .city-card__link:hover {
   color: #fff;
 }
