@@ -1,0 +1,10 @@
+/**
+ * Второстепенные стили сайта (всё кроме main.css).
+ * Порядок импортов сохраняет каскад как при ручном подключении.
+ */
+@import url("main.css");
+@import url("home.css");
+@import url("catalog.css");
+@import url("city.css");
+@import url("place.css");
+@import url("about.css");

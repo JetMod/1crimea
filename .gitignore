@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Editor settings (may contain deployment credentials)
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Secrets and environment files
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.secret
+secrets.*
+
+# FTP/SFTP deployment configs
+sftp.json
+ftpconfig.*
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# Archives and backups
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.bak
