@@ -1,0 +1,29 @@
+<?php
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+get_header();
+?>
+<main class="crimea-content crimea-content--archive">
+    <header class="archive-header">
+        <h1><?php the_archive_title(); ?></h1>
+        <?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+    </header>
+
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <div>
+                    <?php the_excerpt(); ?>
+                </div>
+            </article>
+        <?php endwhile; ?>
+
+        <?php the_posts_pagination(); ?>
+    <?php else : ?>
+        <p>Записей в этом архиве пока нет.</p>
+    <?php endif; ?>
+</main>
+<?php get_footer(); ?>

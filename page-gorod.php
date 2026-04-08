@@ -1,133 +1,23 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Каталог городов Крыма — Южный берег, запад, восток и центр полуострова. Выберите направление и откройте путеводитель." />
-  <title>Города Крыма — каталог</title>
+<?php
+/**
+ * Template Name: Каталог городов
+ * Template Post Type: page
+ */
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Крым — Путеводитель" />
-  <meta property="og:locale" content="ru_RU" />
-  <meta property="og:title" content="Города Крыма — каталог" />
-  <meta property="og:description" content="Каталог городов Крыма — Южный берег, запад, восток и центр полуострова. Выберите направление и откройте путеводитель." />
-  <meta property="og:url" content="/gorod/" />
-  <link rel="canonical" href="/gorod/" />
-  <meta property="og:image" content="/assets/img/cities/1.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Города Крыма — каталог" />
-  <meta name="twitter:description" content="Каталог городов Крыма — Южный берег, запад, восток и центр полуострова. Выберите направление и откройте путеводитель." />
-  <meta name="twitter:image" content="/assets/img/cities/1.jpg" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "TouristDestination",
-        "@id": "/#crimea",
-        "name": "Крым",
-        "description": "Каталог городов Крыма — Южный берег, запад, восток и центр полуострова. Выберите направление и откройте путеводитель.",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "45.03",
-          "longitude": "34.10"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Главная",
-            "item": "/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Города Крыма",
-            "item": "/gorod/"
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
-
-
-  <link rel="stylesheet" href="../assets/css/secondary.css" />
-</head>
-<body class="page-catalog">
-
-  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс прокрутки"></div>
-
-  <!-- =====================================================
-       НАВИГАЦИЯ
-       ===================================================== -->
-  <header class="site-header">
-    <nav class="nav" role="navigation" aria-label="Главное меню">
-      <div class="container nav__inner">
-
-        <div class="nav__brand">
-          <a href="/" class="nav__logo" aria-label="Крым — на главную">
-            <span class="nav__logo-text">Крым</span>
-          </a>
-          <span class="nav__brand-divider" aria-hidden="true"></span>
-          <span class="nav__brand-tag">Путеводитель</span>
-        </div>
-
-        <ul class="nav__menu" role="list">
-          <li><a href="/gorod/" class="nav__link" aria-current="page">Города</a></li>
-          <li><a href="/dostoprimechatelnosti/" class="nav__link">Достопримечательности</a></li>
-          <li><a href="/template-about.html" class="nav__link">О проекте</a></li>
-        </ul>
-
-        <a href="/gorod/" class="btn btn-primary nav__cta">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Смотреть города
-        </a>
-
-        <button class="nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="navDrawer">
-          <span class="nav__burger-line"></span>
-          <span class="nav__burger-line"></span>
-          <span class="nav__burger-line"></span>
-        </button>
-
-      </div>
-    </nav>
-
-    <div class="nav__drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Мобильное меню">
-      <div class="nav__drawer-backdrop" tabindex="-1" aria-hidden="true"></div>
-      <div class="nav__drawer-panel">
-        <div class="nav__drawer-head">
-          <span class="nav__drawer-brand">Крым</span>
-          <button type="button" class="nav__drawer-close" aria-label="Закрыть меню">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-          </button>
-        </div>
-        <nav class="nav__drawer-nav" aria-label="Разделы">
-          <a href="/gorod/" class="nav__drawer-link" aria-current="page">Города</a>
-          <a href="/dostoprimechatelnosti/" class="nav__drawer-link">Достопримечательности</a>
-          <a href="/template-about.html" class="nav__drawer-link">О проекте</a>
-        </nav>
-        <a href="/gorod/" class="btn btn-primary nav__drawer-cta">Смотреть города</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="catalog-page">
+$crimea_assets = get_template_directory_uri() . '/assets';
+get_header();
+?>
+<main class="catalog-page">
 
     <!-- Page hero + фильтры (стили catalog.css; базовая читаемость до подключения) -->
     <section class="catalog-hero" aria-label="Города Крыма">
       <div class="container">
         <nav class="breadcrumbs breadcrumbs--on-dark breadcrumbs--center" aria-label="Навигационная цепочка">
           <ol class="breadcrumbs__list">
-            <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="breadcrumbs__link">Главная</a></li>
             <li class="breadcrumbs__item"><span class="breadcrumbs__text" aria-current="page">Города Крыма</span></li>
           </ol>
         </nav>
@@ -224,9 +114,9 @@
         <div class="cities__grid catalog-grid">
 
           <!-- ЮБК -->
-          <a href="/gorod/yalta.html" class="city-card fade-up" data-delay="1" data-region="юбк" data-tags="пляж курорт архитектура">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="city-card fade-up" data-delay="1" data-region="юбк" data-tags="пляж курорт архитектура">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/1.jpg" alt="Ялта — набережная и морской курорт Южного берега Крыма" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Ялта — набережная и морской курорт Южного берега Крыма" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">ЮБК</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -237,9 +127,9 @@
             </div>
           </a>
 
-          <a href="/gorod/alushta/" class="city-card fade-up" data-delay="1" data-region="юбк" data-tags="пляж горы курорт">
+          <a href="<?php echo esc_url( home_url( '/gorod/alushta/' ) ); ?>" class="city-card fade-up" data-delay="1" data-region="юбк" data-tags="пляж горы курорт">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/7.webp" alt="Алушта — курорт у подножия гор" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Алушта — курорт у подножия гор" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">ЮБК</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -250,7 +140,7 @@
             </div>
           </a>
 
-          <a href="/gorod/gurzuf/" class="city-card fade-up" data-delay="2" data-region="юбк" data-tags="пляж природа">
+          <a href="<?php echo esc_url( home_url( '/gorod/gurzuf/' ) ); ?>" class="city-card fade-up" data-delay="2" data-region="юбк" data-tags="пляж природа">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Гурзуф — бухта и скалы" style="width:100%;height:100%;background:linear-gradient(135deg,#1e3a5f 0%,#3d6b8a 50%,#c4a574 100%);"></div>
               <span class="city-card__badge">ЮБК</span>
@@ -263,7 +153,7 @@
             </div>
           </a>
 
-          <a href="/gorod/foros/" class="city-card fade-up" data-delay="2" data-region="юбк" data-tags="пляж природа архитектура">
+          <a href="<?php echo esc_url( home_url( '/gorod/foros/' ) ); ?>" class="city-card fade-up" data-delay="2" data-region="юбк" data-tags="пляж природа архитектура">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Форос — мыс и вилла" style="width:100%;height:100%;background:linear-gradient(135deg,#0f172a 0%,#334155 40%,#e8c872 100%);"></div>
               <span class="city-card__badge">ЮБК</span>
@@ -276,7 +166,7 @@
             </div>
           </a>
 
-          <a href="/gorod/alupka/" class="city-card fade-up" data-delay="3" data-region="юбк" data-tags="пляж архитектура горы">
+          <a href="<?php echo esc_url( home_url( '/gorod/alupka/' ) ); ?>" class="city-card fade-up" data-delay="3" data-region="юбк" data-tags="пляж архитектура горы">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Алупка — Воронцовский дворец" style="width:100%;height:100%;background:linear-gradient(135deg,#14532d 0%,#166534 45%,#fde68a 100%);"></div>
               <span class="city-card__badge">ЮБК</span>
@@ -290,9 +180,9 @@
           </a>
 
           <!-- Западный -->
-          <a href="/gorod/sevastopol.html" class="city-card fade-up" data-delay="3" data-region="западный" data-tags="история пляж архитектура">
+          <a href="<?php echo esc_url( home_url( '/gorod/sevastopol/' ) ); ?>" class="city-card fade-up" data-delay="3" data-region="западный" data-tags="история пляж архитектура">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/2.jpg" alt="Севастополь — бухты и Херсонес" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/2.jpg" alt="Севастополь — бухты и Херсонес" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Западный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -303,9 +193,9 @@
             </div>
           </a>
 
-          <a href="/gorod/evpatoriya/" class="city-card fade-up" data-delay="4" data-region="западный" data-tags="пляж лечение курорт">
+          <a href="<?php echo esc_url( home_url( '/gorod/evpatoriya/' ) ); ?>" class="city-card fade-up" data-delay="4" data-region="западный" data-tags="пляж лечение курорт">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/3.jpg" alt="Евпатория — пляжи и набережная" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/3.jpg" alt="Евпатория — пляжи и набережная" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Западный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -316,7 +206,7 @@
             </div>
           </a>
 
-          <a href="/gorod/saki/" class="city-card fade-up" data-delay="4" data-region="западный" data-tags="лечение курорт">
+          <a href="<?php echo esc_url( home_url( '/gorod/saki/' ) ); ?>" class="city-card fade-up" data-delay="4" data-region="западный" data-tags="лечение курорт">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Саки — озеро и курорт" style="width:100%;height:100%;background:linear-gradient(135deg,#0c4a6e 0%,#0369a1 50%,#fcd34d 100%);"></div>
               <span class="city-card__badge">Западный</span>
@@ -329,9 +219,9 @@
             </div>
           </a>
 
-          <a href="/gorod/bakhchisaray/" class="city-card fade-up" data-delay="5" data-region="западный" data-tags="история архитектура природа">
+          <a href="<?php echo esc_url( home_url( '/gorod/bakhchisaray/' ) ); ?>" class="city-card fade-up" data-delay="5" data-region="западный" data-tags="история архитектура природа">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/4.jpg" alt="Бахчисарай — ханский дворец" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Бахчисарай — ханский дворец" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Западный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -342,7 +232,7 @@
             </div>
           </a>
 
-          <a href="/gorod/inkerman/" class="city-card fade-up" data-delay="5" data-region="западный" data-tags="история природа архитектура">
+          <a href="<?php echo esc_url( home_url( '/gorod/inkerman/' ) ); ?>" class="city-card fade-up" data-delay="5" data-region="западный" data-tags="история природа архитектура">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Инкерман — пещерный монастырь" style="width:100%;height:100%;background:linear-gradient(135deg,#292524 0%,#57534e 50%,#a8a29e 100%);"></div>
               <span class="city-card__badge">Западный</span>
@@ -356,9 +246,9 @@
           </a>
 
           <!-- Восточный -->
-          <a href="/gorod/feodosiya/" class="city-card fade-up" data-delay="6" data-region="восточный" data-tags="пляж история курорт">
+          <a href="<?php echo esc_url( home_url( '/gorod/feodosiya/' ) ); ?>" class="city-card fade-up" data-delay="6" data-region="восточный" data-tags="пляж история курорт">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/6.webp" alt="Феодосия — набережная и порт" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Феодосия — набережная и порт" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Восточный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -369,9 +259,9 @@
             </div>
           </a>
 
-          <a href="/gorod/sudak/" class="city-card fade-up" data-delay="6" data-region="восточный" data-tags="история пляж вино">
+          <a href="<?php echo esc_url( home_url( '/gorod/sudak/' ) ); ?>" class="city-card fade-up" data-delay="6" data-region="восточный" data-tags="история пляж вино">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/5.jpg" alt="Судак — Генуэзская крепость" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Судак — Генуэзская крепость" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Восточный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -382,7 +272,7 @@
             </div>
           </a>
 
-          <a href="/gorod/koktebel/" class="city-card fade-up" data-delay="7" data-region="восточный" data-tags="природа пляж">
+          <a href="<?php echo esc_url( home_url( '/gorod/koktebel/' ) ); ?>" class="city-card fade-up" data-delay="7" data-region="восточный" data-tags="природа пляж">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Коктебель — залив и гора Карадаг" style="width:100%;height:100%;background:linear-gradient(135deg,#7c2d12 0%,#ea580c 45%,#fbbf24 100%);"></div>
               <span class="city-card__badge">Восточный</span>
@@ -395,9 +285,9 @@
             </div>
           </a>
 
-          <a href="/gorod/kerch/" class="city-card fade-up" data-delay="7" data-region="восточный" data-tags="история пляж">
+          <a href="<?php echo esc_url( home_url( '/gorod/kerch/' ) ); ?>" class="city-card fade-up" data-delay="7" data-region="восточный" data-tags="история пляж">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/10.jfif" alt="Керчь — пролив и история" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/10.jfif" alt="Керчь — пролив и история" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Восточный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -408,7 +298,7 @@
             </div>
           </a>
 
-          <a href="/gorod/novy-svet/" class="city-card fade-up" data-delay="8" data-region="восточный" data-tags="природа вино пляж">
+          <a href="<?php echo esc_url( home_url( '/gorod/novy-svet/' ) ); ?>" class="city-card fade-up" data-delay="8" data-region="восточный" data-tags="природа вино пляж">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Новый Свет — тропа Голицына" style="width:100%;height:100%;background:linear-gradient(135deg,#134e4a 0%,#0d9488 50%,#a7f3d0 100%);"></div>
               <span class="city-card__badge">Восточный</span>
@@ -421,9 +311,9 @@
             </div>
           </a>
 
-          <a href="/gorod/stary-krym/" class="city-card fade-up" data-delay="8" data-region="восточный центральный" data-tags="история природа">
+          <a href="<?php echo esc_url( home_url( '/gorod/stary-krym/' ) ); ?>" class="city-card fade-up" data-delay="8" data-region="восточный центральный" data-tags="история природа">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/4.jpg" alt="Старый Крым — степь и храмы" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Старый Крым — степь и храмы" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Восточный · Центр</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -434,7 +324,7 @@
             </div>
           </a>
 
-          <a href="/gorod/shcholkino/" class="city-card fade-up" data-delay="9" data-region="восточный" data-tags="пляж курорт">
+          <a href="<?php echo esc_url( home_url( '/gorod/shcholkino/' ) ); ?>" class="city-card fade-up" data-delay="9" data-region="восточный" data-tags="пляж курорт">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Щёлкино — Азовское море" style="width:100%;height:100%;background:linear-gradient(135deg,#1e3a8a 0%,#38bdf8 55%,#fef08a 100%);"></div>
               <span class="city-card__badge">Восточный</span>
@@ -448,9 +338,9 @@
           </a>
 
           <!-- Центральный -->
-          <a href="/gorod/simferopol/" class="city-card fade-up" data-delay="9" data-region="центральный" data-tags="история курорт">
+          <a href="<?php echo esc_url( home_url( '/gorod/simferopol/' ) ); ?>" class="city-card fade-up" data-delay="9" data-region="центральный" data-tags="история курорт">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/img9.webp" alt="Симферополь — столица Крыма" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Симферополь — столица Крыма" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Центральный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -461,7 +351,7 @@
             </div>
           </a>
 
-          <a href="/gorod/belogorsk/" class="city-card fade-up" data-delay="10" data-region="центральный" data-tags="природа горы история">
+          <a href="<?php echo esc_url( home_url( '/gorod/belogorsk/' ) ); ?>" class="city-card fade-up" data-delay="10" data-region="центральный" data-tags="природа горы история">
             <div class="city-card__img-wrap">
               <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Белогорск — Белая скала" style="width:100%;height:100%;background:linear-gradient(135deg,#fef3c7 0%,#f59e0b 40%,#78350f 100%);"></div>
               <span class="city-card__badge">Центральный</span>
@@ -493,83 +383,5 @@
 
   </main>
 
-  <!-- =====================================================
-       ПОДВАЛ
-       ===================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-
-        <div class="footer__col footer__col--nav">
-          <a href="/" class="footer__logo" aria-label="Крым — главная">КРЫМ</a>
-          <p class="footer__lead">Путеводитель по полуострову — история, природа, море.</p>
-          <nav aria-label="Навигация в подвале">
-            <ul class="footer__nav">
-              <li><a href="/gorod/" class="footer__nav-link">Популярные города</a></li>
-              <li><a href="/gorod/" class="footer__nav-link">Направления</a></li>
-              <li><a href="/template-about.html" class="footer__nav-link">Интересное</a></li>
-              <li><a href="/politika/" class="footer__nav-link">Политика конфиденциальности</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="footer__col footer__col--popular">
-          <p class="footer__col-title">Популярное</p>
-          <div class="footer__photo-grid">
-            <a href="/gorod/yalta.html" class="footer__photo-item" aria-label="Ялта">
-              <img src="../assets/img/cities/1.jpg" alt="Ялта" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/sevastopol/" class="footer__photo-item" aria-label="Севастополь">
-              <img src="../assets/img/cities/2.jpg" alt="Севастополь" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/evpatoriya/" class="footer__photo-item" aria-label="Евпатория">
-              <img src="../assets/img/cities/3.jpg" alt="Евпатория" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/bakhchisaray/" class="footer__photo-item" aria-label="Бахчисарай">
-              <img src="../assets/img/cities/4.jpg" alt="Бахчисарай" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/sudak/" class="footer__photo-item" aria-label="Судак">
-              <img src="../assets/img/cities/5.jpg" alt="Судак" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/feodosiya/" class="footer__photo-item" aria-label="Феодосия">
-              <img src="../assets/img/cities/6.webp" alt="Феодосия" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/" class="footer__photo-item" aria-label="Горный Крым">
-              <img src="../assets/img/cities/7.webp" alt="Горный Крым" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/" class="footer__photo-item" aria-label="Крымские пейзажи">
-              <img src="../assets/img/cities/img9.webp" alt="Крым" loading="lazy" width="120" height="90" />
-            </a>
-          </div>
-        </div>
-
-        <div class="footer__col footer__col--contact">
-          <p class="footer__col-title">Связаться с нами</p>
-          <ul class="footer__contact-list">
-            <li>
-              <a href="mailto:info@crimea-guide.ru" class="footer__contact-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                info@crimea-guide.ru
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer__copy">
-        &copy; 2026 Крым — Путеводитель. Все права защищены.
-      </div>
-    </div>
-  </footer>
-
-  <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх" type="button">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
-
-  <script src="../assets/js/nav.js"></script>
-  <script src="../assets/js/animations.js"></script>
-  <script src="../assets/js/catalog.js"></script>
-
-</body>
-</html>
+<?php
+get_footer();

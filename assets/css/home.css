@@ -340,6 +340,11 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--c-text);
+  text-decoration: none;
+}
+
+.nav__drawer-brand:hover {
+  color: var(--c-primary);
 }
 
 .nav__drawer-close {

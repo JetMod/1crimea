@@ -1,146 +1,27 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ялта — набережная, Ливадийский и Массандровский дворцы, мягкий климат Южного берега Крыма. Практические советы и достопримечательности." />
-  <title>Ялта — Южный берег Крыма</title>
+<?php
+/**
+ * Template Name: Город — Ялта
+ * Template Post Type: page
+ */
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Крым — Путеводитель" />
-  <meta property="og:locale" content="ru_RU" />
-  <meta property="og:title" content="Ялта — Южный берег Крыма" />
-  <meta property="og:description" content="Ялта — набережная, Ливадийский и Массандровский дворцы, мягкий климат Южного берега Крыма. Практические советы и достопримечательности." />
-  <meta property="og:url" content="/gorod/yalta.html" />
-  <link rel="canonical" href="/gorod/yalta.html" />
-  <meta property="og:image" content="/assets/img/cities/1.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ялта — Южный берег Крыма" />
-  <meta name="twitter:description" content="Ялта — набережная, Ливадийский и Массандровский дворцы, мягкий климат Южного берега Крыма. Практические советы и достопримечательности." />
-  <meta name="twitter:image" content="/assets/img/cities/1.jpg" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "TouristDestination",
-        "@id": "/gorod/yalta.html#destination",
-        "name": "Ялта",
-        "description": "Ялта — набережная, Ливадийский и Массандровский дворцы, мягкий климат Южного берега Крыма. Практические советы и достопримечательности.",
-        "image": "/assets/img/cities/1.jpg",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "44.4952",
-          "longitude": "34.1664"
-        },
-        "containedInPlace": {
-          "@type": "TouristDestination",
-          "@id": "/#crimea",
-          "name": "Крым"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Главная",
-            "item": "/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Города Крыма",
-            "item": "/gorod/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Ялта",
-            "item": "/gorod/yalta.html"
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
-
- 
-  <link rel="stylesheet" href="../assets/css/secondary.css" />
-</head>
-<body>
-
-  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс прокрутки"></div>
-
-  <header class="site-header">
-    <nav class="nav" role="navigation" aria-label="Главное меню">
-      <div class="container nav__inner">
-
-        <div class="nav__brand">
-          <a href="/" class="nav__logo" aria-label="Крым — на главную">
-            <span class="nav__logo-text">Крым</span>
-          </a>
-          <span class="nav__brand-divider" aria-hidden="true"></span>
-          <span class="nav__brand-tag">Путеводитель</span>
-        </div>
-
-        <ul class="nav__menu" role="list">
-          <li><a href="/gorod/" class="nav__link">Города</a></li>
-          <li><a href="/dostoprimechatelnosti/" class="nav__link">Достопримечательности</a></li>
-          <li><a href="/template-about.html" class="nav__link">О проекте</a></li>
-        </ul>
-
-        <a href="/gorod/" class="btn btn-primary nav__cta">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Смотреть города
-        </a>
-
-        <button class="nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="navDrawer">
-          <span class="nav__burger-line"></span>
-          <span class="nav__burger-line"></span>
-          <span class="nav__burger-line"></span>
-        </button>
-
-      </div>
-    </nav>
-
-    <div class="nav__drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Мобильное меню">
-      <div class="nav__drawer-backdrop" tabindex="-1" aria-hidden="true"></div>
-      <div class="nav__drawer-panel">
-        <div class="nav__drawer-head">
-          <span class="nav__drawer-brand">Крым</span>
-          <button type="button" class="nav__drawer-close" aria-label="Закрыть меню">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-          </button>
-        </div>
-        <nav class="nav__drawer-nav" aria-label="Разделы">
-          <a href="/gorod/" class="nav__drawer-link">Города</a>
-          <a href="/dostoprimechatelnosti/" class="nav__drawer-link">Достопримечательности</a>
-          <a href="/template-about.html" class="nav__drawer-link">О проекте</a>
-        </nav>
-        <a href="/gorod/" class="btn btn-primary nav__drawer-cta">Смотреть города</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
+$crimea_assets = get_template_directory_uri() . '/assets';
+get_header();
+?>
+<main>
 
     <!-- 1. HERO -->
     <section class="city-hero" aria-label="Ялта">
-      <div class="city-hero__bg" style="background-image: url('../assets/img/cities/1.jpg');" role="img" aria-label=""></div>
+      <div class="city-hero__bg" style="background-image: url('<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg');" role="img" aria-label=""></div>
       <div class="city-hero__overlay" aria-hidden="true"></div>
       <div class="container">
         <div class="city-hero__content">
           <nav class="breadcrumbs breadcrumbs--on-dark" aria-label="Навигационная цепочка">
             <ol class="breadcrumbs__list">
-              <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
-              <li class="breadcrumbs__item"><a href="/gorod/" class="breadcrumbs__link">Города Крыма</a></li>
+              <li class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="breadcrumbs__link">Главная</a></li>
+              <li class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/gorod/' ) ); ?>" class="breadcrumbs__link">Города Крыма</a></li>
               <li class="breadcrumbs__item"><span class="breadcrumbs__text" aria-current="page">Ялта</span></li>
             </ol>
           </nav>
@@ -229,10 +110,10 @@
         </div>
         <div class="city-sights__grid" id="citySightsGrid" data-sights-per-page="9">
 
-          <a href="/dostoprimechatelnosti/livadiyskiy-dvorets.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/dostoprimechatelnosti/livadiyskiy-dvorets/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Ливадийский дворец среди парка" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Ливадийский дворец среди парка" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -244,10 +125,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Набережная Ялты" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Набережная Ялты" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -259,10 +140,10 @@
           
           </a>
 
-          <a href="/dostoprimechatelnosti/lastochkino-gnezdo.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/dostoprimechatelnosti/lastochkino-gnezdo/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Скалы и море у мыса" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Скалы и море у мыса" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -274,10 +155,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Парк и винодельня" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Парк и винодельня" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -289,10 +170,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Горные склоны и облака" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Горные склоны и облака" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -304,10 +185,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/img9.webp" alt="Пейзаж Южного берега" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Пейзаж Южного берега" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
               </span>
@@ -319,10 +200,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Дом-музей Чехова среди зелени" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/2.jpg" alt="Дом-музей Чехова среди зелени" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -334,10 +215,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Аллея и пальмы в парке" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/3.jpg" alt="Аллея и пальмы в парке" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -349,10 +230,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Вид на море и скалы с мыса" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Вид на море и скалы с мыса" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
               </span>
@@ -364,10 +245,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Дворец в парке Кореиза" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Дворец в парке Кореиза" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -379,10 +260,10 @@
           
           </a>
 
-          <a href="/gorod/foros/" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/foros/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Церковь на красной скале над морем" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Церковь на красной скале над морем" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -394,10 +275,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Галечный пляж у скал" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/3.jpg" alt="Галечный пляж у скал" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -409,10 +290,10 @@
           
           </a>
 
-          <a href="/gorod/alupka/" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/alupka/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Дворец и парк в Алупке" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Дворец и парк в Алупке" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -424,10 +305,10 @@
           
           </a>
 
-          <a href="/gorod/gurzuf/" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/gurzuf/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Бухта и скалы у Гурзуфа" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Бухта и скалы у Гурзуфа" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -439,10 +320,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Скала у моря в Симеизе" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/2.jpg" alt="Скала у моря в Симеизе" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
               </span>
@@ -454,10 +335,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/img9.webp" alt="Парк и пальмы у моря" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Парк и пальмы у моря" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -469,10 +350,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Небольшой дворец на скале" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Небольшой дворец на скале" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -484,10 +365,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Исторический зал музея" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Исторический зал музея" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -499,10 +380,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Купол и колокольня храма в городе" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/2.jpg" alt="Купол и колокольня храма в городе" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -514,10 +395,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Кафедральный собор с куполами" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/3.jpg" alt="Кафедральный собор с куполами" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -529,10 +410,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Виллы и набережная у моря" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Виллы и набережная у моря" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -544,10 +425,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Восточный фасад дворца с башнями" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Восточный фасад дворца с башнями" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -559,10 +440,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Здание морского вокзала у причалов" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Здание морского вокзала у причалов" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -574,10 +455,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Зелёный парк и дорожки зоопарка" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Зелёный парк и дорожки зоопарка" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -589,10 +470,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/img9.webp" alt="Виноградники и здания научного института" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Виноградники и здания научного института" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -604,10 +485,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Парк с пальмами и дорожками" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Парк с пальмами и дорожками" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -619,10 +500,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Обсерватория на горном склоне" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Обсерватория на горном склоне" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -634,10 +515,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/5.jpg" alt="Скалы и спуск к морю в Гаспре" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Скалы и спуск к морю в Гаспре" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -649,10 +530,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Галечный пляж у скал" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Галечный пляж у скал" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -664,10 +545,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/6.webp" alt="Фасад драматического театра" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Фасад драматического театра" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -679,10 +560,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/7.webp" alt="Вид с холма на море и город" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Вид с холма на море и город" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
               </span>
@@ -694,10 +575,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/3.jpg" alt="Пляж и парк у Ливадийского дворца" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/3.jpg" alt="Пляж и парк у Ливадийского дворца" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -709,10 +590,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/2.jpg" alt="Рынок с навесами и людьми" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/2.jpg" alt="Рынок с навесами и людьми" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="История">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
               </span>
@@ -724,10 +605,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="1">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/1.jpg" alt="Катер на фоне скал и моря" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Катер на фоне скал и моря" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Природа">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
               </span>
@@ -739,10 +620,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="2">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/4.jpg" alt="Улица с виллами и зеленью" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Улица с виллами и зеленью" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -754,10 +635,10 @@
           
           </a>
 
-          <a href="/gorod/yalta.html" class="sight-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="sight-card fade-up" data-delay="3">
 
             <div class="sight-card__img-wrap">
-              <img class="sight-card__img" src="../assets/img/cities/img9.webp" alt="Набережная с огнями в сумерках" width="800" height="600" loading="lazy" />
+              <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Набережная с огнями в сумерках" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true" title="Архитектура">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               </span>
@@ -792,48 +673,48 @@
           <div class="gallery__track-wrap">
             <div class="gallery__track" id="galleryTrack">
     
-              <a href="/gorod/yalta.html" class="gallery__item" aria-current="page">
-                <img src="../assets/img/cities/1.jpg" alt="Набережная Ялты — южный берег Крыма" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="gallery__item" aria-current="page">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Набережная Ялты — южный берег Крыма" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Ялта</span>
               </a>
     
-              <a href="/gorod/sevastopol.html" class="gallery__item">
-                <img src="../assets/img/cities/2.jpg" alt="Панорама бухты Севастополя" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/sevastopol/' ) ); ?>" class="gallery__item">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/2.jpg" alt="Панорама бухты Севастополя" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Севастополь</span>
               </a>
     
-              <a href="/gorod/evpatoriya/" class="gallery__item">
-                <img src="../assets/img/cities/3.jpg" alt="Пляжи Евпатории" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/evpatoriya/' ) ); ?>" class="gallery__item">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/3.jpg" alt="Пляжи Евпатории" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Евпатория</span>
               </a>
     
-              <a href="/gorod/bakhchisaray.html" class="gallery__item">
-                <img src="../assets/img/cities/4.jpg" alt="Ханский дворец Бахчисарая" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/bakhchisaray/' ) ); ?>" class="gallery__item">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Ханский дворец Бахчисарая" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Бахчисарай</span>
               </a>
     
-              <a href="/gorod/sudak/" class="gallery__item">
-                <img src="../assets/img/cities/5.jpg" alt="Генуэзская крепость в Судаке" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/sudak/' ) ); ?>" class="gallery__item">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Генуэзская крепость в Судаке" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Судак</span>
               </a>
     
-              <a href="/gorod/feodosiya/" class="gallery__item">
-                <img src="../assets/img/cities/6.webp" alt="Набережная Феодосии" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/feodosiya/' ) ); ?>" class="gallery__item">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Набережная Феодосии" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Феодосия</span>
               </a>
     
-              <a href="/gorod/alushta/" class="gallery__item">
-                <img src="../assets/img/cities/7.webp" alt="Природа Крыма" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/alushta/' ) ); ?>" class="gallery__item">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Природа Крыма" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Алушта</span>
               </a>
     
-              <a href="/gorod/" class="gallery__item">
-                <img src="../assets/img/cities/img9.webp" alt="Горный пейзаж Крыма" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/' ) ); ?>" class="gallery__item">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Горный пейзаж Крыма" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Горный Крым</span>
               </a>
     
-              <a href="/gorod/kerch/" class="gallery__item">
-                <img src="../assets/img/cities/10.jfif" alt="Пейзажи Крымского полуострова" loading="lazy" width="540" height="380" />
+              <a href="<?php echo esc_url( home_url( '/gorod/kerch/' ) ); ?>" class="gallery__item">
+                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/10.jfif" alt="Пейзажи Крымского полуострова" loading="lazy" width="540" height="380" />
                 <span class="gallery__caption">Керчь</span>
               </a>
     
@@ -941,7 +822,7 @@
     </section>
 
     <!-- 6. QUOTE -->
-    <section class="quote city-quote fade-up" style="--city-quote-bg: url('../assets/img/cities/6.webp')" aria-label="Цитата о Ялте">
+    <section class="quote city-quote fade-up" style="--city-quote-bg: url('<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp')" aria-label="Цитата о Ялте">
       <div class="quote__bg" aria-hidden="true"></div>
       <div class="city-quote__decor" aria-hidden="true">
         <div class="city-quote__glow city-quote__glow--a"></div>
@@ -980,16 +861,16 @@
             <span class="eyebrow">Похожие направления</span>
             <h2 id="city-nearby-heading">Рядом</h2>
           </div>
-          <a href="/gorod/" class="section-header__link">
+          <a href="<?php echo esc_url( home_url( '/gorod/' ) ); ?>" class="section-header__link">
             Все города
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
         <div class="city-nearby__grid">
 
-          <a href="/gorod/alushta/" class="city-card fade-up" data-delay="1">
+          <a href="<?php echo esc_url( home_url( '/gorod/alushta/' ) ); ?>" class="city-card fade-up" data-delay="1">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/7.webp" alt="Алушта — набережная и горы" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Алушта — набережная и горы" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">ЮБК</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -1000,9 +881,9 @@
             </div>
           </a>
 
-          <a href="/gorod/alupka/" class="city-card fade-up" data-delay="2">
+          <a href="<?php echo esc_url( home_url( '/gorod/alupka/' ) ); ?>" class="city-card fade-up" data-delay="2">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/4.jpg" alt="Алупка — парк и дворец" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Алупка — парк и дворец" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">ЮБК</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -1013,9 +894,9 @@
             </div>
           </a>
 
-          <a href="/gorod/gurzuf/" class="city-card fade-up" data-delay="3">
+          <a href="<?php echo esc_url( home_url( '/gorod/gurzuf/' ) ); ?>" class="city-card fade-up" data-delay="3">
             <div class="city-card__img-wrap">
-              <img class="city-card__img" src="../assets/img/cities/img9.webp" alt="Гурзуф — бухта" width="600" height="450" loading="lazy" />
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Гурзуф — бухта" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">ЮБК</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -1034,18 +915,18 @@
     <nav class="city-nav" aria-label="Соседние города">
       <div class="container city-nav__inner">
         <div class="city-nav__side city-nav__side--prev">
-          <a href="/gorod/alupka/" class="city-nav__link">
-            <img class="city-nav__thumb" src="../assets/img/cities/4.jpg" alt="" width="64" height="64" loading="lazy" />
+          <a href="<?php echo esc_url( home_url( '/gorod/alupka/' ) ); ?>" class="city-nav__link">
+            <img class="city-nav__thumb" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="" width="64" height="64" loading="lazy" />
             <span class="city-nav__text">
               <span class="city-nav__dir">← Предыдущий</span>
               <span class="city-nav__name">Алупка</span>
             </span>
           </a>
         </div>
-        <a href="/gorod/" class="city-nav__all">Все города</a>
+        <a href="<?php echo esc_url( home_url( '/gorod/' ) ); ?>" class="city-nav__all">Все города</a>
         <div class="city-nav__side city-nav__side--next">
-          <a href="/gorod/gurzuf/" class="city-nav__link city-nav__link--next">
-            <img class="city-nav__thumb" src="../assets/img/cities/img9.webp" alt="" width="64" height="64" loading="lazy" />
+          <a href="<?php echo esc_url( home_url( '/gorod/gurzuf/' ) ); ?>" class="city-nav__link city-nav__link--next">
+            <img class="city-nav__thumb" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="" width="64" height="64" loading="lazy" />
             <span class="city-nav__text">
               <span class="city-nav__dir">Следующий →</span>
               <span class="city-nav__name">Гурзуф</span>
@@ -1057,77 +938,6 @@
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-
-        <div class="footer__col footer__col--nav">
-          <a href="/" class="footer__logo" aria-label="Крым — главная">КРЫМ</a>
-          <p class="footer__lead">Путеводитель по полуострову — история, природа, море.</p>
-          <nav aria-label="Навигация в подвале">
-            <ul class="footer__nav">
-              <li><a href="/gorod/" class="footer__nav-link">Популярные города</a></li>
-              <li><a href="/gorod/" class="footer__nav-link">Направления</a></li>
-              <li><a href="/template-about.html" class="footer__nav-link">Интересное</a></li>
-              <li><a href="/politika/" class="footer__nav-link">Политика конфиденциальности</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="footer__col footer__col--popular">
-          <p class="footer__col-title">Популярное</p>
-          <div class="footer__photo-grid">
-            <a href="/gorod/yalta.html" class="footer__photo-item" aria-label="Ялта">
-              <img src="../assets/img/cities/1.jpg" alt="Ялта" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/sevastopol.html" class="footer__photo-item" aria-label="Севастополь">
-              <img src="../assets/img/cities/2.jpg" alt="Севастополь" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/evpatoriya/" class="footer__photo-item" aria-label="Евпатория">
-              <img src="../assets/img/cities/3.jpg" alt="Евпатория" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/bakhchisaray.html" class="footer__photo-item" aria-label="Бахчисарай">
-              <img src="../assets/img/cities/4.jpg" alt="Бахчисарай" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/sudak/" class="footer__photo-item" aria-label="Судак">
-              <img src="../assets/img/cities/5.jpg" alt="Судак" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/feodosiya/" class="footer__photo-item" aria-label="Феодосия">
-              <img src="../assets/img/cities/6.webp" alt="Феодосия" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/" class="footer__photo-item" aria-label="Горный Крым">
-              <img src="../assets/img/cities/7.webp" alt="Горный Крым" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/" class="footer__photo-item" aria-label="Крымские пейзажи">
-              <img src="../assets/img/cities/img9.webp" alt="Крым" loading="lazy" width="120" height="90" />
-            </a>
-          </div>
-        </div>
-
-        <div class="footer__col footer__col--contact">
-          <p class="footer__col-title">Связаться с нами</p>
-          <ul class="footer__contact-list">
-            <li>
-              <a href="mailto:info@crimea-guide.ru" class="footer__contact-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                info@crimea-guide.ru
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer__copy">
-        &copy; 2026 Крым — Путеводитель. Все права защищены.
-      </div>
-    </div>
-  </footer>
-
-  <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх" type="button">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
-
   <div id="cityGalleryLightbox" class="city-gallery__lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" aria-hidden="true">
     <div class="city-gallery__lightbox-backdrop" tabindex="-1" aria-hidden="true"></div>
     <button type="button" class="city-gallery__lightbox-close" aria-label="Закрыть">
@@ -1138,8 +948,5 @@
     </figure>
   </div>
 
-  <script src="../assets/js/nav.js"></script>
-  <script src="../assets/js/animations.js"></script>
-  <script src="../assets/js/city.js"></script>
-</body>
-</html>
+<?php
+get_footer();

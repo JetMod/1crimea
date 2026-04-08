@@ -1,125 +1,22 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="«Крым — Путеводитель»: зачем существует сайт, для кого материалы и как мы относимся к актуальности информации. Неофициальный справочник для путешественников и жителей полуострова." />
-  <title>О проекте — Крым, путеводитель</title>
+<?php
+/**
+ * Template Name: О проекте
+ * Template Post Type: page
+ */
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Крым — Путеводитель" />
-  <meta property="og:locale" content="ru_RU" />
-  <meta property="og:title" content="О проекте — Крым, путеводитель" />
-  <meta property="og:description" content="«Крым — Путеводитель»: зачем существует сайт, для кого материалы и как мы относимся к актуальности информации." />
-  <meta property="og:url" content="/template-about.html" />
-  <link rel="canonical" href="/template-about.html" />
-  <meta property="og:image" content="/assets/img/cities/7.webp" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="О проекте — Крым, путеводитель" />
-  <meta name="twitter:description" content="«Крым — Путеводитель»: зачем существует сайт, для кого материалы и как мы относимся к актуальности информации." />
-  <meta name="twitter:image" content="/assets/img/cities/7.webp" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "AboutPage",
-        "@id": "/template-about.html#page",
-        "name": "О проекте — Крым, путеводитель",
-        "description": "Миссия путеводителя по Крыму, разделы сайта, редакционные принципы и ограничение ответственности за актуальность туристической информации.",
-        "isPartOf": { "@id": "/#crimea" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Главная",
-            "item": "/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "О проекте",
-            "item": "/template-about.html"
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
-
-
-  <link rel="stylesheet" href="assets/css/secondary.css" />
-</head>
-<body class="page-catalog page-about">
-
-  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс прокрутки"></div>
-
-  <header class="site-header">
-    <nav class="nav" role="navigation" aria-label="Главное меню">
-      <div class="container nav__inner">
-
-        <div class="nav__brand">
-          <a href="/" class="nav__logo" aria-label="Крым — на главную">
-            <span class="nav__logo-text">Крым</span>
-          </a>
-          <span class="nav__brand-divider" aria-hidden="true"></span>
-          <span class="nav__brand-tag">Путеводитель</span>
-        </div>
-
-        <ul class="nav__menu" role="list">
-          <li><a href="/gorod/" class="nav__link">Города</a></li>
-          <li><a href="/dostoprimechatelnosti/" class="nav__link">Достопримечательности</a></li>
-          <li><a href="/template-about.html" class="nav__link" aria-current="page">О проекте</a></li>
-        </ul>
-
-        <a href="/gorod/" class="btn btn-primary nav__cta">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Смотреть города
-        </a>
-
-        <button class="nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="navDrawer">
-          <span class="nav__burger-line"></span>
-          <span class="nav__burger-line"></span>
-          <span class="nav__burger-line"></span>
-        </button>
-
-      </div>
-    </nav>
-
-    <div class="nav__drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Мобильное меню">
-      <div class="nav__drawer-backdrop" tabindex="-1" aria-hidden="true"></div>
-      <div class="nav__drawer-panel">
-        <div class="nav__drawer-head">
-          <span class="nav__drawer-brand">Крым</span>
-          <button type="button" class="nav__drawer-close" aria-label="Закрыть меню">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-          </button>
-        </div>
-        <nav class="nav__drawer-nav" aria-label="Разделы">
-          <a href="/gorod/" class="nav__drawer-link">Города</a>
-          <a href="/dostoprimechatelnosti/" class="nav__drawer-link">Достопримечательности</a>
-          <a href="/template-about.html" class="nav__drawer-link" aria-current="page">О проекте</a>
-        </nav>
-        <a href="/gorod/" class="btn btn-primary nav__drawer-cta">Смотреть города</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="catalog-page">
+$crimea_assets = get_template_directory_uri() . '/assets';
+get_header();
+?>
+<main class="catalog-page">
 
     <section class="catalog-hero catalog-hero--about" aria-label="О проекте">
       <div class="container">
         <nav class="breadcrumbs breadcrumbs--on-dark breadcrumbs--center" aria-label="Навигационная цепочка">
           <ol class="breadcrumbs__list">
-            <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="breadcrumbs__link">Главная</a></li>
             <li class="breadcrumbs__item"><span class="breadcrumbs__text" aria-current="page">О проекте</span></li>
           </ol>
         </nav>
@@ -223,7 +120,7 @@
             <div class="about-feature-card__body">
               <h3 class="about-feature-card__name">Города</h3>
               <p class="about-feature-card__text">Обзоры городов, атмосфера и с чего начать знакомство с направлением.</p>
-              <a href="/gorod/" class="btn btn-outline about-feature-card__btn">Перейти в раздел</a>
+              <a href="<?php echo esc_url( home_url( '/gorod/' ) ); ?>" class="btn btn-outline about-feature-card__btn">Перейти в раздел</a>
             </div>
           </article>
           <article class="about-feature-card">
@@ -233,7 +130,7 @@
             <div class="about-feature-card__body">
               <h3 class="about-feature-card__name">Достопримечательности</h3>
               <p class="about-feature-card__text">Каталог мест с фильтрами и карточками объектов для планирования маршрута.</p>
-              <a href="/dostoprimechatelnosti/" class="btn btn-outline about-feature-card__btn">Перейти в раздел</a>
+              <a href="<?php echo esc_url( home_url( '/dostoprimechatelnosti/' ) ); ?>" class="btn btn-outline about-feature-card__btn">Перейти в раздел</a>
             </div>
           </article>
           <article class="about-feature-card">
@@ -243,7 +140,7 @@
             <div class="about-feature-card__body">
               <h3 class="about-feature-card__name">Главная</h3>
               <p class="about-feature-card__text">Витрина полуострова: настроения маршрутов и быстрый вход в разделы.</p>
-              <a href="/" class="btn btn-outline about-feature-card__btn">На главную</a>
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-outline about-feature-card__btn">На главную</a>
             </div>
           </article>
         </div>
@@ -314,7 +211,7 @@
                 Решения в пути вы принимаете сами. Будьте внимательны к погоде, указателям и местным регламентам.
               </p>
               <p>
-                Как мы обрабатываем данные — в <a href="/politika/">политике конфиденциальности</a>.
+                Как мы обрабатываем данные — в <a href="<?php echo esc_url( home_url( '/politika/' ) ); ?>">политике конфиденциальности</a>.
               </p>
             </div>
           </div>
@@ -391,8 +288,8 @@
           <p class="about-cta__eyebrow">Дальше</p>
           <p class="about-cta__title">Куда отправиться на сайте</p>
           <div class="about-cta__actions">
-            <a href="/gorod/" class="btn btn-primary">Смотреть города</a>
-            <a href="/dostoprimechatelnosti/" class="btn btn-outline">Достопримечательности</a>
+            <a href="<?php echo esc_url( home_url( '/gorod/' ) ); ?>" class="btn btn-primary">Смотреть города</a>
+            <a href="<?php echo esc_url( home_url( '/dostoprimechatelnosti/' ) ); ?>" class="btn btn-outline">Достопримечательности</a>
           </div>
           <p class="about-cta__secondary about-cta__secondary--spaced">
             <a href="mailto:info@crimea-guide.ru" class="about-cta__contact-link">Написать нам</a>
@@ -405,79 +302,5 @@
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-
-        <div class="footer__col footer__col--nav">
-          <a href="/" class="footer__logo" aria-label="Крым — главная">КРЫМ</a>
-          <p class="footer__lead">Путеводитель по полуострову — история, природа, море.</p>
-          <nav aria-label="Навигация в подвале">
-            <ul class="footer__nav">
-              <li><a href="/gorod/" class="footer__nav-link">Популярные города</a></li>
-              <li><a href="/dostoprimechatelnosti/" class="footer__nav-link">Достопримечательности</a></li>
-              <li><a href="/template-about.html" class="footer__nav-link">О проекте</a></li>
-              <li><a href="/politika/" class="footer__nav-link">Политика конфиденциальности</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="footer__col footer__col--popular">
-          <p class="footer__col-title">Популярное</p>
-          <div class="footer__photo-grid">
-            <a href="/gorod/yalta.html" class="footer__photo-item" aria-label="Ялта">
-              <img src="assets/img/cities/1.jpg" alt="Ялта" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/sevastopol/" class="footer__photo-item" aria-label="Севастополь">
-              <img src="assets/img/cities/2.jpg" alt="Севастополь" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/evpatoriya/" class="footer__photo-item" aria-label="Евпатория">
-              <img src="assets/img/cities/3.jpg" alt="Евпатория" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/bakhchisaray/" class="footer__photo-item" aria-label="Бахчисарай">
-              <img src="assets/img/cities/4.jpg" alt="Бахчисарай" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/sudak/" class="footer__photo-item" aria-label="Судак">
-              <img src="assets/img/cities/5.jpg" alt="Судак" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/feodosiya/" class="footer__photo-item" aria-label="Феодосия">
-              <img src="assets/img/cities/6.webp" alt="Феодосия" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/dostoprimechatelnosti/" class="footer__photo-item" aria-label="Достопримечательности">
-              <img src="assets/img/cities/7.webp" alt="Крым" loading="lazy" width="120" height="90" />
-            </a>
-            <a href="/gorod/" class="footer__photo-item" aria-label="Крымские пейзажи">
-              <img src="assets/img/cities/img9.webp" alt="Крым" loading="lazy" width="120" height="90" />
-            </a>
-          </div>
-        </div>
-
-        <div class="footer__col footer__col--contact">
-          <p class="footer__col-title">Связаться с нами</p>
-          <ul class="footer__contact-list">
-            <li>
-              <a href="mailto:info@crimea-guide.ru" class="footer__contact-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                info@crimea-guide.ru
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer__copy">
-        &copy; 2026 Крым — Путеводитель. Все права защищены.
-      </div>
-    </div>
-  </footer>
-
-  <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх" type="button">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
-
-  <script src="assets/js/nav.js"></script>
-  <script src="assets/js/animations.js"></script>
-
-</body>
-</html>
+<?php
+get_footer();
