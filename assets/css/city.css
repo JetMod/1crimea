@@ -31,6 +31,15 @@
   background-repeat: no-repeat;
 }
 
+.city-hero__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .city-hero__overlay {
   position: absolute;
   inset: 0;
@@ -150,6 +159,37 @@
   z-index: 3;
 }
 
+/* Доп. кадр в герое (напр. Алушта): мини-превью под чипами */
+.city-hero__preview {
+  margin: 1.75rem 0 0;
+  max-width: min(100%, 26rem);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.city-hero__preview-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.city-hero__preview-caption {
+  margin: 0;
+  padding: 0.55rem 0.85rem;
+  font-family: var(--font-hero-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(6, 14, 28, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 /* ---- 2. INTRO + факты ---- */
 .city-intro {
   padding: var(--section-py) 0;
@@ -171,6 +211,15 @@
   letter-spacing: 0.01em;
   font-feature-settings: "kern" 1, "liga" 1;
   color: var(--c-text);
+}
+
+.city-intro__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--c-dark);
+  margin: 0.35em 0 1em;
 }
 
 /* Первый абзац — чуть крупнее и плотнее, как лид */
@@ -274,6 +323,11 @@
   gap: 1.75rem;
 }
 
+/* Пагинация city.js: скрытые «страницы» (перебивает display:flex у .sight-card) */
+#citySightsGrid .sight-card.sight-card--paged-out {
+  display: none !important;
+}
+
 .sight-card {
   background: var(--c-bg);
   border-radius: var(--radius-card);
@@ -364,7 +418,7 @@ a.sight-card:focus-visible {
   overflow: hidden;
 }
 
-/* Пагинация «Что посмотреть» (9 карточек на страницу, см. city.js) */
+/* Пагинация «Что посмотреть» (6 карточек на страницу, см. city.js): ← 1 2 3 … → */
 .city-sights__pagination {
   display: flex;
   flex-wrap: wrap;
@@ -406,6 +460,11 @@ a.sight-card:focus-visible {
     color var(--t-fast),
     border-color var(--t-fast),
     opacity var(--t-fast);
+}
+
+.city-sights__page-arrow svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 .city-sights__page-arrow:hover:not(:disabled) {
@@ -457,6 +516,21 @@ a.sight-card:focus-visible {
 .city-sights__page-num:focus-visible {
   outline: 2px solid var(--c-accent);
   outline-offset: 2px;
+}
+
+.city-sights__page-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  padding: 0 0.15rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-muted);
+  user-select: none;
+  pointer-events: none;
 }
 
 /* ---- 4. GALLERY + lightbox ---- */
@@ -918,165 +992,65 @@ a.sight-card:focus-visible {
   background: linear-gradient(145deg, #3dd68c, #2a9d8f);
 }
 
-/* ---- 6. QUOTE (на базе .quote из home.css) ---- */
-.city-quote.quote {
-  min-height: min(82vh, 820px);
-  isolation: isolate;
+/* ---- 6. QUOTE — как на главной (home.css .quote / .quote__bg): параллакс через background-attachment: fixed ---- */
+section.city-quote {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .city-quote .quote__bg {
-  background-color: #0a1528;
-  background-image:
-    linear-gradient(
-      160deg,
-      rgba(30, 73, 118, 0.22) 0%,
-      transparent 38%,
-      rgba(61, 214, 140, 0.12) 72%,
-      rgba(255, 190, 140, 0.08) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(6, 16, 36, 0.35) 0%,
-      transparent 32%,
-      transparent 58%,
-      rgba(4, 12, 28, 0.45) 100%
-    ),
-    var(--city-quote-bg, url("../img/cities/7.webp"));
-  background-size: cover, cover, cover;
-  background-position: center 36%, center center, center 40%;
-  background-repeat: no-repeat;
-  transform: scale(1.07);
-  filter: saturate(1.14) contrast(1.05) brightness(1.03);
-}
-
-.city-quote__decor {
   position: absolute;
   inset: 0;
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
+  background-image: var(--city-quote-bg, url("../img/cities/7.webp"));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.city-quote__glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(72px);
-  pointer-events: none;
-}
-
-.city-quote__glow--a {
-  width: min(48vw, 500px);
-  height: min(48vw, 500px);
-  background: radial-gradient(circle, rgba(61, 214, 140, 0.5) 0%, rgba(61, 214, 140, 0.08) 45%, transparent 72%);
-  top: -12%;
-  left: -14%;
-  opacity: 0.9;
-}
-
-.city-quote__glow--b {
-  width: min(55vw, 580px);
-  height: min(55vw, 580px);
-  background: radial-gradient(circle, rgba(72, 130, 198, 0.42) 0%, rgba(30, 73, 118, 0.12) 50%, transparent 70%);
-  bottom: -8%;
-  right: -16%;
-  opacity: 0.85;
-}
-
-.city-quote__glow--c {
-  width: min(36vw, 360px);
-  height: min(36vw, 360px);
-  background: radial-gradient(circle, rgba(255, 210, 170, 0.35) 0%, rgba(255, 180, 120, 0.1) 40%, transparent 68%);
-  top: 32%;
-  right: 4%;
-  opacity: 1;
-}
-
-/* Лёгкая «зернистость» и блик по диагонали */
-.city-quote__grain {
-  position: absolute;
-  inset: 0;
-  opacity: 0.085;
-  background-image:
-    linear-gradient(
-      125deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.04) 42%,
-      transparent 63%
-    ),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-}
-
-.city-quote__mark {
-  position: absolute;
-  font-family: var(--font-hero-display);
-  font-weight: 700;
-  font-style: italic;
-  line-height: 1;
-  color: #fff;
-  opacity: 0.07;
-  user-select: none;
-  text-shadow: none;
-}
-
-.city-quote__mark--open {
-  left: clamp(0.5rem, 4vw, 3rem);
-  top: 14%;
-  font-size: clamp(5rem, 18vw, 11rem);
-}
-
-.city-quote__mark--close {
-  right: clamp(0.5rem, 4vw, 3rem);
-  bottom: 18%;
-  font-size: clamp(4.5rem, 16vw, 10rem);
-}
-
-.city-quote__wave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: clamp(72px, 12vw, 120px);
-  z-index: 2;
-}
-
-.city-quote__ridge {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: clamp(100px, 16vw, 160px);
-  z-index: 1;
-  opacity: 0.95;
+/* Разметка city-quote__decor остаётся в шаблонах; визуал как на главной — слой скрыт. */
+.city-quote__decor {
+  display: none;
 }
 
 .city-quote .quote__overlay {
-  z-index: 3;
-  background:
-    radial-gradient(ellipse 130% 90% at 50% 50%, transparent 0%, rgba(2, 6, 18, 0.55) 100%),
-    radial-gradient(ellipse 85% 65% at 50% 32%, rgba(255, 255, 255, 0.06) 0%, rgba(8, 26, 52, 0.18) 38%, rgba(6, 18, 42, 0.55) 100%),
-    radial-gradient(ellipse 70% 50% at 78% 18%, rgba(61, 214, 140, 0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 45% at 12% 75%, rgba(120, 175, 230, 0.12) 0%, transparent 50%),
-    linear-gradient(
-      178deg,
-      rgba(4, 12, 28, 0.5) 0%,
-      rgba(8, 24, 48, 0.22) 42%,
-      rgba(6, 20, 44, 0.28) 55%,
-      rgba(2, 8, 22, 0.88) 100%
-    );
-  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.35);
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  pointer-events: none;
+  background: linear-gradient(
+    160deg,
+    rgba(8, 22, 48, 0.72) 0%,
+    rgba(14, 33, 56, 0.55) 45%,
+    rgba(8, 22, 48, 0.78) 100%
+  );
+  box-shadow: none;
 }
 
 .city-quote .quote__content {
   position: relative;
-  z-index: 4;
+  z-index: 1;
   max-width: 46rem;
   padding: clamp(3rem, 9vw, 5.5rem) 1.25rem;
+}
+
+/* Только fade по opacity: без translateY как у .fade-up — меньше лишних перерисовок при появлении. */
+.city-quote .quote__content.fade-up {
+  opacity: 0;
+  transform: none;
+  transition: opacity var(--t-slow);
+}
+.city-quote .quote__content.fade-up.is-visible {
+  opacity: 1;
 }
 
 .city-quote__kicker {
@@ -1129,8 +1103,33 @@ a.sight-card:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .city-quote .quote__bg {
-    transform: none;
-    filter: saturate(1.05) contrast(1.02);
+    background-attachment: scroll;
+  }
+}
+
+/* Как на главной (home.css): на узких экранах fixed даёт рывки / баги — только scroll */
+@media (max-width: 768px) {
+  .city-quote .quote__bg {
+    background-attachment: scroll;
+  }
+}
+
+/*
+ * С animations.js: класс city-quote--parallax — сдвиг слоя через transform (там, где background-attachment:fixed не даёт эффекта).
+ * Только desktop; на мобилке и при prefers-reduced-motion скрипт класс не вешает.
+ */
+@media (min-width: 769px) {
+  .city-quote.city-quote--parallax .quote__bg {
+    background-attachment: scroll;
+    inset: auto 0 auto 0;
+    top: -20%;
+    bottom: -20%;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    height: auto;
+    min-height: 140%;
+    will-change: transform;
   }
 }
 
@@ -1316,6 +1315,11 @@ a.sight-card:focus-visible {
 }
 
 @media print {
+  /* Показать все карточки при печати, в т.ч. скрытые пагинацией на экране */
+  #citySightsGrid .sight-card.sight-card--paged-out {
+    display: flex !important;
+  }
+
   .city-sights__grid .sight-card {
     display: flex !important;
   }
@@ -1495,3 +1499,303 @@ a.sight-card:focus-visible {
       display: none;
     }
   }
+
+/* ============================================================
+   CITY STATS STRIP — ключевые цифры города
+   ============================================================ */
+.city-stats-strip {
+  padding: clamp(1.75rem, 4vw, 2.5rem) 0;
+  background: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.city-stats-strip__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.city-stats-strip__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.35rem;
+  padding: clamp(1rem, 2.5vw, 1.35rem) clamp(0.75rem, 2vw, 1rem);
+}
+
+.city-stats-strip__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--c-text);
+}
+
+.city-stats-strip__label {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: var(--c-text-muted, #6b7280);
+  max-width: 12rem;
+}
+
+@media (min-width: 768px) {
+  .city-stats-strip__item + .city-stats-strip__item {
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (max-width: 767px) {
+  .city-stats-strip__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .city-stats-strip__item:nth-child(odd) {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .city-stats-strip__item:nth-child(-n + 4) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* ============================================================
+   CITY HISTORY — краткая хронология (вертикальная шкала + годы)
+   ============================================================ */
+.city-history {
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+}
+
+.city-history .section-header {
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.city-history__lead {
+  max-width: 42rem;
+  margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1rem, 1.2vw, 1.075rem);
+  line-height: 1.65;
+  color: var(--c-text-muted, #6b7280);
+}
+
+.city-history__timeline {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.city-history__timeline > li {
+  list-style: none;
+  list-style-type: none;
+}
+
+.city-history__event {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 11rem) minmax(0, 1fr);
+  gap: 0.65rem clamp(1rem, 3vw, 1.75rem);
+  align-items: start;
+  padding-bottom: clamp(1.5rem, 3.5vw, 2.25rem);
+  margin-left: -1.25rem;
+  padding-left: 1.25rem;
+}
+
+.city-history__event:last-child {
+  padding-bottom: 0;
+}
+
+/* Маркер на общей вертикальной линии */
+.city-history__event::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0.35em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  border: 2px solid var(--c-bg, #fff);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.city-history__year {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.35;
+  color: var(--c-accent);
+  letter-spacing: 0.02em;
+}
+
+.city-history__body {
+  margin: 0;
+}
+
+.city-history__body p {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--c-text);
+}
+
+.city-history__body strong {
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+@media (max-width: 639px) {
+  .city-history__event {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .city-history__year {
+    padding-bottom: 0.1rem;
+  }
+}
+
+/* ─── ROUTES ────────────────────────────────────────────── */
+.city-routes {
+  padding: var(--section-py) 0;
+  background: var(--c-surface);
+}
+
+.city-routes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.75rem;
+}
+
+.route-card {
+  background: var(--c-bg);
+  border-radius: var(--radius-card);
+  padding: 1.75rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  border: 1px solid rgba(0, 0, 0, .06);
+  transition: box-shadow .2s, transform .2s;
+}
+
+.route-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .09);
+  transform: translateY(-3px);
+}
+
+.route-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.route-card__icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--c-dark);
+  color: var(--c-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.route-card__duration {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.route-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.route-card__desc {
+  font-size: .9rem;
+  color: var(--c-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.route-card__stops {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  counter-reset: stop-counter;
+  padding-top: .25rem;
+  border-top: 1px solid rgba(0,0,0,.07);
+}
+
+.route-card__stops li {
+  counter-increment: stop-counter;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  font-size: .88rem;
+  color: var(--c-text);
+  line-height: 1.45;
+}
+
+.route-card__stops li::before {
+  content: counter(stop-counter);
+  min-width: 1.5rem;
+  height: 1.5rem;
+  background: var(--c-dark);
+  color: var(--c-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.route-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: auto;
+  padding-top: .5rem;
+}
+
+.route-card__tag {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  padding: .25em .75em;
+  border-radius: 100px;
+  background: var(--c-surface);
+  border: 1px solid rgba(0, 0, 0, .1);
+  color: var(--c-muted);
+}
+
+@media (max-width: 900px) {
+  .city-routes__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .city-routes__grid {
+    grid-template-columns: 1fr;
+  }
+}

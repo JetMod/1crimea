@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
-<main class="crimea-content">
+<main id="main-content" class="crimea-content">
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -16,8 +16,8 @@ get_header();
             </article>
         <?php endwhile; ?>
     <?php else : ?>
-        <h1><?php bloginfo('name'); ?></h1>
-        <p>Theme is active. Create a page and set it as homepage in Settings -> Reading.</p>
+        <h1><?php echo esc_html(crimea_site_name()); ?></h1>
+        <p><?php esc_html_e('Тема активна. Создайте страницу и назначьте её главной в «Настройки → Чтение».', 'crimea'); ?></p>
     <?php endif; ?>
 </main>
 

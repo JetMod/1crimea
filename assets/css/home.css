@@ -853,6 +853,15 @@
   background: var(--c-bg);
 }
 
+/* Не дублировать --section-py на стыке «Города Крыма» → «Крым в кадре» */
+.cities:has(+ .gallery) {
+  padding-bottom: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+.cities + .gallery {
+  padding-top: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
 .cities__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

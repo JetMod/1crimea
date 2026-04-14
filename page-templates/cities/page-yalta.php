@@ -10,11 +10,11 @@ if (!defined('ABSPATH')) {
 $crimea_assets = get_template_directory_uri() . '/assets';
 get_header();
 ?>
-<main>
+<main id="main-content">
 
     <!-- 1. HERO -->
     <section class="city-hero" aria-label="Ялта">
-      <div class="city-hero__bg" style="background-image: url('<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg');" role="img" aria-label=""></div>
+      <div class="city-hero__bg" style="background-image: url('<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg');" aria-hidden="true"></div>
       <div class="city-hero__overlay" aria-hidden="true"></div>
       <div class="container">
         <div class="city-hero__content">
@@ -50,9 +50,11 @@ get_header();
     </section>
 
     <!-- 2. INTRO -->
-    <section class="city-intro" aria-label="О Ялте">
+    <section class="city-intro" aria-labelledby="city-intro-heading">
       <div class="container city-intro__grid">
         <div class="city-intro__copy fade-up" data-delay="1">
+          <span class="eyebrow">О городе</span>
+          <h2 id="city-intro-heading" class="city-intro__heading">Ялта — жемчужина Южного берега</h2>
           <p>
             Ялта — главный курорт Южного берега Крыма: здесь сходятся горы и море, дворцы XIX века и оживлённая набережная.
             Город славится мягким климатом, когда можно гулять вдоль воды утром и подниматься в горы к закату.
@@ -96,6 +98,33 @@ get_header();
             <span class="city-facts__tag">Горы</span>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section class="city-stats-strip" aria-label="Ключевые цифры по Ялте">
+      <div class="container">
+        <ul class="city-stats-strip__list">
+          <li class="city-stats-strip__item">
+            <span class="city-stats-strip__value">134 000</span>
+            <span class="city-stats-strip__label">жителей</span>
+          </li>
+          <li class="city-stats-strip__item">
+            <span class="city-stats-strip__value">более 70</span>
+            <span class="city-stats-strip__label">пляжей</span>
+          </li>
+          <li class="city-stats-strip__item">
+            <span class="city-stats-strip__value">87 км</span>
+            <span class="city-stats-strip__label">до Симферополя</span>
+          </li>
+          <li class="city-stats-strip__item">
+            <span class="city-stats-strip__value">3–200 м</span>
+            <span class="city-stats-strip__label">высота над уровнем моря</span>
+          </li>
+          <li class="city-stats-strip__item">
+            <span class="city-stats-strip__value">1838</span>
+            <span class="city-stats-strip__label">год основания</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -656,81 +685,123 @@ get_header();
       </div>
     </section>
 
-  
-    <!-- =====================================================
-         GALLERY — горизонтальный scroll-snap
-         ===================================================== -->
-         <section class="gallery" aria-label="Фотогалерея Крыма">
-          <div class="container">
-            <div class="section-header">
-              <div>
-                <span class="eyebrow">Другие города</span>
-                <h2>Крым в кадре</h2>
-              </div>
-            </div>
+    <!-- 4. ROUTES -->
+    <section class="city-routes" aria-labelledby="city-routes-heading">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div>
+            <span class="eyebrow">Идеи для поездки</span>
+            <h2 id="city-routes-heading">Маршруты на день</h2>
           </div>
-    
-          <div class="gallery__track-wrap">
-            <div class="gallery__track" id="galleryTrack">
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/yalta/' ) ); ?>" class="gallery__item" aria-current="page">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Набережная Ялты — южный берег Крыма" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Ялта</span>
-              </a>
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/sevastopol/' ) ); ?>" class="gallery__item">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/2.jpg" alt="Панорама бухты Севастополя" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Севастополь</span>
-              </a>
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/evpatoriya/' ) ); ?>" class="gallery__item">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/3.jpg" alt="Пляжи Евпатории" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Евпатория</span>
-              </a>
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/bakhchisaray/' ) ); ?>" class="gallery__item">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Ханский дворец Бахчисарая" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Бахчисарай</span>
-              </a>
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/sudak/' ) ); ?>" class="gallery__item">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Генуэзская крепость в Судаке" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Судак</span>
-              </a>
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/feodosiya/' ) ); ?>" class="gallery__item">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Набережная Феодосии" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Феодосия</span>
-              </a>
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/alushta/' ) ); ?>" class="gallery__item">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Природа Крыма" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Алушта</span>
-              </a>
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/' ) ); ?>" class="gallery__item">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Горный пейзаж Крыма" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Горный Крым</span>
-              </a>
-    
-              <a href="<?php echo esc_url( home_url( '/gorod/kerch/' ) ); ?>" class="gallery__item">
-                <img src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/10.jfif" alt="Пейзажи Крымского полуострова" loading="lazy" width="540" height="380" />
-                <span class="gallery__caption">Керчь</span>
-              </a>
-    
+        </div>
+        <div class="city-routes__grid">
+
+          <article class="route-card fade-up" data-delay="1">
+            <div class="route-card__header">
+              <span class="route-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg>
+              </span>
+              <span class="route-card__duration">~6–7 часов</span>
             </div>
-    
-            <button class="gallery__btn gallery__btn--prev" id="galleryPrev" aria-label="Предыдущие фото">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="gallery__btn gallery__btn--next" id="galleryNext" aria-label="Следующие фото">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
+            <h3 class="route-card__title">Дворцовый день</h3>
+            <p class="route-card__desc">Три эпохи и три дворца вдоль южного берега — пешком, на маршрутке и с видом на море.</p>
+            <ol class="route-card__stops">
+              <li>Ливадийский дворец и парк</li>
+              <li>Ласточкино гнездо (мыс Ай-Тодор)</li>
+              <li>Воронцовский дворец в Алупке</li>
+              <li>Вечерняя набережная Ялты</li>
+            </ol>
+            <div class="route-card__tags">
+              <span class="route-card__tag">История</span>
+              <span class="route-card__tag">Архитектура</span>
+            </div>
+          </article>
+
+          <article class="route-card fade-up" data-delay="2">
+            <div class="route-card__header">
+              <span class="route-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </span>
+              <span class="route-card__duration">~7–8 часов</span>
+            </div>
+            <h3 class="route-card__title">Горный день</h3>
+            <p class="route-card__desc">Подъём на плато, воздух хребта и панорама над морем — от Мисхора до вершины Ай-Петри и обратно.</p>
+            <ol class="route-card__stops">
+              <li>Канатная дорога Мисхор — Ай-Петри</li>
+              <li>Зубцы и смотровые на плато</li>
+              <li>Никитский ботанический сад</li>
+              <li>Дача Чехова по пути назад</li>
+            </ol>
+            <div class="route-card__tags">
+              <span class="route-card__tag">Природа</span>
+              <span class="route-card__tag">Панорамы</span>
+            </div>
+          </article>
+
+          <article class="route-card fade-up" data-delay="3">
+            <div class="route-card__header">
+              <span class="route-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </span>
+              <span class="route-card__duration">~5–6 часов</span>
+            </div>
+            <h3 class="route-card__title">Пляжный день</h3>
+            <p class="route-card__desc">Море утром, прогулка с видами и закат с Поликуровского холма — неспешный день без лишних километров.</p>
+            <ol class="route-card__stops">
+              <li>Мраморный пляж в Гаспре</li>
+              <li>Морская прогулка от Морского вокзала</li>
+              <li>Приморский рынок: фрукты и вино</li>
+              <li>Поликуровский холм на закате</li>
+            </ol>
+            <div class="route-card__tags">
+              <span class="route-card__tag">Пляж</span>
+              <span class="route-card__tag">Отдых</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PHOTO GALLERY (lightbox) -->
+    <section class="city-gallery" aria-labelledby="yalta-gallery-heading">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div>
+            <span class="eyebrow">Фотогалерея</span>
+            <h2 id="yalta-gallery-heading">Ялта в объективе</h2>
           </div>
-        </section>
+        </div>
+        <div class="city-gallery__grid" role="list">
+          <button type="button" class="city-gallery__item city-gallery__item--featured fade-up" data-delay="1" role="listitem" aria-label="Увеличить: набережная Ялты">
+            <img class="city-gallery__thumb" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/1.jpg" alt="Набережная Ялты" width="800" height="600" loading="lazy" />
+          </button>
+          <button type="button" class="city-gallery__item fade-up" data-delay="2" role="listitem" aria-label="Увеличить: парк и пальмы">
+            <img class="city-gallery__thumb" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/3.jpg" alt="Аллея с пальмами в приморском парке" width="800" height="600" loading="lazy" />
+          </button>
+          <button type="button" class="city-gallery__item fade-up" data-delay="3" role="listitem" aria-label="Увеличить: дворец в парке">
+            <img class="city-gallery__thumb" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Ливадийский дворец среди парка" width="800" height="600" loading="lazy" />
+          </button>
+          <button type="button" class="city-gallery__item fade-up" data-delay="1" role="listitem" aria-label="Увеличить: скалы и море">
+            <img class="city-gallery__thumb" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Скалы и море у побережья Южного берега" width="800" height="600" loading="lazy" />
+          </button>
+          <button type="button" class="city-gallery__item fade-up" data-delay="2" role="listitem" aria-label="Увеличить: дворец и парк">
+            <img class="city-gallery__thumb" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Массандровский дворец и парковая зона" width="800" height="600" loading="lazy" />
+          </button>
+          <button type="button" class="city-gallery__item fade-up" data-delay="3" role="listitem" aria-label="Увеличить: горы и панорама">
+            <img class="city-gallery__thumb" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/7.webp" alt="Горный склон и панорама над морем" width="800" height="600" loading="lazy" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <?php get_template_part('template-parts/gallery-card', null, [
+        'crimea_assets'               => $crimea_assets,
+        'crimea_gallery_current_slug' => 'yalta',
+    ]); ?>
 
 
-    <!-- 5. PRACTICAL -->
+    <!-- 6. PRACTICAL -->
     <section class="city-practical" aria-labelledby="city-practical-heading">
       <div class="container">
         <div class="section-header fade-up">
@@ -821,27 +892,57 @@ get_header();
       </div>
     </section>
 
-    <!-- 6. QUOTE -->
-    <section class="quote city-quote fade-up" style="--city-quote-bg: url('<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp')" aria-label="Цитата о Ялте">
-      <div class="quote__bg" aria-hidden="true"></div>
-      <div class="city-quote__decor" aria-hidden="true">
-        <div class="city-quote__glow city-quote__glow--a"></div>
-        <div class="city-quote__glow city-quote__glow--b"></div>
-        <div class="city-quote__glow city-quote__glow--c"></div>
-        <div class="city-quote__grain"></div>
-        <span class="city-quote__mark city-quote__mark--open">«</span>
-        <span class="city-quote__mark city-quote__mark--close">»</span>
-        <svg class="city-quote__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
-          <path fill="rgba(255,255,255,0.04)" d="M0,48 C240,8 480,88 720,48 S1200,8 1440,48 L1440,100 L0,100 Z"/>
-          <path fill="none" stroke="rgba(61,214,140,0.15)" stroke-width="1.5" d="M0,56 C280,18 520,92 760,52 S1180,14 1440,52"/>
-        </svg>
-        <svg class="city-quote__ridge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-          <path fill="rgba(0,0,0,0.18)" d="M0,140 L0,95 Q150,70 300,88 T600,75 T900,92 T1200,80 L1200,140 Z"/>
-          <path fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="2" d="M0,92 Q200,65 400,82 T800,72 T1200,78"/>
-        </svg>
+    <section class="city-history" aria-labelledby="city-history-heading">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div>
+            <span class="eyebrow">История</span>
+            <h2 id="city-history-heading">Краткая хронология</h2>
+          </div>
+        </div>
+        <p class="city-history__lead fade-up" data-delay="1">
+          От античной колонии до встречи лидеров союзников — несколько вех, которые помогают понять, как Ялта стала тем городом, что мы видим сегодня.
+        </p>
+        <ol class="city-history__timeline">
+          <li class="city-history__event fade-up" data-delay="1">
+            <span class="city-history__year">422 до н.э.</span>
+            <div class="city-history__body">
+              <p>Греческая колония <strong>Ялос</strong> — одна из точек античного присутствия на побережье.</p>
+            </div>
+          </li>
+          <li class="city-history__event fade-up" data-delay="2">
+            <span class="city-history__year">1783</span>
+            <div class="city-history__body">
+              <p>Вхождение Крыма в состав <strong>Российской империи</strong> — начало нового этапа развития южного побережья.</p>
+            </div>
+          </li>
+          <li class="city-history__event fade-up" data-delay="3">
+            <span class="city-history__year">1838</span>
+            <div class="city-history__body">
+              <p><strong>Официальный статус города</strong> — закрепление Ялты как административного и курортного центра региона.</p>
+            </div>
+          </li>
+          <li class="city-history__event fade-up" data-delay="1">
+            <span class="city-history__year">1898–1904</span>
+            <div class="city-history__body">
+              <p>А. П. Чехов живёт и работает в Ялте: здесь созданы <strong>«Вишнёвый сад»</strong>, <strong>«Три сестры»</strong> и другие произведения.</p>
+            </div>
+          </li>
+          <li class="city-history__event fade-up" data-delay="2">
+            <span class="city-history__year">1945</span>
+            <div class="city-history__body">
+              <p><strong>Ялтинская конференция</strong> — встреча Рузвельта, Черчилля и Сталина; переговоры проходят в Ливадийском дворце.</p>
+            </div>
+          </li>
+        </ol>
       </div>
+    </section>
+
+    <!-- 6. QUOTE -->
+    <section class="quote city-quote" aria-label="Цитата о Ялте">
+      <div class="quote__bg" style="background-image: url('<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp')" aria-hidden="true"></div>
       <div class="quote__overlay" aria-hidden="true"></div>
-      <div class="container quote__content">
+      <div class="container quote__content fade-up">
         <p class="city-quote__kicker">Слова о городе</p>
         <blockquote class="quote__text city-quote__text">
           <span class="city-quote__line">«Ялта — это море в ладони гор,</span>

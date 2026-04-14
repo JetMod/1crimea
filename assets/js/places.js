@@ -21,9 +21,14 @@
   if (!grid || !cityBtns.length) return;
 
   var cards = grid.querySelectorAll('.sight-card[data-city]');
-  var heroCountEl = document.getElementById('placesHeroCount');
-  if (heroCountEl) {
-    heroCountEl.textContent = String(cards.length);
+  var catalogHeroCountEl = document.getElementById('placesCatalogHeroCount');
+  var landingCountEl = document.getElementById('placesLandingCount');
+  var landingCards = grid.querySelectorAll('.sight-card[data-crimea-place-page="1"]');
+  if (catalogHeroCountEl) {
+    catalogHeroCountEl.textContent = String(cards.length);
+  }
+  if (landingCountEl) {
+    landingCountEl.textContent = String(landingCards.length);
   }
 
   var currentCity = 'all';

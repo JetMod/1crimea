@@ -10,10 +10,10 @@ if (!defined('ABSPATH')) {
 $crimea_assets = get_template_directory_uri() . '/assets';
 get_header();
 ?>
-<main>
+<main id="main-content">
 
     <section class="city-hero" aria-label="Ливадийский дворец">
-      <div class="city-hero__bg" style="background-image: url('<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg');" role="img" aria-label=""></div>
+      <div class="city-hero__bg" style="background-image: url('<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg');" aria-hidden="true"></div>
       <div class="city-hero__overlay" aria-hidden="true"></div>
       <div class="container">
         <div class="city-hero__content">

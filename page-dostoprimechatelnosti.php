@@ -7,10 +7,14 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+$crimea_place_landing_count = count(crimea_get_place_template_slugs());
+/** @var int Число карточек в сетке ниже (подборка направлений, не только отдельные страницы мест). */
+$crimea_places_hub_catalog_count = 12;
+
 $crimea_assets = get_template_directory_uri() . '/assets';
 get_header();
 ?>
-<main class="catalog-page places-hub">
+<main id="main-content" class="catalog-page places-hub">
 
     <section class="catalog-hero catalog-hero--places" aria-label="Достопримечательности Крыма">
       <div class="container">
@@ -23,7 +27,9 @@ get_header();
         <p class="eyebrow">Каталог</p>
         <h1 class="hero__title">Достопримечательности</h1>
         <p class="hero__subtitle">
-          <span id="placesHeroCount">12</span> мест — дворцы, крепости, музеи и природа по всему Крыму
+          Подборка из <span id="placesCatalogHeroCount"><?php echo (int) $crimea_places_hub_catalog_count; ?></span> направлений
+          (дворцы, крепости, музеи и природа). Отдельные страницы на сайте:
+          <span id="placesLandingCount"><?php echo (int) $crimea_place_landing_count; ?></span>.
         </p>
       </div>
     </section>
@@ -53,7 +59,7 @@ get_header();
         <div class="section-header catalog-section-header">
           <div>
             <span class="eyebrow">Что посмотреть</span>
-            <h2 id="places-cities-heading">Объекты <span class="catalog-count" id="placesVisibleCount" aria-live="polite">12</span></h2>
+            <h2 id="places-cities-heading">Объекты <span class="catalog-count" id="placesVisibleCount" aria-live="polite"><?php echo (int) $crimea_places_hub_catalog_count; ?></span></h2>
           </div>
           <div class="catalog-section-header__tools">
             <div class="catalog-search-wrap">
@@ -106,7 +112,7 @@ get_header();
 
         <div class="cities__grid catalog-grid places-grid">
 
-          <a href="<?php echo esc_url( home_url( '/dostoprimechatelnosti/livadiyskiy-dvorets/' ) ); ?>" class="sight-card fade-up" data-delay="1" data-city="yalta" data-type="dvorets" data-tags="история архитектура музей">
+          <a href="<?php echo esc_url( crimea_place_page_url( 'livadiyskiy-dvorets' ) ); ?>" class="sight-card fade-up" data-delay="1" data-city="yalta" data-type="dvorets" data-tags="история архитектура музей" data-crimea-place-page="1">
             <div class="sight-card__img-wrap">
               <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Ливадийский дворец среди парка" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0M9 18v0"/></svg></span>
@@ -178,7 +184,7 @@ get_header();
             </div>
           </a>
 
-          <a href="<?php echo esc_url( home_url( '/dostoprimechatelnosti/lastochkino-gnezdo/' ) ); ?>" class="sight-card fade-up" data-delay="4" data-city="yalta" data-type="priroda" data-tags="архитектура природа курорт">
+          <a href="<?php echo esc_url( crimea_place_page_url( 'lastochkino-gnezdo' ) ); ?>" class="sight-card fade-up" data-delay="4" data-city="yalta" data-type="priroda" data-tags="архитектура природа курорт" data-crimea-place-page="1">
             <div class="sight-card__img-wrap">
               <img class="sight-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Замок Ласточкино гнездо" width="800" height="600" loading="lazy" />
               <span class="sight-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>

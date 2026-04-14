@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 get_header();
 $theme_assets_uri = get_template_directory_uri() . '/assets';
 ?>
-  <main>
+  <main id="main-content">
 
 <!-- =====================================================
      HERO — видеофон
@@ -19,6 +19,7 @@ $theme_assets_uri = get_template_directory_uri() . '/assets';
     muted
     loop
     playsinline
+    preload="metadata"
     poster="<?php echo esc_url($theme_assets_uri . '/img/cities/1.jpg'); ?>"
     aria-hidden="true"
   >
@@ -316,78 +317,16 @@ $theme_assets_uri = get_template_directory_uri() . '/assets';
   </div>
 </section>
 
-<!-- =====================================================
-     GALLERY — Крым в кадре
-     ===================================================== -->
-<section class="gallery" id="gallery" aria-label="Фотогалерея Крыма">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <span class="eyebrow">Фотогалерея</span>
-        <h2>Крым в кадре</h2>
-      </div>
-    </div>
-  </div>
-
-  <div class="gallery__track-wrap">
-    <div class="gallery__track" id="galleryTrack">
-
-      <a href="<?php echo esc_url(home_url('/gorod/yalta/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/1.jpg'); ?>" alt="Набережная Ялты — южный берег Крыма" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Ялта</span>
-      </a>
-
-      <a href="<?php echo esc_url(home_url('/gorod/sevastopol/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/2.jpg'); ?>" alt="Панорама бухты Севастополя" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Севастополь</span>
-      </a>
-
-      <a href="<?php echo esc_url(home_url('/gorod/evpatoriya/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/3.jpg'); ?>" alt="Пляжи Евпатории" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Евпатория</span>
-      </a>
-
-      <a href="<?php echo esc_url(home_url('/gorod/bakhchisaray/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/4.jpg'); ?>" alt="Ханский дворец Бахчисарая" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Бахчисарай</span>
-      </a>
-
-      <a href="<?php echo esc_url(home_url('/gorod/sudak/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/5.jpg'); ?>" alt="Генуэзская крепость в Судаке" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Судак</span>
-      </a>
-
-      <a href="<?php echo esc_url(home_url('/gorod/feodosiya/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/6.webp'); ?>" alt="Набережная Феодосии" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Феодосия</span>
-      </a>
-
-      <a href="<?php echo esc_url(home_url('/gorod/alushta/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/7.webp'); ?>" alt="Алушта — курорт у подножия гор" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Алушта</span>
-      </a>
-
-      <a href="<?php echo esc_url(home_url('/gorod/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/img9.webp'); ?>" alt="Горный пейзаж Крыма" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Горный Крым</span>
-      </a>
-
-      <a href="<?php echo esc_url(home_url('/gorod/kerch/')); ?>" class="gallery__item">
-        <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/10.jfif'); ?>" alt="Пейзажи Крымского полуострова" loading="lazy" width="540" height="380" />
-        <span class="gallery__caption">Керчь</span>
-      </a>
-
-    </div>
-
-    <button class="gallery__btn gallery__btn--prev" id="galleryPrev" type="button" aria-label="Предыдущие фото">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
-    <button class="gallery__btn gallery__btn--next" id="galleryNext" type="button" aria-label="Следующие фото">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-    </button>
-  </div>
-</section>
-
+<?php
+get_template_part(
+    'template-parts/gallery-card',
+    null,
+    array(
+        'crimea_assets' => $crimea_assets,
+        'crimea_gallery_current_slug' => 'gurzuf',
+    )
+);
+?>
 
 <!-- =====================================================
      SEASONS — когда ехать

@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 $crimea_assets = get_template_directory_uri() . '/assets';
 get_header();
 ?>
-<main class="catalog-page">
+<main id="main-content" class="catalog-page">
 
     <!-- Page hero + фильтры (стили catalog.css; базовая читаемость до подключения) -->
     <section class="catalog-hero" aria-label="Города Крыма">
@@ -142,7 +142,7 @@ get_header();
 
           <a href="<?php echo esc_url( home_url( '/gorod/gurzuf/' ) ); ?>" class="city-card fade-up" data-delay="2" data-region="юбк" data-tags="пляж природа">
             <div class="city-card__img-wrap">
-              <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Гурзуф — бухта и скалы" style="width:100%;height:100%;background:linear-gradient(135deg,#1e3a5f 0%,#3d6b8a 50%,#c4a574 100%);"></div>
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Гурзуф — бухта и скалы" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">ЮБК</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -155,7 +155,7 @@ get_header();
 
           <a href="<?php echo esc_url( home_url( '/gorod/foros/' ) ); ?>" class="city-card fade-up" data-delay="2" data-region="юбк" data-tags="пляж природа архитектура">
             <div class="city-card__img-wrap">
-              <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Форос — мыс и вилла" style="width:100%;height:100%;background:linear-gradient(135deg,#0f172a 0%,#334155 40%,#e8c872 100%);"></div>
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Форос — мыс и церковь Воскресения на скале" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">ЮБК</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -168,7 +168,7 @@ get_header();
 
           <a href="<?php echo esc_url( home_url( '/gorod/alupka/' ) ); ?>" class="city-card fade-up" data-delay="3" data-region="юбк" data-tags="пляж архитектура горы">
             <div class="city-card__img-wrap">
-              <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Алупка — Воронцовский дворец" style="width:100%;height:100%;background:linear-gradient(135deg,#14532d 0%,#166534 45%,#fde68a 100%);"></div>
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/4.jpg" alt="Алупка — Воронцовский дворец и парк" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">ЮБК</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -208,7 +208,7 @@ get_header();
 
           <a href="<?php echo esc_url( home_url( '/gorod/saki/' ) ); ?>" class="city-card fade-up" data-delay="4" data-region="западный" data-tags="лечение курорт">
             <div class="city-card__img-wrap">
-              <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Саки — озеро и курорт" style="width:100%;height:100%;background:linear-gradient(135deg,#0c4a6e 0%,#0369a1 50%,#fcd34d 100%);"></div>
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/6.webp" alt="Саки — озёра и курортная зона западного побережья" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Западный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -274,7 +274,7 @@ get_header();
 
           <a href="<?php echo esc_url( home_url( '/gorod/koktebel/' ) ); ?>" class="city-card fade-up" data-delay="7" data-region="восточный" data-tags="природа пляж">
             <div class="city-card__img-wrap">
-              <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Коктебель — залив и гора Карадаг" style="width:100%;height:100%;background:linear-gradient(135deg,#7c2d12 0%,#ea580c 45%,#fbbf24 100%);"></div>
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Коктебель — залив и гора Карадаг" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Восточный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -300,7 +300,7 @@ get_header();
 
           <a href="<?php echo esc_url( home_url( '/gorod/novy-svet/' ) ); ?>" class="city-card fade-up" data-delay="8" data-region="восточный" data-tags="природа вино пляж">
             <div class="city-card__img-wrap">
-              <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Новый Свет — тропа Голицына" style="width:100%;height:100%;background:linear-gradient(135deg,#134e4a 0%,#0d9488 50%,#a7f3d0 100%);"></div>
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/img9.webp" alt="Новый Свет — тропа Голицына и бухты заповедного мыса" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Восточный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>
@@ -326,7 +326,7 @@ get_header();
 
           <a href="<?php echo esc_url( home_url( '/gorod/shcholkino/' ) ); ?>" class="city-card fade-up" data-delay="9" data-region="восточный" data-tags="пляж курорт">
             <div class="city-card__img-wrap">
-              <div class="city-card__img city-card__img--placeholder" role="img" aria-label="Щёлкино — Азовское море" style="width:100%;height:100%;background:linear-gradient(135deg,#1e3a8a 0%,#38bdf8 55%,#fef08a 100%);"></div>
+              <img class="city-card__img" src="<?php echo esc_url( $crimea_assets ); ?>/img/cities/5.jpg" alt="Щёлкино — побережье Азовского моря" width="600" height="450" loading="lazy" />
               <span class="city-card__badge">Восточный</span>
               <div class="city-card__overlay" aria-hidden="true"></div>
             </div>

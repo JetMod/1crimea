@@ -32,22 +32,22 @@
             <a href="<?php echo esc_url(home_url('/gorod/sevastopol/')); ?>" class="footer__photo-item" aria-label="Севастополь">
               <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/2.jpg'); ?>" alt="Севастополь" loading="lazy" width="120" height="90" />
             </a>
-            <a href="<?php echo esc_url(home_url('/gorod/')); ?>" class="footer__photo-item" aria-label="Евпатория">
+            <a href="<?php echo esc_url(home_url('/gorod/evpatoriya/')); ?>" class="footer__photo-item" aria-label="Евпатория">
               <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/3.jpg'); ?>" alt="Евпатория" loading="lazy" width="120" height="90" />
             </a>
             <a href="<?php echo esc_url(home_url('/gorod/bakhchisaray/')); ?>" class="footer__photo-item" aria-label="Бахчисарай">
               <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/4.jpg'); ?>" alt="Бахчисарай" loading="lazy" width="120" height="90" />
             </a>
-            <a href="<?php echo esc_url(home_url('/gorod/')); ?>" class="footer__photo-item" aria-label="Судак">
+            <a href="<?php echo esc_url(home_url('/gorod/sudak/')); ?>" class="footer__photo-item" aria-label="Судак">
               <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/5.jpg'); ?>" alt="Судак" loading="lazy" width="120" height="90" />
             </a>
-            <a href="<?php echo esc_url(home_url('/gorod/')); ?>" class="footer__photo-item" aria-label="Феодосия">
+            <a href="<?php echo esc_url(home_url('/gorod/feodosiya/')); ?>" class="footer__photo-item" aria-label="Феодосия">
               <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/6.webp'); ?>" alt="Феодосия" loading="lazy" width="120" height="90" />
             </a>
-            <a href="<?php echo esc_url(home_url('/gorod/')); ?>" class="footer__photo-item" aria-label="Горный Крым">
-              <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/7.webp'); ?>" alt="Горный Крым" loading="lazy" width="120" height="90" />
+            <a href="<?php echo esc_url(home_url('/gorod/alushta/')); ?>" class="footer__photo-item" aria-label="Алушта">
+              <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/7.webp'); ?>" alt="Алушта" loading="lazy" width="120" height="90" />
             </a>
-            <a href="<?php echo esc_url(home_url('/gorod/')); ?>" class="footer__photo-item" aria-label="Крымские пейзажи">
+            <a href="<?php echo esc_url(home_url('/gorod/')); ?>" class="footer__photo-item" aria-label="Каталог городов Крыма">
               <img src="<?php echo esc_url($theme_assets_uri . '/img/cities/img9.webp'); ?>" alt="Крым" loading="lazy" width="120" height="90" />
             </a>
           </div>

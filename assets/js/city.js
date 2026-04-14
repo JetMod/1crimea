@@ -147,7 +147,7 @@
   });
 }());
 
-/* «Что посмотреть» — пагинация: по 9 карточек на страницу */
+/* «Что посмотреть» — пагинация: по 6 карточек на страницу (data-sights-per-page на #citySightsGrid); стрелки + номера 1 2 3 … */
 (function () {
   var grid = document.getElementById('citySightsGrid');
   var nav = document.getElementById('citySightsPagination');
@@ -156,24 +156,69 @@
   var cards = grid.querySelectorAll('.sight-card');
   if (!cards.length) return;
 
-  var perPage = parseInt(grid.getAttribute('data-sights-per-page'), 10) || 9;
-  if (perPage < 1) perPage = 9;
+  var perPage = parseInt(grid.getAttribute('data-sights-per-page'), 10) || 6;
+  if (perPage < 1) perPage = 6;
   var totalPages = Math.ceil(cards.length / perPage);
   var currentPage = 1;
   var prevBtn;
   var nextBtn;
-  var numButtons = [];
+  var list;
 
-  function updateNavState() {
-    if (!prevBtn || !nextBtn) return;
-    prevBtn.disabled = currentPage <= 1;
-    nextBtn.disabled = currentPage >= totalPages;
-    numButtons.forEach(function (b, i) {
-      var n = i + 1;
-      var active = n === currentPage;
-      b.classList.toggle('is-active', active);
-      if (active) b.setAttribute('aria-current', 'page');
-      else b.removeAttribute('aria-current');
+  var ARROW_PREV =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
+  var ARROW_NEXT =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>';
+
+  /** Для totalPages > MAX_ALL показываем 1 … 4 5 6 … N вместо длинной ленты. */
+  var MAX_ALL = 9;
+  var DELTA = 2;
+
+  function getPaginationItems(current, total) {
+    var out = [];
+    var i;
+    if (total <= MAX_ALL) {
+      for (i = 1; i <= total; i++) out.push(i);
+      return out;
+    }
+    var left = Math.max(2, current - DELTA);
+    var right = Math.min(total - 1, current + DELTA);
+    out.push(1);
+    if (left > 2) out.push('ellipsis');
+    for (i = left; i <= right; i++) out.push(i);
+    if (right < total - 1) out.push('ellipsis');
+    out.push(total);
+    return out;
+  }
+
+  function renderPageList() {
+    if (!list) return;
+    list.innerHTML = '';
+    var items = getPaginationItems(currentPage, totalPages);
+    items.forEach(function (item) {
+      if (item === 'ellipsis') {
+        var span = document.createElement('span');
+        span.className = 'city-sights__page-ellipsis';
+        span.setAttribute('aria-hidden', 'true');
+        span.textContent = '…';
+        list.appendChild(span);
+        return;
+      }
+      var pageNum = item;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'city-sights__page-num';
+      if (pageNum === currentPage) {
+        b.classList.add('is-active');
+        b.setAttribute('aria-current', 'page');
+      }
+      b.textContent = String(pageNum);
+      b.setAttribute('aria-label', 'Страница ' + pageNum);
+      (function (n) {
+        b.addEventListener('click', function () {
+          goToPage(n);
+        });
+      })(pageNum);
+      list.appendChild(b);
     });
   }
 
@@ -184,10 +229,13 @@
     cards.forEach(function (card, i) {
       var page = Math.floor(i / perPage) + 1;
       var show = page === n;
-      card.style.display = show ? 'flex' : 'none';
+      card.classList.toggle('sight-card--paged-out', !show);
+      card.style.removeProperty('display');
       if (show) card.classList.add('is-visible');
     });
-    updateNavState();
+    if (prevBtn) prevBtn.disabled = currentPage <= 1;
+    if (nextBtn) nextBtn.disabled = currentPage >= totalPages;
+    renderPageList();
 
     if (!scrollToHeading) return;
     var heading = document.getElementById('city-sights-heading');
@@ -200,7 +248,8 @@
   if (totalPages <= 1) {
     nav.hidden = true;
     cards.forEach(function (c) {
-      c.style.display = 'flex';
+      c.classList.remove('sight-card--paged-out');
+      c.style.removeProperty('display');
       c.classList.add('is-visible');
     });
     return;
@@ -213,34 +262,18 @@
   prevBtn.type = 'button';
   prevBtn.className = 'city-sights__page-arrow city-sights__page-arrow--prev';
   prevBtn.setAttribute('aria-label', 'Предыдущая страница');
-  prevBtn.textContent = 'Назад';
+  prevBtn.innerHTML = ARROW_PREV;
 
-  var list = document.createElement('div');
+  list = document.createElement('div');
   list.className = 'city-sights__page-list';
   list.setAttribute('role', 'group');
-  list.setAttribute('aria-label', 'Номер страницы');
-
-  var p;
-  for (p = 1; p <= totalPages; p++) {
-    (function (pageNum) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'city-sights__page-num';
-      b.textContent = String(pageNum);
-      b.setAttribute('aria-label', 'Страница ' + pageNum);
-      b.addEventListener('click', function () {
-        goToPage(pageNum);
-      });
-      list.appendChild(b);
-      numButtons.push(b);
-    })(p);
-  }
+  list.setAttribute('aria-label', 'Номера страниц');
 
   nextBtn = document.createElement('button');
   nextBtn.type = 'button';
   nextBtn.className = 'city-sights__page-arrow city-sights__page-arrow--next';
   nextBtn.setAttribute('aria-label', 'Следующая страница');
-  nextBtn.textContent = 'Вперёд';
+  nextBtn.innerHTML = ARROW_NEXT;
 
   prevBtn.addEventListener('click', function () {
     goToPage(currentPage - 1);

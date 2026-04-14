@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 $crimea_assets = get_template_directory_uri() . '/assets';
 get_header();
 ?>
-<main class="catalog-page">
+<main id="main-content" class="catalog-page">
 
     <section class="catalog-hero catalog-hero--about" aria-label="О проекте">
       <div class="container">
@@ -47,7 +47,7 @@ get_header();
     </section>
 
     <section class="about-content" aria-labelledby="about-mission-heading">
-      <div class="container about-content__inner">
+      <div class="container about-content__inner"> 
 
         <div class="about-section about-section--rich">
           <h2 id="about-mission-heading">Зачем мы это делаем</h2>
@@ -63,28 +63,7 @@ get_header();
 
             <p class="about-accent-line">Спокойный редакторский тон — без спешки и навязчивой рекламы.</p>
 
-            <h3 class="about-prose__subhead">Для кого сайт</h3>
-            <div class="about-audience">
-              <div class="about-audience__item">
-                <span class="about-audience__icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
-                </span>
-                <p class="about-audience__text">Туристам и автопутешественникам — маршрут и первое знакомство с полуостровом.</p>
-              </div>
-              <div class="about-audience__item">
-                <span class="about-audience__icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L9 1"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.4-1.4"/><path d="m10 18 1.4-1.4"/></svg>
-                </span>
-                <p class="about-audience__text">Любителям истории, архитектуры, виноделия и природы.</p>
-              </div>
-              <div class="about-audience__item">
-                <span class="about-audience__icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </span>
-                <p class="about-audience__text">Жителям региона — заметки о городах и точках интереса под рукой.</p>
-              </div>
-            </div>
-
+            <br />
             <div class="about-callout about-callout--notice" aria-labelledby="about-not-heading">
               <div class="about-callout__icon" aria-hidden="true">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
@@ -99,7 +78,7 @@ get_header();
                 </p>
               </div>
             </div>
-          </div>
+          </div> 
         </div>
 
       </div>
@@ -150,73 +129,6 @@ get_header();
     <section class="about-content" aria-labelledby="about-process-heading">
       <div class="container about-content__inner">
 
-        <div class="about-section about-section--rich">
-          <h2 id="about-process-heading">Как мы готовим материалы</h2>
-          <div class="about-process">
-            <ol class="about-process-cards">
-              <li class="about-process-cards__item">
-                <span class="about-process-cards__num" aria-hidden="true">1</span>
-                <p class="about-process-cards__label">Источники и проверка</p>
-                <p class="about-process-cards__text">
-                  Факты и даты — из общедоступных источников: справочники, открытые материалы учреждений и проверенные публикации. По мере сил перекрёстно сверяем ключевые сведения.
-                </p>
-              </li>
-              <li class="about-process-cards__item">
-                <span class="about-process-cards__num" aria-hidden="true">2</span>
-                <p class="about-process-cards__label">Обновления</p>
-                <p class="about-process-cards__text">
-                  Правим текст по мере появления новой информации. Заметили неточность — напишите, учтём при очередной правке.
-                </p>
-              </li>
-              <li class="about-process-cards__item">
-                <span class="about-process-cards__num" aria-hidden="true">3</span>
-                <p class="about-process-cards__label">Фото и визуал</p>
-                <p class="about-process-cards__text">
-                  Свои снимки и стоки с соблюдением лицензий. У разделов разный ритм, но общий аккуратный тон.
-                </p>
-              </li>
-            </ol>
-
-            <div class="about-callout about-callout--soft">
-              <div class="about-callout__icon about-callout__icon--soft" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-              </div>
-              <div class="about-callout__body">
-                <p class="about-callout__title">Язык и тон</p>
-                <p class="about-callout__text">
-                  Нейтральный, уважительный к региону и читателю — без сенсаций и без обещаний, которые невозможно выполнить.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-section about-section--rich" aria-labelledby="about-disclaimer-heading">
-          <h2 id="about-disclaimer-heading">Ограничения и ответственность</h2>
-          <div class="about-disclaimer about-disclaimer--visual">
-            <div class="about-disclaimer__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-            </div>
-            <div class="about-disclaimer__body">
-              <p>
-                Режимы работы музеев и заповедников, стоимость входа, расписания экскурсий и транспорта <strong>могут меняться</strong>.
-              </p>
-              <p>
-                Перед поездкой сверяйте актуальные данные на официальных ресурсах объектов и у перевозчиков.
-              </p>
-              <p>
-                Описания маршрутов и советы по отдыху <strong>не отменяют</strong> Правила дорожного движения и требования безопасности на воде, в горах и на природных территориях.
-              </p>
-              <p>
-                Решения в пути вы принимаете сами. Будьте внимательны к погоде, указателям и местным регламентам.
-              </p>
-              <p>
-                Как мы обрабатываем данные — в <a href="<?php echo esc_url( home_url( '/politika/' ) ); ?>">политике конфиденциальности</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-
         <div class="about-section about-team-section" aria-labelledby="about-team-heading">
           <h2 id="about-team-heading">Команда</h2>
           <div class="about-team-card">
@@ -231,7 +143,7 @@ get_header();
                 </svg>
                 <span class="about-team-card__badge-label">Крым — Путеводитель</span>
               </div>
-            </div>
+            </div> 
             <div class="about-team-card__main">
               <p class="about-team-card__eyebrow">Кто стоит за сайтом</p>
               <p class="about-team-card__lead">

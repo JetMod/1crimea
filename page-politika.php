@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 
 get_header();
 ?>
-<main class="catalog-page">
+<main id="main-content" class="catalog-page">
 
   <section class="catalog-hero catalog-hero--about" aria-label="Политика конфиденциальности">
     <div class="container">

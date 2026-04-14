@@ -135,8 +135,10 @@
     var scrollTop = window.scrollY || document.documentElement.scrollTop;
     var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+    pct = Math.max(0, Math.min(100, pct));
     bar.style.width = pct + '%';
-    bar.setAttribute('aria-valuenow', pct);
+    bar.setAttribute('aria-valuenow', String(pct));
+    bar.setAttribute('aria-valuetext', pct + ' %');
   }
 
   window.addEventListener('scroll', updateProgress, { passive: true });
@@ -161,4 +163,51 @@
   btn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+}());
+
+/* ---- 7. City page — quote block parallax (CSS fixed часто ломается в WebKit; JS как на главной по ощущению) ---- */
+(function () {
+  var section = document.querySelector('section.city-quote');
+  if (!section) return;
+  var bg = section.querySelector('.quote__bg');
+  if (!bg) return;
+
+  var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var mqMobile = window.matchMedia('(max-width: 768px)');
+  var strength = 0.2;
+  var ticking = false;
+
+  function tick() {
+    if (mqReduce.matches || mqMobile.matches) {
+      section.classList.remove('city-quote--parallax');
+      bg.style.removeProperty('transform');
+      return;
+    }
+    section.classList.add('city-quote--parallax');
+    var rect = section.getBoundingClientRect();
+    var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    var sectionTop = rect.top + scrolled;
+    var relative = scrolled - sectionTop;
+    var offset = -relative * strength;
+    bg.style.transform = 'translate3d(0, ' + offset.toFixed(2) + 'px, 0)';
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        tick();
+      });
+    }
+  }
+
+  if (mqReduce.matches) return;
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  if (mqMobile.addEventListener) {
+    mqMobile.addEventListener('change', onScroll);
+  }
+  onScroll();
 }());
